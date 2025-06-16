@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Premium Tech Resources | Optic Bee Soft Tech - Tools, Guides & Assets</title>
+        <meta name="description" content="Access cutting-edge tech resources at Optic Bee Soft Tech - developer tools, design assets, coding templates, AI resources, and productivity boosters for professionals.">
+        <meta name="keywords" content="tech resources, developer tools, design assets, coding templates, AI resources, software development kits, Optic Bee Soft Tech">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+
+
+
+<!-- Navbar -->
+<header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+    <!-- Logo -->
+    <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+      <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+      <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
+
+    <!-- Desktop Navigation -->
+    <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+      <a href="/" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="Projects.html" class="nav-link">Projects</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="affiliate.html" class="nav-link">Affiliates</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      
+      <!-- Icons -->
+      <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+        <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+        <a href="register.html" class="nav-icon" title="Register">👤</a>
+        <button id="searchToggle" class="nav-icon">🔍</button>
+        
+        <!-- Desktop Language Selector -->
+        <div id="customDropdown" style="position:relative; user-select:none;">
+          <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+            <span id="currentLanguage">EN</span>
+            <span style="margin-left:5px;">▼</span>
+          </div>
+          <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="products.html" class="mobile-nav-link">Products</a>
+      <a href="Projects.html" class="mobile-nav-link">Projects</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+      <a href="partners-page.html" class="mobile-nav-link">Insights</a>
+      <a href="partners.html" class="mobile-nav-link">Partners</a>
+      <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+      <a href="industries.html" class="mobile-nav-link">Industries</a>
+      <a href="resources.html" class="mobile-nav-link">Resources</a>
+      
+      <div style="display:flex; justify-content:space-around; margin-top:15px;">
+        <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+        <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+      </div>
+      
+      <!-- Mobile Language Selector -->
+      <div style="margin-top:15px;">
+        <select id="mobileLanguageSelect" class="mobile-language-selector">
+          <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+          <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+          <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+          <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+          <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+          <!-- More languages will be added by JavaScript -->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Container -->
+  <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+    <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+  </div>
+</header>
+
+<style>
+  /* Common Styles */
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+  
+  .nav-icon {
+    color: white;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Styles */
+  .mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .mobile-nav-icon {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .mobile-language-selector {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  /* Language dropdown options */
+  #optionsList div {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #optionsList div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #optionsList img {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .nav-link {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #mobileMenuButton {
+      display: block;
+    }
+    
+    #desktopNav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Country/language data
+  const countries = [
+    {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+    {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+    {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+    {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+    {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+    {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+    {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+    {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+    {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+    {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+    {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+  ];
+
+  // Initialize language functionality
+  function initLanguageSelection() {
+    // Populate desktop dropdown
+    const optionsList = document.getElementById('optionsList');
+    countries.forEach(country => {
+      const option = document.createElement('div');
+      option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+      option.dataset.code = country.code;
+      option.dataset.flag = country.flag;
+      option.dataset.name = country.name;
+      option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+      optionsList.appendChild(option);
+    });
+
+    // Populate mobile dropdown
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    countries.forEach(country => {
+      if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+        const option = document.createElement('option');
+        option.value = country.code;
+        option.textContent = `${country.name} (${country.country})`;
+        option.dataset.flag = country.flag;
+        mobileSelect.appendChild(option);
+      }
+    });
+
+    // Set up event listeners
+    document.getElementById('selectedOption').onclick = function() {
+      optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+    };
+
+    document.getElementById('mobileLanguageSelect').onchange = function() {
+      const selectedOption = this.options[this.selectedIndex];
+      selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#customDropdown')) {
+        optionsList.style.display = 'none';
+      }
+    });
+
+    // Detect user's language
+    detectUserLanguage();
+  }
+
+  // Select language function
+  function selectLanguage(code, flag, name) {
+    // Update desktop display
+    document.getElementById('currentFlag').src = flag;
+    document.getElementById('currentLanguage').textContent = code.toUpperCase();
+    document.getElementById('optionsList').style.display = 'none';
+    
+    // Update mobile display
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    mobileSelect.value = code;
+    
+    // Store selection
+    localStorage.setItem('userLanguage', code);
+    localStorage.setItem('userLanguageFlag', flag);
+    localStorage.setItem('userLanguageName', name);
+    
+    // Change Google Translate language
+    changeGoogleTranslateLanguage(code);
+  }
+
+  // Detect user's language
+  function detectUserLanguage() {
+    // Check for stored preference first
+    const storedLanguage = localStorage.getItem('userLanguage');
+    if (storedLanguage) {
+      const storedFlag = localStorage.getItem('userLanguageFlag');
+      const storedName = localStorage.getItem('userLanguageName');
+      selectLanguage(storedLanguage, storedFlag, storedName);
+      return;
+    }
+
+    // Try to detect from browser
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    if (browserLanguage) {
+      const mainLang = browserLanguage.split('-')[0];
+      const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+      if (matchedCountry) {
+        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        return;
+      }
+    }
+
+    // Fallback to IP detection
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const countryCode = data.country;
+        const matchedCountry = countries.find(c => 
+          c.country.toLowerCase() === data.country_name.toLowerCase() || 
+          c.code === data.languages?.split(',')[0]
+        );
+        if (matchedCountry) {
+          selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        } else {
+          // Default to English
+          selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+        }
+      })
+      .catch(() => {
+        // Default to English if all detection fails
+        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+      });
+  }
+
+  // Change Google Translate language
+  function changeGoogleTranslateLanguage(languageCode) {
+    if (typeof google !== 'undefined' && google.translate) {
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = languageCode;
+        combo.dispatchEvent(new Event('change'));
+      }
+    } else {
+      // Retry after a delay if Google Translate isn't loaded yet
+      setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+    }
+  }
+
+  // Initialize Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      includedLanguages: countries.map(c => c.code).join(',')
+    }, 'google_translate_element');
+  }
+
+  // Navbar functions
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function toggleSearch() {
+    const searchContainer = document.getElementById('searchContainer');
+    searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function handleResponsive() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('mobileMenuButton').style.display = 'block';
+      document.getElementById('desktopNav').style.display = 'none';
+    } else {
+      document.getElementById('mobileMenuButton').style.display = 'none';
+      document.getElementById('desktopNav').style.display = 'flex';
+      document.getElementById('mobileMenu').style.display = 'none';
+      document.getElementById('searchContainer').style.display = 'none';
+    }
+  }
+
+  // Initialize everything when DOM loads
+  document.addEventListener('DOMContentLoaded', function() {
+    initLanguageSelection();
+    handleResponsive();
+    document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+    window.addEventListener('resize', handleResponsive);
+    
+    // Load Google Translate script
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(script);
+  });
+</script>
+
+<!-- Google Translate element (hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+
+
+
+
+
+
+<!-- Hero Section -->
+<section style="background:linear-gradient(95deg,#0f0c29 0%,#302b63 50%,#24243e 100%);color:#fff;padding:2rem 1rem 4rem;text-align:center;position:relative;overflow:hidden;min-height:70vh;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;flex-wrap:wrap;">
+
+    <!-- Animated Tech Background -->
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;overflow:hidden;">
+        <div style="width:100%;height:100%;background:url('images/resources.png') center/cover no-repeat;opacity:0.15;animation:zoomBg 25s ease-in-out infinite alternate;"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="max-width:700px;position:relative;z-index:2;padding:1rem;width:100%;flex:1;">
+        <h1 style="font-size:clamp(2.8rem, 6vw, 5rem);margin-bottom:1.5rem;font-weight:900;text-shadow:0 5px 20px rgba(0,0,0,0.4);line-height:1.1;animation:fadeInDown 0.8s ease both;letter-spacing:-0.5px;">
+        Transform Your <span style="background:linear-gradient(90deg,#00d2ff 0%,#3a7bd5 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">Development</span> Workflow
+        </h1>
+        <p style="font-size:clamp(1.2rem, 2.5vw, 1.8rem);margin-bottom:3rem;max-width:800px;margin-left:auto;margin-right:auto;animation:fadeInUp 0.8s ease 0.3s both;opacity:0;line-height:1.6;text-shadow:0 2px 8px rgba(0,0,0,0.3);font-weight:300;">
+        Access premium developer tools, frameworks, and resources to build faster, smarter, and more efficient applications
+        </p>
+
+        <!-- Buttons -->
+        <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;animation:fadeIn 0.8s ease 0.6s both;opacity:0;">
+        <a href="#resources" style="background:linear-gradient(135deg,#00d2ff 0%,#3a7bd5 100%);color:#fff;padding:1.2rem 3rem;border-radius:50px;font-weight:700;text-decoration:none;transition:all 0.4s ease;box-shadow:0 10px 30px rgba(58,123,213,0.4);font-size:1.2rem;position:relative;overflow:hidden;z-index:1;border:none;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 15px 40px rgba(58,123,213,0.6)';this.querySelector('span').style.opacity='1'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 10px 30px rgba(58,123,213,0.4)';this.querySelector('span').style.opacity='0'">
+            <span style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);opacity:0;transition:opacity 0.4s ease;z-index:-1;"></span>
+            Explore Developer Tools
+        </a>
+        </div>
+    </div>
+
+    <!-- Image Column -->
+    <div style="flex:1;max-width:500px;z-index:2;padding:1rem;animation:float 6s ease-in-out infinite;display:flex;justify-content:center;align-items:center;">
+        <img src="images/resorce.png" alt="Developer Illustration" style="width:300px;height:300px;border-radius:50%; object-fit:cover;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.4));">
+    </div>
+
+    <!-- Animated Waves -->
+    <div style="position:absolute;bottom:0;left:0;width:100%;height:200px;background:linear-gradient(180deg, rgba(15,12,41,0) 0%, #0f0c29 70%);z-index:2;"></div>
+</section>
+
+        <style>
+            @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-40px); } 100% { opacity: 1; transform: translateY(0); } }
+            @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(40px); } 100% { opacity: 1; transform: translateY(0); } }
+            @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+            @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+            @keyframes zoomBg { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
+        </style>
+
+        <!-- Featured Resources -->
+        <section id="resources" style="background:#fff;padding:5rem 1rem;">
+        <div style="max-width:1200px;margin:0 auto;">
+            <h2 style="text-align:center;font-size:2.5rem;margin-bottom:4rem;color:#333;">Featured Resources</h2>
+
+                <!-- Resource 1 -->
+                <div style="display:flex;align-items:center;gap:2rem;margin-bottom:4rem;flex-wrap:wrap;">
+                <!-- Icon -->
+                <div style="flex:0 0 80px;height:80px;display:flex;align-items:center;justify-content:center;background:linear-gradient(45deg,#4776e6,#8e54e9);border-radius:50%;">
+                    <i class="fas fa-code" style="font-size:2.5rem;color:#fff;"></i>
+                </div>
+
+                <!-- Text Block -->
+                <div style="flex:1;min-width:250px;">
+                    <h3 style="font-size:2rem;margin-bottom:0.7rem;color:#333;">Developer Toolkits</h3>
+                    <p style="color:#444;margin-bottom:1rem;line-height:1.8;font-size:1.1rem;">
+                    Comprehensive collections of APIs, frameworks, and libraries to accelerate development.
+                    </p>
+                    <p style="color:#555;margin-bottom:1rem;line-height:1.8;font-size:1.05rem;">
+                    Whether you're building for the web, mobile, or backend systems, our toolkits provide pre-built components and best practices to streamline your workflow and ensure code quality.
+                    </p>
+                    <p style="color:#555;line-height:1.8;font-size:1.05rem;">
+                    Access open-source packages, SDKs, documentation, and productivity tools tailored for modern developers.
+                    </p>
+                </div>
+
+                    <!-- Image with Hover Effect -->
+                <div style="flex:0 0 300px;overflow:hidden;border-radius:8px;">
+                    <img src="images/developer.png" alt="Developer Toolkits" style="width:100%;height:auto;border-radius:8px;transition:transform 0.4s ease, box-shadow 0.4s ease;" 
+                        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 30px rgba(110,72,170,0.5)'" 
+                        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                </div>
+
+                </div>
+
+
+                <!-- Resource 2 -->
+                <div style="display:flex;align-items:center;gap:2rem;margin-bottom:4rem;flex-wrap:wrap;">
+                <!-- Icon -->
+                <div style="flex:0 0 80px;height:80px;display:flex;align-items:center;justify-content:center;background:linear-gradient(45deg,#ff4e50,#f9d423);border-radius:50%;">
+                    <i class="fas fa-paint-brush" style="font-size:2.5rem;color:#fff;"></i>
+                </div>
+
+                <!-- Text Block -->
+                <div style="flex:1;min-width:250px;">
+                    <h3 style="font-size:2rem;margin-bottom:0.7rem;color:#333;">Design Assets</h3>
+                    <p style="color:#444;margin-bottom:1rem;line-height:1.8;font-size:1.1rem;">
+                    Premium UI kits, icons, templates, and mockups to enhance your design workflow.
+                    </p>
+                    <p style="color:#555;margin-bottom:1rem;line-height:1.8;font-size:1.05rem;">
+                    Get access to high-quality visual resources tailored for designers—from vector illustrations and wireframes to style guides and responsive layouts.
+                    </p>
+                    <p style="color:#555;line-height:1.8;font-size:1.05rem;">
+                    Perfect for product design, branding, or rapid prototyping with modern aesthetic and functional consistency.
+                    </p>
+                </div>
+
+                <!-- Image with Hover Effect -->
+                <div style="flex:0 0 300px;overflow:hidden;border-radius:8px;">
+                    <img 
+                    src="images/design.png" 
+                    alt="Design Assets" 
+                    style="width:100%;height:auto;border-radius:8px;transition:transform 0.4s ease, box-shadow 0.4s ease;" 
+                    onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" 
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                    >
+                </div>
+                </div>
+
+
+                <!-- Resource 3 -->
+                <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-bottom:4rem;">
+                <!-- Icon -->
+                <div style="flex:0 0 80px;height:80px;display:flex;align-items:center;justify-content:center;background:linear-gradient(45deg,#1d976c,#93f9b9);border-radius:50%;">
+                    <i class="fas fa-robot" style="font-size:2.5rem;color:#fff;"></i>
+                </div>
+
+                <!-- Text Block -->
+                <div style="flex:1;min-width:250px;">
+                    <h3 style="font-size:2rem;margin-bottom:0.7rem;color:#333;">AI Resources</h3>
+                    <p style="color:#444;margin-bottom:1rem;line-height:1.8;font-size:1.1rem;">
+                    Explore cutting-edge machine learning models, neural networks, and AI development frameworks designed to boost innovation and automation.
+                    </p>
+                    <p style="color:#555;margin-bottom:1rem;line-height:1.8;font-size:1.05rem;">
+                    Access curated datasets, training modules, pre-built models, and deployment tools to accelerate your AI projects from concept to execution.
+                    </p>
+                    <p style="color:#555;line-height:1.8;font-size:1.05rem;">
+                    Ideal for research, startups, and enterprises looking to integrate intelligent solutions into their products and services.
+                    </p>
+                </div>
+
+                <!-- Image with Hover Effect -->
+                <div style="flex:0 0 300px;overflow:hidden;border-radius:8px;">
+                    <img 
+                    src="images/ai.png" 
+                    alt="AI Resources" 
+                    style="width:100%;height:auto;border-radius:8px;transition:transform 0.4s ease, box-shadow 0.4s ease;" 
+                    onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" 
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                    >
+                </div>
+                </div>
+
+
+        </div>
+        </section>
+
+        <!-- Resource Categories -->
+        <section style="background:#f8f9fa;padding:5rem 1rem;">
+        <div style="max-width:900px;margin:0 auto;">
+
+            <!-- Centered Title with Horizontal Lines -->
+            <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:3rem;">
+            <div style="flex:1;height:2px;background:#ccc;"></div>
+            <h2 style="margin:0;font-size:2rem;font-weight:600;color:#333;">Browse by Category</h2>
+            <div style="flex:1;height:2px;background:#ccc;"></div>
+            </div>
+
+            <!-- Table Format Display with Hover and Shadow -->
+            <table style="width:100%;border-collapse:collapse;text-align:left;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px #7a16fd5b;">
+            <thead>
+                <tr style="background:#eaeaea;">
+                <th style="padding:1rem;font-size:1rem;color:#333;">Category</th>
+                <th style="padding:1rem;font-size:1rem;color:#333;">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-top:1px solid #fcfcfc;transition:all 0.3s;" onmouseover="this.style.background='#f1f1f1';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.background='transparent';this.style.boxShadow='none'">
+                <td style="padding:1rem;"><i class="fas fa-laptop-code" style="color:#1976d2;margin-right:10px;"></i>Development</td>
+                <td style="padding:1rem;color:#666666;">Frameworks, libraries, and coding tools</td>
+                </tr>
+                <tr style="background:#fafafa;border-top:1px solid #eeeeee;transition:all 0.3s;" onmouseover="this.style.background='#f1f1f1';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.background='#fafafa';this.style.boxShadow='none'">
+                <td style="padding:1rem;"><i class="fas fa-palette" style="color:#ff8f00;margin-right:10px;"></i>Design</td>
+                <td style="padding:1rem;color:#666;">UI/UX kits, icons, and templates</td>
+                </tr>
+                <tr style="border-top:1px solid #eee;transition:all 0.3s;" onmouseover="this.style.background='#f1f1f1';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.background='transparent';this.style.boxShadow='none'">
+                <td style="padding:1rem;"><i class="fas fa-database" style="color:#8e24aa;margin-right:10px;"></i>Data Science</td>
+                <td style="padding:1rem;color:#666;">Datasets, analytics tools</td>
+                </tr>
+                <tr style="background:#fafafa;border-top:1px solid #eee;transition:all 0.3s;" onmouseover="this.style.background='#f1f1f1';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.background='#fafafa';this.style.boxShadow='none'">
+                <td style="padding:1rem;"><i class="fas fa-cloud" style="color:#43a047;margin-right:10px;"></i>Cloud</td>
+                <td style="padding:1rem;color:#666;">Cloud services and APIs</td>
+                </tr>
+            </tbody>
+            </table>
+
+        </div>
+        </section>
+
+        <!-- Popular Downloads -->
+        <section style="background:#eef1f5;padding:5rem 1rem;">
+            <div style="max-width:1200px;margin:0 auto;">
+                <h2 style="text-align:center;font-size:2.6rem;margin-bottom:3rem;color:#222;">Explore Documentation</h2>
+                    <div style="display:flex;gap:1.5rem;overflow-x:auto;padding-bottom:1rem;">
+
+                    <!-- Card Template -->
+                    <div style="min-width:220px;background:#ffffff;border-radius:12px;padding:1.5rem;text-align:center;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(128,0,255,0.1);" 
+                        onmouseover="this.style.boxShadow='0 8px 24px rgba(128,0,255,0.4)'; this.style.border='2px solid #b388ff';" 
+                        onmouseout="this.style.boxShadow='0 4px 15px rgba(128,0,255,0.1)'; this.style.border='none';">
+                        <div style="background:#d1e8ff;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                        <i class="fas fa-play-circle" style="font-size:1.8rem;color:#6200ea;"></i>
+                        </div>
+                        <h3 style="font-size:1.2rem;margin-bottom:0.8rem;color:#222;">Getting Started</h3>
+                        <p style="color:#555;font-size:0.9rem;">Step-by-step guides and setup instructions.</p>
+                    </div>
+
+                    <!-- API Reference -->
+                    <div style="min-width:220px;background:#ffffff;border-radius:12px;padding:1.5rem;text-align:center;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(128,0,255,0.1);" 
+                        onmouseover="this.style.boxShadow='0 8px 24px rgba(128,0,255,0.4)'; this.style.border='2px solid #b388ff';" 
+                        onmouseout="this.style.boxShadow='0 4px 15px rgba(128,0,255,0.1)'; this.style.border='none';">
+                        <div style="background:#fff4de;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                        <i class="fas fa-plug" style="font-size:1.8rem;color:#6200ea;"></i>
+                        </div>
+                        <h3 style="font-size:1.2rem;margin-bottom:0.8rem;color:#222;">API Reference</h3>
+                        <p style="color:#555;font-size:0.9rem;">Detailed API documentation and parameters.</p>
+                    </div>
+
+                    <!-- Tutorials -->
+                    <div style="min-width:220px;background:#ffffff;border-radius:12px;padding:1.5rem;text-align:center;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(128,0,255,0.1);" 
+                        onmouseover="this.style.boxShadow='0 8px 24px rgba(128,0,255,0.4)'; this.style.border='2px solid #b388ff';" 
+                        onmouseout="this.style.boxShadow='0 4px 15px rgba(128,0,255,0.1)'; this.style.border='none';">
+                        <div style="background:#ede7f6;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                        <i class="fas fa-chalkboard-teacher" style="font-size:1.8rem;color:#6200ea;"></i>
+                        </div>
+                        <h3 style="font-size:1.2rem;margin-bottom:0.8rem;color:#222;">Tutorials</h3>
+                        <p style="color:#555;font-size:0.9rem;">Walkthroughs and feature implementation guides.</p>
+                    </div>
+
+                    <!-- FAQs -->
+                    <div style="min-width:220px;background:#ffffff;border-radius:12px;padding:1.5rem;text-align:center;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(128,0,255,0.1);" 
+                        onmouseover="this.style.boxShadow='0 8px 24px rgba(128,0,255,0.4)'; this.style.border='2px solid #b388ff';" 
+                        onmouseout="this.style.boxShadow='0 4px 15px rgba(128,0,255,0.1)'; this.style.border='none';">
+                        <div style="background:#dcedc8;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                        <i class="fas fa-question-circle" style="font-size:1.8rem;color:#6200ea;"></i>
+                        </div>
+                        <h3 style="font-size:1.2rem;margin-bottom:0.8rem;color:#222;">FAQs</h3>
+                        <p style="color:#555;font-size:0.9rem;">Helpful answers to common user questions.</p>
+                    </div>
+
+                    </div>
+
+            </div>
+        </section>
+
+        <section style="background:#f6f6f7;padding:60px 20px;font-family:sans-serif;">
+        <div style="max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;justify-content:space-between;">
+
+            <!-- Left Content -->
+            <div style="flex:1;min-width:280px;">
+            <h2 style="font-size:2rem;font-weight:700;color:#111;margin-bottom:30px;">
+                Community Power <span style="color:#6706b6;">Engaging Together</span>
+            </h2>
+
+            <div style="margin-bottom:25px;">
+                <h3 style="font-weight:700;font-size:1rem;margin-bottom:5px;">Topic Specialists</h3>
+                <p style="margin:0;color:#444;">contribute expertise in niche community questions.</p>
+            </div>
+
+            <div style="margin-bottom:25px;">
+                <h3 style="font-weight:700;font-size:1rem;margin-bottom:5px;">Active Moderators</h3>
+                <p style="margin:0;color:#444;">keep conversations helpful, respectful, and on-topic.</p>
+            </div>
+
+            <div style="margin-bottom:25px;">
+                <h3 style="font-weight:700;font-size:1rem;margin-bottom:5px;">Global Contributors</h3>
+                <p style="margin:0;color:#444;">share perspectives and feedback across regions and cultures.</p>
+            </div>
+
+            <!-- Links -->
+            <div style="margin-top:30px;">
+                <a href="register.html" style="color:#4c00a3;text-decoration:none;margin-right:20px;font-weight:600;">Join Now →</a>
+                <a href="#FAQ" style="color:#44009c;text-decoration:none;font-weight:600;">Forum FAQs →</a>
+            </div>
+            </div>
+
+            <!-- Right Stats -->
+            <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:20px;">
+
+                <div 
+                    style="display:flex;align-items:center;background:#e3f7f9;padding:20px;border-radius:12px;transition:0.3s ease;box-shadow:0 0 0 rgba(0,0,0,0);"
+                    onmouseover="this.style.boxShadow='0 8px 20px rgba(128,0,128,0.3)'"
+                    onmouseout="this.style.boxShadow='0 0 0 rgba(0,0,0,0)'">
+                    <div style="flex:1;">
+                    <h3 style="font-size:1.5rem;margin:0;font-weight:700;">500K+</h3>
+                    <p style="margin:0;color:#555;">active members</p>
+                    </div>
+                    <img src="images/michel.png" alt="Avatar" style="width:60px;height:60px;border-radius:50%;">
+                </div>
+
+                <div 
+                    style="display:flex;align-items:center;background:#fff7e0;padding:20px;border-radius:12px;transition:0.3s ease;box-shadow:0 0 0 rgba(0,0,0,0);"
+                    onmouseover="this.style.boxShadow='0 8px 20px rgba(128,0,128,0.3)'"
+                    onmouseout="this.style.boxShadow='0 0 0 rgba(0,0,0,0)'">
+                    <div style="flex:1;">
+                    <h3 style="font-size:1.5rem;margin:0;font-weight:700;">2 million+</h3>
+                    <p style="margin:0;color:#555;">posts and replies</p>
+                    </div>
+                    <img src="images/thomson.png" alt="Avatar" style="width:60px;height:60px;border-radius:50%;">
+                </div>
+
+            <div 
+                style="display:flex;align-items:center;background:#f9e0e0;padding:20px;border-radius:12px;transition:0.3s ease;box-shadow:0 0 0 rgba(0,0,0,0);"
+                onmouseover="this.style.boxShadow='0 8px 20px rgba(128,0,128,0.3)'"
+                onmouseout="this.style.boxShadow='0 0 0 rgba(0,0,0,0)'">
+                <div style="flex:1;">
+                <h3 style="font-size:1.5rem;margin:0;font-weight:700;">99%</h3>
+                <p style="margin:0;color:#555;">positive feedback</p>
+                </div>
+                <img src="images/priya.png" alt="Avatar" style="width:60px;height:60px;border-radius:50%;">
+            </div>
+
+            </div>
+
+        </div>
+        </section>
+
+        <section style="background:#fff;padding:60px 20px;font-family:Arial,sans-serif;">
+            <div style="max-width:1200px;margin:0 auto;text-align:center;">
+                <h2 style="font-size:2.5rem;color:#111;margin-top:-30px;margin-bottom:20px;">
+                How We <span style="color:#5806c4;">Support You</span>
+                </h2>
+                <p style="font-size:1.1rem;color:#131212;max-width:700px;margin:0 auto 40px;">
+                Our team is here to ensure you get the most out of every interaction.
+                </p>
+
+                <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:center;text-align:left;">
+                
+                <div onmouseover="this.style.boxShadow='0 0 20px rgba(88,6,196,0.2)'; this.style.transform='scale(1.02)'; this.querySelector('h3').style.color='#5806c4'; this.querySelector('p').style.color='#5806c4';"
+                    onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'; this.querySelector('h3').style.color='#000'; this.querySelector('p').style.color='#131212';"
+                    style="flex:1 1 300px;min-width:260px;padding-bottom:15px;border-bottom:1px solid #eee;transition:all 0.3s ease;">
+                    <h3 style="font-size:1.2rem;color:#000;font-weight:bold;margin-bottom:10px;">Technical Assistance</h3>
+                    <p style="margin:0;color:#131212;">Bug fixes, configuration help, and software troubleshooting.</p>
+                </div>
+
+                <div onmouseover="this.style.boxShadow='0 0 20px rgba(88,6,196,0.2)'; this.style.transform='scale(1.02)'; this.querySelector('h3').style.color='#5806c4'; this.querySelector('p').style.color='#5806c4';"
+                    onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'; this.querySelector('h3').style.color='#000'; this.querySelector('p').style.color='#111111';"
+                    style="flex:1 1 300px;min-width:260px;padding-bottom:15px;border-bottom:1px solid #eee;transition:all 0.3s ease;">
+                    <h3 style="font-size:1.2rem;color:#000;font-weight:bold;margin-bottom:10px;">Account & Billing</h3>
+                    <p style="margin:0;color:#111111;">Manage your subscription, billing details, and renewals.</p>
+                </div>
+
+                <div onmouseover="this.style.boxShadow='0 0 20px rgba(88,6,196,0.2)'; this.style.transform='scale(1.02)'; this.querySelector('h3').style.color='#5806c4'; this.querySelector('p').style.color='#5806c4';"
+                    onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'; this.querySelector('h3').style.color='#000'; this.querySelector('p').style.color='#0e0d0d';"
+                    style="flex:1 1 300px;min-width:260px;padding-bottom:15px;border-bottom:1px solid #eee;transition:all 0.3s ease;">
+                    <h3 style="font-size:1.2rem;color:#000;font-weight:bold;margin-bottom:10px;">Product Guidance</h3>
+                    <p style="margin:0;color:#0e0d0d;">Get expert recommendations and usage best practices.</p>
+                </div>
+
+                <div onmouseover="this.style.boxShadow='0 0 20px rgba(88,6,196,0.2)'; this.style.transform='scale(1.02)'; this.querySelector('h3').style.color='#5806c4'; this.querySelector('p').style.color='#5806c4';"
+                    onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'; this.querySelector('h3').style.color='#000'; this.querySelector('p').style.color='#111111';"
+                    style="flex:1 1 300px;min-width:260px;padding-bottom:15px;border-bottom:1px solid #eee;transition:all 0.3s ease;">
+                    <h3 style="font-size:1.2rem;color:#000;font-weight:bold;margin-bottom:10px;">Community Forums</h3>
+                    <p style="margin:0;color:#111111;">Ask questions, share ideas, and connect with other users.</p>
+                </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="FAQ" style="padding:5rem 1rem;background:#f8f9fa;">
+        <div style="max-width:800px;margin:0 auto;">
+            <h2 style="text-align:center;font-size:2.5rem;margin-bottom:3rem;color:#333;">
+            Frequently Asked Questions
+            </h2>
+            <div id="faq-container" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+
+            <!-- FAQ Item -->
+            <div style="border-bottom:1px solid #eee;">
+                <div onclick="toggleFAQ(this)" style="padding:1.5rem;cursor:pointer;transition:all 0.3s;display:flex;justify-content:space-between;align-items:center;">
+                <h3 style="font-size:1.2rem;margin:0;color:#333;">Are these resources free to use?</h3>
+                <i class="fas fa-chevron-down" style="transition:transform 0.3s;"></i>
+                </div>
+                <div style="display:none;padding:1rem;color:#666;">
+                Most resources are free for personal and commercial use under open licenses. Some premium resources may require attribution or have specific license terms which are clearly marked on each download page.
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div style="border-bottom:1px solid #eee;">
+                <div onclick="toggleFAQ(this)" style="padding:1.5rem;cursor:pointer;transition:all 0.3s;display:flex;justify-content:space-between;align-items:center;">
+                <h3 style="font-size:1.2rem;margin:0;color:#333;">How often are new resources added?</h3>
+                <i class="fas fa-chevron-down" style="transition:transform 0.3s;"></i>
+                </div>
+                <div style="display:none;padding:1rem;color:#666;">
+                We add new resources weekly across all categories. Our team constantly curates and creates high-quality tools, templates, and assets to keep our collection fresh and relevant.
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div style="border-bottom:1px solid #eee;">
+                <div onclick="toggleFAQ(this)" style="padding:1.5rem;cursor:pointer;transition:all 0.3s;display:flex;justify-content:space-between;align-items:center;">
+                <h3 style="font-size:1.2rem;margin:0;color:#333;">Can I contribute my own resources?</h3>
+                <i class="fas fa-chevron-down" style="transition:transform 0.3s;"></i>
+                </div>
+                <div style="display:none;padding:1rem;color:#666;">
+                Yes! We welcome contributions from the community. Visit our Contribute page to submit your resources for review. High-quality submissions may be featured and credited to you.
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div>
+                <div onclick="toggleFAQ(this)" style="padding:1.5rem;cursor:pointer;transition:all 0.3s;display:flex;justify-content:space-between;align-items:center;">
+                <h3 style="font-size:1.2rem;margin:0;color:#333;">What if I need help with a resource?</h3>
+                <i class="fas fa-chevron-down" style="transition:transform 0.3s;"></i>
+                </div>
+                <div style="display:none;padding:1rem;color:#666;">
+                Each resource includes documentation and usage examples. For additional support, you can contact our technical team through the support portal, and we'll assist you within 24 hours.
+                </div>
+            </div>
+
+            </div>
+        </div>
+        </section>
+
+        <script>
+        function toggleFAQ(clickedHeader) {
+            const allItems = document.querySelectorAll('#faq-container > div');
+            allItems.forEach(item => {
+            const answer = item.children[1];
+            const question = item.children[0];
+            const icon = question.querySelector('i');
+            const title = question.querySelector('h3');
+
+            if (question === clickedHeader) {
+                const isVisible = answer.style.display === 'block';
+                answer.style.display = isVisible ? 'none' : 'block';
+                title.style.color = isVisible ? '#333' : '#5806c4';
+                question.style.boxShadow = isVisible ? 'none' : '0 0 15px rgba(138,43,226,0.3)';
+                icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+            } else {
+                answer.style.display = 'none';
+                title.style.color = '#333';
+                question.style.boxShadow = 'none';
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            }
+            });
+        }
+        </script>
+
+        <section id="subscribe" style="padding:5rem 1rem;background:#000;">
+            <div style="max-width:800px;margin:0 auto;background:#1a1a1a;border-radius:12px;padding:3rem;text-align:center;">
+                <h2 style="font-size:2rem;margin-bottom:1rem;color:#fff;">Get New Resources Weekly</h2>
+                <p style="color:#fffdfd;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto;">
+                Join our newsletter to receive curated tech resources, tools, and updates directly to your inbox.
+                </p>
+
+                <form style="display:flex;max-width:500px;margin:0 auto;">
+                <input type="email" placeholder="Your email address" 
+                    style="flex:1;padding:1rem;border:1px solid #444;border-radius:50px 0 0 50px;font-size:1rem;outline:none;background:#000;color:#fff;">
+                <button type="submit" 
+                    style="background:#6e48aa;color:#fff;border:none;padding:0 2rem;border-radius:0 50px 50px 0;font-weight:600;cursor:pointer;transition:all 0.3s;" 
+                    onmouseover="this.style.background='#5d3a9b'" 
+                    onmouseout="this.style.background='#6e48aa'">
+                    Subscribe
+                </button>
+                </form>
+
+                <p style="font-size:0.8rem;color:#ffffff;margin-top:1rem;">
+                We respect your privacy. Unsubscribe at any time.
+                </p>
+            </div>
+        </section>
+
+  
+
+
+
+    <style>
+    @keyframes fadeIn{from{opacity:0;
+    }
+    to{opacity:1;}
+    }
+    @keyframes fadeInDown{from{opacity:0;
+    transform:translateY(-20px);
+    }
+    to
+    {opacity:1;transform:translateY(0);
+    }
+    }
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px);
+    }
+    to
+    {
+    opacity:1;transform:translateY(0);
+    }
+    }
+    </style>
+</body>
+</html>
+

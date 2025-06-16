@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Optic Bee Partners</title>
+</head>
+<body style="margin:0; font-family:Arial, sans-serif; color:#fff;">
+
+
+
+
+<!-- Navbar -->
+<header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+    <!-- Logo -->
+    <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+      <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+      <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
+
+    <!-- Desktop Navigation -->
+    <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+      <a href="/" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="Projects.html" class="nav-link">Projects</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="affiliate.html" class="nav-link">Affiliates</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      
+      <!-- Icons -->
+      <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+        <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+        <a href="register.html" class="nav-icon" title="Register">👤</a>
+        <button id="searchToggle" class="nav-icon">🔍</button>
+        
+        <!-- Desktop Language Selector -->
+        <div id="customDropdown" style="position:relative; user-select:none;">
+          <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+            <span id="currentLanguage">EN</span>
+            <span style="margin-left:5px;">▼</span>
+          </div>
+          <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="products.html" class="mobile-nav-link">Products</a>
+      <a href="Projects.html" class="mobile-nav-link">Projects</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+      <a href="partners-page.html" class="mobile-nav-link">Insights</a>
+      <a href="partners.html" class="mobile-nav-link">Partners</a>
+      <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+      <a href="industries.html" class="mobile-nav-link">Industries</a>
+      <a href="resources.html" class="mobile-nav-link">Resources</a>
+      
+      <div style="display:flex; justify-content:space-around; margin-top:15px;">
+        <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+        <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+      </div>
+      
+      <!-- Mobile Language Selector -->
+      <div style="margin-top:15px;">
+        <select id="mobileLanguageSelect" class="mobile-language-selector">
+          <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+          <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+          <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+          <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+          <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+          <!-- More languages will be added by JavaScript -->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Container -->
+  <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+    <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+  </div>
+</header>
+
+<style>
+  /* Common Styles */
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+  
+  .nav-icon {
+    color: white;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Styles */
+  .mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .mobile-nav-icon {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .mobile-language-selector {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  /* Language dropdown options */
+  #optionsList div {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #optionsList div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #optionsList img {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .nav-link {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #mobileMenuButton {
+      display: block;
+    }
+    
+    #desktopNav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Country/language data
+  const countries = [
+    {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+    {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+    {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+    {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+    {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+    {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+    {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+    {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+    {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+    {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+    {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+  ];
+
+  // Initialize language functionality
+  function initLanguageSelection() {
+    // Populate desktop dropdown
+    const optionsList = document.getElementById('optionsList');
+    countries.forEach(country => {
+      const option = document.createElement('div');
+      option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+      option.dataset.code = country.code;
+      option.dataset.flag = country.flag;
+      option.dataset.name = country.name;
+      option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+      optionsList.appendChild(option);
+    });
+
+    // Populate mobile dropdown
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    countries.forEach(country => {
+      if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+        const option = document.createElement('option');
+        option.value = country.code;
+        option.textContent = `${country.name} (${country.country})`;
+        option.dataset.flag = country.flag;
+        mobileSelect.appendChild(option);
+      }
+    });
+
+    // Set up event listeners
+    document.getElementById('selectedOption').onclick = function() {
+      optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+    };
+
+    document.getElementById('mobileLanguageSelect').onchange = function() {
+      const selectedOption = this.options[this.selectedIndex];
+      selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#customDropdown')) {
+        optionsList.style.display = 'none';
+      }
+    });
+
+    // Detect user's language
+    detectUserLanguage();
+  }
+
+  // Select language function
+  function selectLanguage(code, flag, name) {
+    // Update desktop display
+    document.getElementById('currentFlag').src = flag;
+    document.getElementById('currentLanguage').textContent = code.toUpperCase();
+    document.getElementById('optionsList').style.display = 'none';
+    
+    // Update mobile display
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    mobileSelect.value = code;
+    
+    // Store selection
+    localStorage.setItem('userLanguage', code);
+    localStorage.setItem('userLanguageFlag', flag);
+    localStorage.setItem('userLanguageName', name);
+    
+    // Change Google Translate language
+    changeGoogleTranslateLanguage(code);
+  }
+
+  // Detect user's language
+  function detectUserLanguage() {
+    // Check for stored preference first
+    const storedLanguage = localStorage.getItem('userLanguage');
+    if (storedLanguage) {
+      const storedFlag = localStorage.getItem('userLanguageFlag');
+      const storedName = localStorage.getItem('userLanguageName');
+      selectLanguage(storedLanguage, storedFlag, storedName);
+      return;
+    }
+
+    // Try to detect from browser
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    if (browserLanguage) {
+      const mainLang = browserLanguage.split('-')[0];
+      const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+      if (matchedCountry) {
+        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        return;
+      }
+    }
+
+    // Fallback to IP detection
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const countryCode = data.country;
+        const matchedCountry = countries.find(c => 
+          c.country.toLowerCase() === data.country_name.toLowerCase() || 
+          c.code === data.languages?.split(',')[0]
+        );
+        if (matchedCountry) {
+          selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        } else {
+          // Default to English
+          selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+        }
+      })
+      .catch(() => {
+        // Default to English if all detection fails
+        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+      });
+  }
+
+  // Change Google Translate language
+  function changeGoogleTranslateLanguage(languageCode) {
+    if (typeof google !== 'undefined' && google.translate) {
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = languageCode;
+        combo.dispatchEvent(new Event('change'));
+      }
+    } else {
+      // Retry after a delay if Google Translate isn't loaded yet
+      setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+    }
+  }
+
+  // Initialize Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      includedLanguages: countries.map(c => c.code).join(',')
+    }, 'google_translate_element');
+  }
+
+  // Navbar functions
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function toggleSearch() {
+    const searchContainer = document.getElementById('searchContainer');
+    searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function handleResponsive() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('mobileMenuButton').style.display = 'block';
+      document.getElementById('desktopNav').style.display = 'none';
+    } else {
+      document.getElementById('mobileMenuButton').style.display = 'none';
+      document.getElementById('desktopNav').style.display = 'flex';
+      document.getElementById('mobileMenu').style.display = 'none';
+      document.getElementById('searchContainer').style.display = 'none';
+    }
+  }
+
+  // Initialize everything when DOM loads
+  document.addEventListener('DOMContentLoaded', function() {
+    initLanguageSelection();
+    handleResponsive();
+    document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+    window.addEventListener('resize', handleResponsive);
+    
+    // Load Google Translate script
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(script);
+  });
+</script>
+
+<!-- Google Translate element (hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<!-- =================================================================================== -->
+
+
+
+
+
+<!-- Partner Section -->
+<div style="background:linear-gradient(135deg, #1e0033, #3d0066); padding:80px 50px; animation:fadeInUp 1s ease-in-out;">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+    
+    <!-- Left Side -->
+    <div style="flex:1;min-width:300px;padding-right:40px;">
+      <div style="font-size:14px;color:#f0c6ff;margin-bottom:10px;">Home / Our Partners</div>
+      <h1 style="font-size:52px;font-weight:700;margin:0 0 20px 0;">Our partners</h1>
+      <p style="font-size:20px;line-height:1.6;margin:0;">There's no such thing as going it alone, which is why we partner with industry-leading businesses</p>
+    </div>
+
+    <!-- Right Side -->
+    <div style="flex:1;min-width:300px;position:relative;">
+      <div id="imageContainer" style="overflow:hidden;border-radius:20px;transition:transform 0.5s ease;cursor:pointer;" 
+           onmouseover="this.style.transform='scale(1.05)'" 
+           onmouseout="this.style.transform='scale(1)'">
+        <img id="partnerImage" src="images/data ai _summit.png" style="width:100%;display:block;border-radius:20px;" />
+      </div>
+
+      <!-- Description Box Below Image -->
+      <div style="margin-top:20px;background:#1a1a1a;padding:20px;border-radius:12px;">
+        <p id="imageText" style="margin:0;font-size:16px;line-height:1.5;">Join us at the Optic Bee Data + AI Summit 2025. See how Optic Bee takes AI from abstract to impact. <span style="color:#ff4081;">Register Now</span></p>
+      </div>
+
+      <!-- Tabs (Slider Style) -->
+      <div style="display:flex;gap:30px;margin-top:20px;overflow-x:hidden;">
+        <div id="tab0" onclick="changeImage(0)" style="cursor:pointer;min-width:220px;padding:10px 0;border-bottom:3px solid #ffcc00;font-size:13px;color:#fff;">Register Now for Optic Bee AI Summit 2025</div>
+        <div id="tab1" onclick="changeImage(1)" style="cursor:pointer;min-width:220px;padding:10px 0;border-bottom:3px solid transparent;font-size:13px;color:#fff;">Join Us at Snowflake Summit 2025</div>
+        <div id="tab2" onclick="changeImage(2)" style="cursor:pointer;min-width:220px;padding:10px 0;border-bottom:3px solid transparent;font-size:13px;color:#fff;">Join Us at Dreamforce 2025</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Partner Ecosystem Section -->
+<div style="background:#050605; padding:80px 50px;">
+  <h1 style="font-size:48px; font-weight:800; margin:0 0 20px 0;">Our partner ecosystem</h1>
+  <p style="font-size:20px; line-height:1.6; max-width:1000px;">We blend our deep business and industry knowledge and expertise with data, tech, and AI with our partners' innovative technologies. Together, we focus on delivering outcomes that shape the future.</p>
+
+  <!-- Cards Container -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:30px; margin-top:60px;">
+    <div style="background:#121212; border-radius:12px; padding:30px; text-align:center; transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)';">
+<img src="images/aws_partners.png" alt="AWS" style="width:100%; height:auto; max-width:100%; margin-bottom:20px; border-radius: 8px; object-fit: contain;">
+      <p style="margin-bottom:20px;">Deliver new levels of business value and resilience through cloud-enabled domain solutions and our partner, AWS.</p>
+      <a href="#" style="color:#ff4444; text-decoration:none; font-weight:bold;">Learn more</a>
+    </div>
+    <div style="background:#121212; border-radius:12px; padding:30px; text-align:center; transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)';">
+<img src="images/service_now_partners.png" alt="service.now" style="width:100%; height:auto; max-width:100%; margin-bottom:20px; border-radius: 8px; object-fit: contain;">
+      <p style="margin-bottom:20px;">As a ServiceNow Elite partner, Optic Bee offers a wide range of pre-built accelerators across multiple industries.</p>
+      <a href="#" style="color:#ff4444; text-decoration:none; font-weight:bold;">Learn more</a>
+    </div>
+    <div style="background:#121212; border-radius:12px; padding:30px; text-align:center; transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)';">
+<img src="images/microsoft_partners.png" alt="Microsoft" style="width:100%; height:auto; max-width:100%; margin-bottom:20px; border-radius: 8px; object-fit: contain;">
+      <p style="margin-bottom:20px;">Transform employee experiences with Microsoft Viva. Discover how our innovative solutions boost productivity.</p>
+      <a href="#" style="color:#ff4444; text-decoration:none; font-weight:bold;">Learn more</a>
+    </div>
+    <div style="background:#121212; border-radius:12px; padding:30px; text-align:center; transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)';">
+<img src="images/google_cloud_partners.png" alt="Google Cloud" style="width:100%; height:auto; max-width:100%; margin-bottom:20px; border-radius: 8px; object-fit: contain;">
+      <p style="margin-bottom:20px;">Optic Bee and Google Cloud create agile, scalable, and cost-effective solutions for every industry.</p>
+      <a href="#" style="color:#ff4444; text-decoration:none; font-weight:bold;">Learn more</a>
+    </div>
+    <div style="background:#121212; border-radius:12px; padding:30px; text-align:center; transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)';">
+      <img src="images/ibm_partners.png" alt="IBM" style="width:100%; height:auto; max-width:100%; margin-bottom:20px; border-radius: 8px; object-fit: contain;">
+      <p style="margin-bottom:20px;">With IBM, Optic Bee transforms enterprise systems through AI-powered automation and smart workflows.</p>
+      <a href="#" style="color:#ff4444; text-decoration:none; font-weight:bold;">Learn more</a>
+    </div>
+    <div style="background:#121212; border-radius:12px; padding:30px; text-align:center; transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)';">
+      <img src="images/sap_partners.png" alt="SAP" style="width:100%; height:auto; max-width:100%; margin-bottom:20px; border-radius: 8px; object-fit: contain;">
+      <p style="margin-bottom:20px;">Leverage SAP with Optic Bee to modernize enterprise operations and maximize data-driven performance.</p>
+      <a href="#" style="color:#ff4444; text-decoration:none; font-weight:bold;">Learn more</a>
+    </div>
+    <div style="background:#121212; border-radius:12px; padding:30px; text-align:center; transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)';">
+      <img src="images/oracle_partners.png" alt="Oracle" style="width:100%; height:auto; max-width:100%; margin-bottom:20px; border-radius: 8px; object-fit: contain;">
+      <p style="margin-bottom:20px;">Oracle and Optic Bee deliver robust enterprise software tailored for tomorrow’s challenges.</p>
+      <a href="#" style="color:#ff4444; text-decoration:none; font-weight:bold;">Learn more</a>
+    </div>
+    <div style="background:#121212; border-radius:12px; padding:30px; text-align:center; transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)';">
+      <img src="images/salesforce_partners.png" alt="Salesforce" style="width:100%; height:auto; max-width:100%; margin-bottom:20px; border-radius: 8px; object-fit: contain;">
+      <p style="margin-bottom:20px;">Optic Bee and Salesforce collaborate to elevate customer experiences through CRM innovation.</p>
+      <a href="#" style="color:#ff4444; text-decoration:none; font-weight:bold;">Learn more</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Optic Bee Solutions Extended Partner Ecosystem Section -->
+<section style="background-color:#0d0d0d;padding:80px 20px;color:white;animation:fadeInUp 1s ease-in-out;">
+  <div style="max-width:1200px;margin:auto;text-align:center;">
+    <h2 style="font-size:40px;font-weight:700;margin-bottom:20px;">Our extended partner ecosystem</h2>
+    <p style="font-size:20px;max-width:900px;margin:auto;margin-bottom:60px;">
+      Meet the industry-leading companies we partner with to scale the impact we generate for clients.
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:0;">
+      <!-- 24 Cards unified as a single design block -->
+      <script>
+        const logos = ["Adobe", "Anaplan", "AppZen", "Automation Anywhere", "Cloudflare", "Salesforce", "Slack", "SAP", "IBM", "Atlassian", "Zoom", "Twilio", "HubSpot", "Oracle", "MongoDB", "Stripe", "Snowflake", "Zendesk", "Figma", "Freshworks", "Cisco", "Dropbox", "Intel", "Nvidia"];
+        const descriptions = [
+          "Transform customer experiences with tailored solutions.",
+          "Develop intelligent insights and strategic decisions.",
+          "Identify fraud and ensure compliance using AI.",
+          "Automate processes efficiently for CXOs.",
+          "Enhance performance through edge security.",
+          "Deliver robust CRM and automation tools.",
+          "Connect teams and streamline workflows.",
+          "Enterprise-grade ERP solutions at scale.",
+          "Power AI and analytics across ecosystems.",
+          "Agile project management and collaboration.",
+          "Video collaboration redefined for teams.",
+          "APIs to unify communication channels.",
+          "Inbound marketing and automation tools.",
+          "Cloud infrastructure and database tools.",
+          "Modern NoSQL for flexible data management.",
+          "Online payment solutions built for growth.",
+          "Data warehousing for smarter insights.",
+          "Customer service tools that scale.",
+          "Collaborative UI/UX prototyping tools.",
+          "All-in-one CRM and support solutions.",
+          "Secure network connectivity & cloud ops.",
+          "File sharing and collaboration tools.",
+          "Chipsets that power innovation.",
+          "Advanced GPUs for AI & deep learning."
+        ];
+        let cardHTML = '';
+        for (let i = 0; i < 24; i++) {
+          cardHTML += `
+          <div style="padding:30px;transition:transform 0.3s;cursor:pointer;border-top:1px solid #333;border-right:1px solid #333;border-bottom:1px solid #333;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            <h3 style="font-size:24px;font-weight:600;margin-bottom:15px;color:#ffffff;">${logos[i]}</h3>
+            <p style="font-size:15px;margin-bottom:15px;line-height:1.6;color:#cccccc;">${descriptions[i]}</p>
+            <a href="#" style="color:#ff4c4c;text-decoration:none;font-weight:500;transition:color 0.3s;">Learn more</a>
+          </div>
+          `;
+        }
+        document.write(cardHTML);
+      </script>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes fadeInUp {
+  0% {opacity: 0; transform: translateY(40px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+</style>
+<section id="opticbee-partners" style="background:#0a0a0a;padding:80px 40px;font-family:sans-serif;color:#fff;">
+  <h2 style="font-size:38px;font-weight:700;margin-bottom:20px;">See how our partnerships create lasting value for our clients and their customers</h2>
+  <p style="font-size:18px;margin-bottom:60px;max-width:800px;line-height:1.6;">We partner with companies that complement our industry and functional expertise with best-in-class technology to help our clients meet their goals.</p>
+
+  <div id="partner-scroll" style="display:flex;gap:20px;overflow-x:hidden;scroll-behavior:smooth;padding-bottom:20px;">
+    <div id="scroll-track" style="display:flex;gap:20px;width:max-content;">
+      <!-- Card Template (repeat as needed) -->
+      <div style="min-width:300px;flex:0 0 auto;background:#1c1c1c;border-radius:12px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.2);transition:transform 0.3s ease;">
+        <img src="images/business_process_animation.png" style="width:100%;display:block;">
+        <div style="padding:20px;">
+          <p style="font-weight:600;">Fueling business transformation through automation. <a href="#" style="color:#e53935;text-decoration:none;">Read more</a></p>
+        </div>
+      </div>
+      <div style="min-width:300px;flex:0 0 auto;background:#1c1c1c;border-radius:12px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.2);transition:transform 0.3s ease;">
+<div style="display:flex; justify-content:center; padding:10px; border:1px solid #ccc; border-radius:12px; background:#f9f9f9; max-width:max-content; margin:auto;">
+  <img src="images/" style="height:auto; max-width:100%; display:block;">
+</div>        <div style="padding:20px;">
+          <p style="font-weight:600;">Optic Bee Solutions' role in enabling finance transformation. <a href="#" style="color:#e53935;text-decoration:none;">Read more</a></p>
+        </div>
+      </div>
+      <div style="min-width:300px;flex:0 0 auto;background:#1c1c1c;border-radius:12px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.2);transition:transform 0.3s ease;">
+        <img src="images/procurement_cycles_partners.png" style="width:100%;display:block;">
+        <div style="padding:20px;">
+          <p style="font-weight:600;">Dropbox cuts procurement cycle with Optic Bee Solutions. <a href="#" style="color:#e53935;text-decoration:none;">Read more</a></p>
+        </div>
+      </div>
+      <div style="min-width:300px;flex:0 0 auto;background:#1c1c1c;border-radius:12px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.2);transition:transform 0.3s ease;">
+        <img src="https://via.placeholder.com/300x200" style="width:100%;display:block;">
+        <div style="padding:20px;">
+          <p style="font-weight:600;">AI transformation solutions offered by Optic Bee Solutions. <a href="#" style="color:#e53935;text-decoration:none;">Read more</a></p>
+        </div>
+      </div>
+      <!-- Add more cards here as needed -->
+    </div>
+  </div>
+
+  <div style="margin-top:20px;display:flex;justify-content:center;align-items:center;gap:15px;">
+    <button onclick="scrollToStart()" style="width:15px;height:5px;background:#fff;border:none;border-radius:5px;cursor:pointer;"></button>
+    <button onclick="scrollToEnd()" style="width:15px;height:5px;background:#fff;border:none;border-radius:5px;cursor:pointer;"></button>
+    <button onclick="scrollByStep(-1)" style="background:#fff;color:#000;border:none;padding:10px 15px;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.3);">&larr;</button>
+    <button onclick="scrollByStep(1)" style="background:#fff;color:#000;border:none;padding:10px 15px;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.3);">&rarr;</button>
+  </div>
+
+  <script>
+    const scrollTrack = document.getElementById('scroll-track');
+    const scrollContainer = document.getElementById('partner-scroll');
+    const card = scrollTrack.querySelector('div');
+    const cardWidth = card ? card.offsetWidth + 20 : 320;
+
+    function scrollToStart() {
+      scrollContainer.scrollTo({left: 0, behavior: 'smooth'});
+    }
+
+    function scrollToEnd() {
+      scrollContainer.scrollTo({left: scrollContainer.scrollWidth, behavior: 'smooth'});
+    }
+
+    function scrollByStep(step) {
+      scrollContainer.scrollBy({left: step * cardWidth, behavior: 'smooth'});
+    }
+  </script>
+</section>
+<section class="info-sections" style="background:#0a0a0a;max-width:1100px;margin:0 auto;padding:100px 100px;display:flex;flex-wrap:nowrap;gap:20px;overflow-x:auto;scroll-behavior:smooth;justify-content:flex-start; scrollbar-width:none; -ms-overflow-style:none;">
+  <style>
+    /* Hide scrollbar for WebKit browsers */
+    .info-sections::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <div onclick="window.location='#';" style="cursor:pointer;min-width:300px;max-width:300px;height:330px;background: linear-gradient(135deg, #f0f0f0, #1a1a1a); padding:30px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2); text-align:center; transition: background 0.3s ease, transform 0.3s ease; display:flex; flex-direction:column; align-items:center; justify-content:center; color: #222;" 
+       onmouseover="this.style.background='linear-gradient(135deg, #ffffff, #3a3a3a)'; this.style.transform='scale(1.03)'; this.style.color='#000';" 
+       onmouseout="this.style.background='linear-gradient(135deg, #f0f0f0, #1a1a1a)'; this.style.transform='scale(1)'; this.style.color='#222';">
+    <img src="https://cdn-icons-png.flaticon.com/512/2910/2910793.png" alt="Innovation Icon" style="width:64px;height:64px;margin-bottom:20px;filter: hue-rotate(250deg) saturate(5) brightness(1.2);" />
+    <h3 style="margin-bottom:12px;">Innovative Solutions</h3>
+    <p style="font-size:16px;line-height:1.5;">We leverage cutting-edge technology and creative approaches to solve complex challenges.</p>
+  </div>
+  <div onclick="window.location='#';" style="cursor:pointer;min-width:300px;max-width:300px;height:330px;background: linear-gradient(135deg, #f0f0f0, #1a1a1a); padding:30px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2); text-align:center; transition: background 0.3s ease, transform 0.3s ease; display:flex; flex-direction:column; align-items:center; justify-content:center; color: #222;" 
+       onmouseover="this.style.background='linear-gradient(135deg, #ffffff, #3a3a3a)'; this.style.transform='scale(1.03)'; this.style.color='#000';" 
+       onmouseout="this.style.background='linear-gradient(135deg, #f0f0f0, #1a1a1a)'; this.style.transform='scale(1)'; this.style.color='#222';">
+    <img src="https://cdn-icons-png.flaticon.com/512/2910/2910763.png" alt="Global Reach Icon" style="width:64px;height:64px;margin-bottom:20px;filter: hue-rotate(170deg) saturate(5) brightness(1.2);" />
+    <h3 style="margin-bottom:12px;">Global Network</h3>
+    <p style="font-size:16px;line-height:1.5;">Our partnerships span across continents, enabling seamless collaboration worldwide.</p>
+  </div>
+  <div onclick="window.location='#';" style="cursor:pointer;min-width:300px;max-width:300px;height:330px;background: linear-gradient(135deg, #f0f0f0, #1a1a1a); padding:30px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2); text-align:center; transition: background 0.3s ease, transform 0.3s ease; display:flex; flex-direction:column; align-items:center; justify-content:center; color: #222;" 
+       onmouseover="this.style.background='linear-gradient(135deg, #ffffff, #3a3a3a)'; this.style.transform='scale(1.03)'; this.style.color='#000';" 
+       onmouseout="this.style.background='linear-gradient(135deg, #f0f0f0, #1a1a1a)'; this.style.transform='scale(1)'; this.style.color='#222';">
+    <img src="https://cdn-icons-png.flaticon.com/512/2910/2910799.png" alt="Trust Icon" style="width:64px;height:64px;margin-bottom:20px;" />
+    <h3 style="margin-bottom:12px;">Trusted Partner</h3>
+    <p style="font-size:16px;line-height:1.5;">We prioritize transparency and reliability, building long-lasting relationships.</p>
+  </div>
+</section>
+
+
+
+
+
+<!-- Contact CTA -->
+<section id="contact" style="background:#5f4b8b;color:#fff;text-align:center;padding:60px 20px;">
+  <h2 style="font-size:36px;margin-bottom:20px;">Ready to Partner with Optic Bee?</h2>
+  <p style="font-size:20px;max-width:600px;margin:0 auto 30px;line-height:1.4;">Get in touch with us today and explore how our partnership can create extraordinary value for your business.</p>
+  <a href="mailto:partners@opticbee.com" style="background:#fff;color:#5f4b8b;padding:16px 48px;border-radius:30px;font-weight:700;text-decoration:none;letter-spacing:0.7px;transition:background 0.3s ease;cursor:pointer;">Contact Us</a>
+</section>
+
+<!-- Footer -->
+<footer style="background:#122d55;color:#bbb;text-align:center;padding:35px 20px;font-size:14px;">
+  <p style="margin:0;">© 2025 Optic Bee. All rights reserved.</p>
+</footer>
+<!-- Keyframe Animation -->
+<style>
+@keyframes fadeInUp {
+  from {opacity:0; transform:translateY(40px);}
+  to {opacity:1; transform:translateY(0);}
+}
+</style>
+
+<!-- Script for Tab Change -->
+<script>
+const images = [
+  {
+    src: "https://via.placeholder.com/600x350.png?text=Optic+Bee+Summit",
+    text: "Join us at the Optic Bee Data + AI Summit 2025. See how Optic Bee takes AI from abstract to impact. <span style='color:#ff4081;'>Register Now</span>"
+  },
+  {
+    src: "https://via.placeholder.com/600x350.png?text=Snowflake+Summit",
+    text: "Be a part of the Snowflake Summit 2025 with Optic Bee's insights in cloud AI innovation."
+  },
+  {
+    src: "https://via.placeholder.com/600x350.png?text=Dreamforce+Summit",
+    text: "Experience Dreamforce 2025 with Optic Bee Soft Tech's future-ready AI solutions."
+  }
+];
+
+function changeImage(index) {
+  document.getElementById("partnerImage").src = images[index].src;
+  document.getElementById("imageText").innerHTML = images[index].text;
+  for (let i = 0; i < images.length; i++) {
+    document.getElementById("tab" + i).style.borderBottom = i === index ? "3px solid #ffcc00" : "3px solid transparent";
+  }
+}
+</script>
+
+</body>
+</html>

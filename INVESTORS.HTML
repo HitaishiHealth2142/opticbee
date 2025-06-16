@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optic Bee Soft Tech - Investors</title>
+</head>
+<body style="margin:0;font-family:Segoe UI,Arial,sans-serif;background:#fff;color:#000;">
+
+
+
+<!-- Navbar -->
+<header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+    <!-- Logo -->
+    <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+      <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+      <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
+
+    <!-- Desktop Navigation -->
+    <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+      <a href="/" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="Projects.html" class="nav-link">Projects</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="affiliate.html" class="nav-link">Affiliates</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      
+      <!-- Icons -->
+      <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+        <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+        <a href="register.html" class="nav-icon" title="Register">👤</a>
+        <button id="searchToggle" class="nav-icon">🔍</button>
+        
+        <!-- Desktop Language Selector -->
+        <div id="customDropdown" style="position:relative; user-select:none;">
+          <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+            <span id="currentLanguage">EN</span>
+            <span style="margin-left:5px;">▼</span>
+          </div>
+          <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="products.html" class="mobile-nav-link">Products</a>
+      <a href="Projects.html" class="mobile-nav-link">Projects</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+      <a href="partners-page.html" class="mobile-nav-link">Insights</a>
+      <a href="partners.html" class="mobile-nav-link">Partners</a>
+      <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+      <a href="industries.html" class="mobile-nav-link">Industries</a>
+      <a href="resources.html" class="mobile-nav-link">Resources</a>
+      
+      <div style="display:flex; justify-content:space-around; margin-top:15px;">
+        <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+        <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+      </div>
+      
+      <!-- Mobile Language Selector -->
+      <div style="margin-top:15px;">
+        <select id="mobileLanguageSelect" class="mobile-language-selector">
+          <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+          <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+          <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+          <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+          <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+          <!-- More languages will be added by JavaScript -->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Container -->
+  <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+    <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+  </div>
+</header>
+
+<style>
+  /* Common Styles */
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+  
+  .nav-icon {
+    color: white;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Styles */
+  .mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .mobile-nav-icon {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .mobile-language-selector {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  /* Language dropdown options */
+  #optionsList div {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #optionsList div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #optionsList img {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .nav-link {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #mobileMenuButton {
+      display: block;
+    }
+    
+    #desktopNav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Country/language data
+  const countries = [
+    {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+    {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+    {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+    {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+    {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+    {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+    {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+    {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+    {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+    {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+    {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+  ];
+
+  // Initialize language functionality
+  function initLanguageSelection() {
+    // Populate desktop dropdown
+    const optionsList = document.getElementById('optionsList');
+    countries.forEach(country => {
+      const option = document.createElement('div');
+      option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+      option.dataset.code = country.code;
+      option.dataset.flag = country.flag;
+      option.dataset.name = country.name;
+      option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+      optionsList.appendChild(option);
+    });
+
+    // Populate mobile dropdown
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    countries.forEach(country => {
+      if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+        const option = document.createElement('option');
+        option.value = country.code;
+        option.textContent = `${country.name} (${country.country})`;
+        option.dataset.flag = country.flag;
+        mobileSelect.appendChild(option);
+      }
+    });
+
+    // Set up event listeners
+    document.getElementById('selectedOption').onclick = function() {
+      optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+    };
+
+    document.getElementById('mobileLanguageSelect').onchange = function() {
+      const selectedOption = this.options[this.selectedIndex];
+      selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#customDropdown')) {
+        optionsList.style.display = 'none';
+      }
+    });
+
+    // Detect user's language
+    detectUserLanguage();
+  }
+
+  // Select language function
+  function selectLanguage(code, flag, name) {
+    // Update desktop display
+    document.getElementById('currentFlag').src = flag;
+    document.getElementById('currentLanguage').textContent = code.toUpperCase();
+    document.getElementById('optionsList').style.display = 'none';
+    
+    // Update mobile display
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    mobileSelect.value = code;
+    
+    // Store selection
+    localStorage.setItem('userLanguage', code);
+    localStorage.setItem('userLanguageFlag', flag);
+    localStorage.setItem('userLanguageName', name);
+    
+    // Change Google Translate language
+    changeGoogleTranslateLanguage(code);
+  }
+
+  // Detect user's language
+  function detectUserLanguage() {
+    // Check for stored preference first
+    const storedLanguage = localStorage.getItem('userLanguage');
+    if (storedLanguage) {
+      const storedFlag = localStorage.getItem('userLanguageFlag');
+      const storedName = localStorage.getItem('userLanguageName');
+      selectLanguage(storedLanguage, storedFlag, storedName);
+      return;
+    }
+
+    // Try to detect from browser
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    if (browserLanguage) {
+      const mainLang = browserLanguage.split('-')[0];
+      const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+      if (matchedCountry) {
+        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        return;
+      }
+    }
+
+    // Fallback to IP detection
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const countryCode = data.country;
+        const matchedCountry = countries.find(c => 
+          c.country.toLowerCase() === data.country_name.toLowerCase() || 
+          c.code === data.languages?.split(',')[0]
+        );
+        if (matchedCountry) {
+          selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        } else {
+          // Default to English
+          selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+        }
+      })
+      .catch(() => {
+        // Default to English if all detection fails
+        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+      });
+  }
+
+  // Change Google Translate language
+  function changeGoogleTranslateLanguage(languageCode) {
+    if (typeof google !== 'undefined' && google.translate) {
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = languageCode;
+        combo.dispatchEvent(new Event('change'));
+      }
+    } else {
+      // Retry after a delay if Google Translate isn't loaded yet
+      setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+    }
+  }
+
+  // Initialize Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      includedLanguages: countries.map(c => c.code).join(',')
+    }, 'google_translate_element');
+  }
+
+  // Navbar functions
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function toggleSearch() {
+    const searchContainer = document.getElementById('searchContainer');
+    searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function handleResponsive() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('mobileMenuButton').style.display = 'block';
+      document.getElementById('desktopNav').style.display = 'none';
+    } else {
+      document.getElementById('mobileMenuButton').style.display = 'none';
+      document.getElementById('desktopNav').style.display = 'flex';
+      document.getElementById('mobileMenu').style.display = 'none';
+      document.getElementById('searchContainer').style.display = 'none';
+    }
+  }
+
+  // Initialize everything when DOM loads
+  document.addEventListener('DOMContentLoaded', function() {
+    initLanguageSelection();
+    handleResponsive();
+    document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+    window.addEventListener('resize', handleResponsive);
+    
+    // Load Google Translate script
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(script);
+  });
+</script>
+
+<!-- Google Translate element (hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<!-- =================================================================================== -->
+
+
+
+  <!-- Hero Section with zoom in/out animation -->
+  <section id="hero" style="position:relative;overflow:hidden;height:500px;display:flex;align-items:center;justify-content:center;background:#000;">
+    <img src="https://www.genpact.com/sites/default/files/2023-05/investors-banner_0.jpg" alt="Hero Image" id="hero-img" style="width:100%;height:500px;object-fit:cover;transform-origin:center center;transition:transform 5s ease-in-out;">
+    <div style="position:absolute;color:#fff;text-align:center;width:100%;top:50%;left:50%;transform:translate(-50%, -50%);">
+      <h1 style="font-size:3rem;font-weight:700;text-shadow:0 0 10px rgba(0,0,0,0.7);margin-bottom:10px;">Optic Bee Soft Tech</h1>
+      <p style="font-size:1.2rem;color:#ddd;">Empowering Digital Future</p>
+    </div>
+  </section>
+
+  <!-- Sticky Navbar -->
+  <nav id="navbar" style="position:sticky;top:0;z-index:1000;background:#050505;display:flex;justify-content:center;gap:30px;padding:15px 0;box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+    <a href="#overview" style="color:#aaa;text-decoration:none;font-weight:600;font-size:1rem;padding:8px 12px;border-radius:4px;transition:color 0.3s;">Overview</a>
+    <a href="#financials" style="color:#aaa;text-decoration:none;font-weight:600;font-size:1rem;padding:8px 12px;border-radius:4px;transition:color 0.3s;">Financials</a>
+    <a href="#governance" style="color:#aaa;text-decoration:none;font-weight:600;font-size:1rem;padding:8px 12px;border-radius:4px;transition:color 0.3s;">Governance</a>
+    <a href="#reports" style="color:#aaa;text-decoration:none;font-weight:600;font-size:1rem;padding:8px 12px;border-radius:4px;transition:color 0.3s;">Reports</a>
+    <a href="#investor-tools" style="color:#aaa;text-decoration:none;font-weight:600;font-size:1rem;padding:8px 12px;border-radius:4px;transition:color 0.3s;">Investor Tools</a>
+  </nav>
+<section id="investors-overview" style="background:#f8f9fa; padding:60px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 1200px; margin: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.05);">
+
+ 
+  <!-- Overview Section -->
+  <section id="overview" style="max-width:1100px;margin:40px auto;padding:20px;">
+    <h2 style="font-size:2rem;color:#222;margin-bottom:20px;">Overview</h2>
+    <p style="font-size:1rem;line-height:1.8;color:#444;">Optic Bee Soft Tech is a leading global technology and professional services firm, enabling organizations to digitally transform their business operations and customer experiences through intelligent data-driven strategies and innovation.</p>
+    <p style="font-size:1rem;line-height:1.8;color:#444;">With clients in over 30 countries and a strong presence across major industries, we build resilience, growth, and intelligent operations into enterprise systems by leveraging AI, analytics, and cloud technologies.</p>
+  </section>
+
+  <!-- Interactive Stock Price Chart Placeholder -->
+  <div style="background:#fff; border-radius:12px; padding:30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); max-width:900px; margin: 0 auto 60px;">
+    <h3 style="font-size:1.75rem; font-weight:700; color:#1a1a1a; margin-bottom:20px; text-align:center;">Stock Price Performance (1 Year)</h3>
+    <canvas id="stockChart" style="max-width:100%; height: 320px;"></canvas>
+  </div>
+
+  <!-- Quick Links -->
+  <div style="display:flex; flex-wrap: wrap; justify-content:center; gap:20px; max-width:900px; margin: auto;">
+    <a href="/financial-reports" style="flex:1 1 180px; background:#0078d7; color:#fff; text-align:center; padding:15px 20px; border-radius:10px; font-weight:600; text-decoration:none; transition: background-color 0.3s;">Financial Reports</a>
+    <a href="/stock-information" style="flex:1 1 180px; background:#0078d7; color:#fff; text-align:center; padding:15px 20px; border-radius:10px; font-weight:600; text-decoration:none; transition: background-color 0.3s;">Stock Information</a>
+    <a href="/annual-reports" style="flex:1 1 180px; background:#0078d7; color:#fff; text-align:center; padding:15px 20px; border-radius:10px; font-weight:600; text-decoration:none; transition: background-color 0.3s;">Annual Reports</a>
+    <a href="/investor-presentations" style="flex:1 1 180px; background:#0078d7; color:#fff; text-align:center; padding:15px 20px; border-radius:10px; font-weight:600; text-decoration:none; transition: background-color 0.3s;">Investor Presentations</a>
+    <a href="/governance-documents" style="flex:1 1 180px; background:#0078d7; color:#fff; text-align:center; padding:15px 20px; border-radius:10px; font-weight:600; text-decoration:none; transition: background-color 0.3s;">Governance Documents</a>
+    <a href="/earnings-calls" style="flex:1 1 180px; background:#0078d7; color:#fff; text-align:center; padding:15px 20px; border-radius:10px; font-weight:600; text-decoration:none; transition: background-color 0.3s;">Earnings Calls</a>
+  </div>
+
+</section>
+
+<!-- Chart.js CDN for the stock price graph -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('stockChart').getContext('2d');
+  const stockChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'
+      ],
+      datasets: [{
+        label: 'Stock Price',
+        data: [230, 245, 240, 260, 270, 280, 290, 285, 300, 310, 320, 325],
+        borderColor: '#0078d7',
+        backgroundColor: 'rgba(0, 120, 215, 0.2)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          mode: 'index',
+          intersect: false,
+          backgroundColor: '#0078d7',
+          titleColor: '#fff',
+          bodyColor: '#fff',
+        }
+      },
+      scales: {
+        x: { grid: { display: false } },
+        y: {
+          beginAtZero: false,
+          grid: { color: '#e0e0e0' },
+          ticks: { color: '#333' }
+        }
+      },
+      interaction: {
+        mode: 'nearest',
+        axis: 'x',
+        intersect: false,
+      }
+    }
+  });
+</script>
+
+
+<section style="background:#0c0c0c; color:#fff; padding:80px 30px; font-family:'Segoe UI',sans-serif; text-align:center;">
+  <h2 style="font-size:42px; font-weight:800; margin-bottom:20px; color:#00d9ff;">Financials</h2>
+  <p style="font-size:18px; max-width:800px; margin:0 auto 50px; line-height:1.7; color:#d0d0d0;">Our strong financial performance is the result of focused execution and a long-term growth strategy.</p>
+  
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px; max-width:1200px; margin:0 auto;">
+    
+    <div style="background:#1a1a1a; padding:30px 20px; border-radius:14px; box-shadow:0 0 25px rgba(0,217,255,0.15); transition:all 0.3s ease; cursor:pointer;">
+      <img src="images/quarterly.png" alt="Quarterly Reports" style="width:80px; margin-bottom:20px;">
+      <h3 style="font-size:22px; color:#00d9ff; margin-bottom:15px;">Quarterly Earnings Reports</h3>
+      <p style="font-size:15px; color:#bbb; line-height:1.6; margin-bottom:10px;">Dive into our latest earnings insights and performance summaries for each quarter.</p>
+      <a href="#" style="color:#00d9ff; text-decoration:underline; font-size:14px;">View Reports</a>
+    </div>
+
+    <div style="background:#1a1a1a; padding:30px 20px; border-radius:14px; box-shadow:0 0 25px rgba(0,217,255,0.15); transition:all 0.3s ease; cursor:pointer;">
+      <img src="images/annual.png" alt="Annual Highlights" style="width:80px; margin-bottom:20px;">
+      <h3 style="font-size:22px; color:#00d9ff; margin-bottom:15px;">Annual Financial Highlights</h3>
+      <p style="font-size:15px; color:#bbb; line-height:1.6; margin-bottom:10px;">Explore comprehensive yearly financial overviews, trends, and strategic growth metrics.</p>
+      <a href="#" style="color:#00d9ff; text-decoration:underline; font-size:14px;">View Highlights</a>
+    </div>
+
+    <div style="background:#1a1a1a; padding:30px 20px; border-radius:14px; box-shadow:0 0 25px rgba(0,217,255,0.15); transition:all 0.3s ease; cursor:pointer;">
+      <img src="images/sec.png" alt="SEC Filings" style="width:80px; margin-bottom:20px;">
+      <h3 style="font-size:22px; color:#00d9ff; margin-bottom:15px;">SEC Filings & Disclosures</h3>
+      <p style="font-size:15px; color:#bbb; line-height:1.6; margin-bottom:10px;">Stay compliant and informed with our detailed filings and regulatory documents.</p>
+      <a href="#" style="color:#00d9ff; text-decoration:underline; font-size:14px;">Browse Filings</a>
+    </div>
+
+    <div style="background:#1a1a1a; padding:30px 20px; border-radius:14px; box-shadow:0 0 25px rgba(0,217,255,0.15); transition:all 0.3s ease; cursor:pointer;">
+      <img src="images/presentations.png" alt="Investor Presentations" style="width:80px; margin-bottom:20px;">
+      <h3 style="font-size:22px; color:#00d9ff; margin-bottom:15px;">Investor Presentations</h3>
+      <p style="font-size:15px; color:#bbb; line-height:1.6; margin-bottom:10px;">Gain insights into our strategy and performance through professionally designed decks.</p>
+      <a href="#" style="color:#00d9ff; text-decoration:underline; font-size:14px;">View Presentations</a>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Governance Section -->
+  <section id="governance" style="max-width:1100px;margin:40px auto;padding:20px;">
+    <h2 style="font-size:2rem;color:#222;margin-bottom:20px;">Governance</h2>
+    <p style="font-size:1rem;line-height:1.8;color:#444;">At Optic Bee Soft Tech, governance is not just compliance—it’s our commitment to ethical leadership, integrity, and transparent corporate conduct.</p>
+    <ul style="font-size:1rem;color:#444;line-height:2;padding-left:20px;">
+      <li>Board of Directors Overview</li>
+      <li>Leadership Team</li>
+      <li>Corporate Governance Guidelines</li>
+      <li>Code of Conduct & Ethics</li>
+    </ul>
+  </section>
+
+  <!-- Reports Section -->
+  <section id="reports" style="max-width:1100px;margin:40px auto;padding:20px;background:#f2f2f2;border-radius:8px;">
+    <h2 style="font-size:2rem;color:#222;margin-bottom:20px;">Reports</h2>
+    <p style="font-size:1rem;line-height:1.8;color:#444;">Access our sustainability, environmental, social, and governance (ESG) reports, along with annual disclosures and proxy statements.</p>
+    <ul style="font-size:1rem;color:#444;line-height:2;padding-left:20px;">
+      <li>Sustainability Report</li>
+      <li>Proxy Statement</li>
+      <li>ESG Summary</li>
+      <li>CSR Initiatives Overview</li>
+    </ul>
+  </section>
+
+  <!-- Investor Tools Section -->
+  <section id="investor-tools" style="max-width:1100px;margin:40px auto;padding:20px;">
+    <h2 style="font-size:2rem;color:#222;margin-bottom:20px;">Investor Tools</h2>
+    <p style="font-size:1rem;line-height:1.8;color:#444;">Use our tools to stay updated and informed.</p>
+    <ul style="font-size:1rem;color:#444;line-height:2;padding-left:20px;">
+      <li>Email Alerts</li>
+      <li>Event Calendar</li>
+      <li>FAQs</li>
+      <li>Contact Investor Relations</li>
+    </ul>
+  </section>
+
+  <script>
+    // Hero image zoom in/out animation loop on page load
+    const heroImg = document.getElementById('hero-img');
+    let zoomIn = true;
+    function zoomAnimation() {
+      heroImg.style.transform = zoomIn ? 'scale(1.1)' : 'scale(1)';
+      zoomIn = !zoomIn;
+    }
+    zoomAnimation();
+    setInterval(zoomAnimation, 5000);
+
+    // Scrollspy for navbar highlight
+    const navbarLinks = document.querySelectorAll('#navbar a');
+    const sections = Array.from(navbarLinks).map(link => document.querySelector(link.getAttribute('href')));
+    window.addEventListener('scroll', () => {
+      let scrollPos = window.scrollY + 150;
+      sections.forEach((section, index) => {
+        if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+          navbarLinks.forEach(link => link.style.color = '#aaa');
+          navbarLinks[index].style.color = '#5f4b8b';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

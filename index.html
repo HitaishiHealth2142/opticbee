@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flag Icons Country-Language Google Translate</title>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+<body style="margin:0; font-family: Arial, sans-serif;">
+
+<!-- Navbar -->
+<header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+    <!-- Logo -->
+    <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+      <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+      <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
+
+    <!-- Desktop Navigation -->
+    <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+      <a href="/" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="Projects.html" class="nav-link">Projects</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="affiliate.html" class="nav-link">Affiliates</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      
+      <!-- Icons -->
+      <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+        <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+        <a href="register.html" class="nav-icon" title="Register">👤</a>
+        <button id="searchToggle" class="nav-icon">🔍</button>
+        
+        <!-- Desktop Language Selector -->
+        <div id="customDropdown" style="position:relative; user-select:none;">
+          <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+            <span id="currentLanguage">EN</span>
+            <span style="margin-left:5px;">▼</span>
+          </div>
+          <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="products.html" class="mobile-nav-link">Products</a>
+      <a href="Projects.html" class="mobile-nav-link">Projects</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+      <a href="partners-page.html" class="mobile-nav-link">Insights</a>
+      <a href="partners.html" class="mobile-nav-link">Partners</a>
+      <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+      <a href="industries.html" class="mobile-nav-link">Industries</a>
+      <a href="resources.html" class="mobile-nav-link">Resources</a>
+      
+      <div style="display:flex; justify-content:space-around; margin-top:15px;">
+        <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+        <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+      </div>
+      
+      <!-- Mobile Language Selector -->
+      <div style="margin-top:15px;">
+        <select id="mobileLanguageSelect" class="mobile-language-selector">
+          <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+          <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+          <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+          <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+          <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+          <!-- More languages will be added by JavaScript -->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Container -->
+  <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+    <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+  </div>
+</header>
+
+<style>
+  /* Common Styles */
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+  
+  .nav-icon {
+    color: white;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Styles */
+  .mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .mobile-nav-icon {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .mobile-language-selector {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  /* Language dropdown options */
+  #optionsList div {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #optionsList div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #optionsList img {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .nav-link {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #mobileMenuButton {
+      display: block;
+    }
+    
+    #desktopNav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Country/language data
+  const countries = [
+    {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+    {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+    {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+    {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+    {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+    {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+    {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+    {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+    {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+    {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+    {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+  ];
+
+  // Initialize language functionality
+  function initLanguageSelection() {
+    // Populate desktop dropdown
+    const optionsList = document.getElementById('optionsList');
+    countries.forEach(country => {
+      const option = document.createElement('div');
+      option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+      option.dataset.code = country.code;
+      option.dataset.flag = country.flag;
+      option.dataset.name = country.name;
+      option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+      optionsList.appendChild(option);
+    });
+
+    // Populate mobile dropdown
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    countries.forEach(country => {
+      if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+        const option = document.createElement('option');
+        option.value = country.code;
+        option.textContent = `${country.name} (${country.country})`;
+        option.dataset.flag = country.flag;
+        mobileSelect.appendChild(option);
+      }
+    });
+
+    // Set up event listeners
+    document.getElementById('selectedOption').onclick = function() {
+      optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+    };
+
+    document.getElementById('mobileLanguageSelect').onchange = function() {
+      const selectedOption = this.options[this.selectedIndex];
+      selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#customDropdown')) {
+        optionsList.style.display = 'none';
+      }
+    });
+
+    // Detect user's language
+    detectUserLanguage();
+  }
+
+  // Select language function
+  function selectLanguage(code, flag, name) {
+    // Update desktop display
+    document.getElementById('currentFlag').src = flag;
+    document.getElementById('currentLanguage').textContent = code.toUpperCase();
+    document.getElementById('optionsList').style.display = 'none';
+    
+    // Update mobile display
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    mobileSelect.value = code;
+    
+    // Store selection
+    localStorage.setItem('userLanguage', code);
+    localStorage.setItem('userLanguageFlag', flag);
+    localStorage.setItem('userLanguageName', name);
+    
+    // Change Google Translate language
+    changeGoogleTranslateLanguage(code);
+  }
+
+  // Detect user's language
+  function detectUserLanguage() {
+    // Check for stored preference first
+    const storedLanguage = localStorage.getItem('userLanguage');
+    if (storedLanguage) {
+      const storedFlag = localStorage.getItem('userLanguageFlag');
+      const storedName = localStorage.getItem('userLanguageName');
+      selectLanguage(storedLanguage, storedFlag, storedName);
+      return;
+    }
+
+    // Try to detect from browser
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    if (browserLanguage) {
+      const mainLang = browserLanguage.split('-')[0];
+      const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+      if (matchedCountry) {
+        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        return;
+      }
+    }
+
+    // Fallback to IP detection
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const countryCode = data.country;
+        const matchedCountry = countries.find(c => 
+          c.country.toLowerCase() === data.country_name.toLowerCase() || 
+          c.code === data.languages?.split(',')[0]
+        );
+        if (matchedCountry) {
+          selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        } else {
+          // Default to English
+          selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+        }
+      })
+      .catch(() => {
+        // Default to English if all detection fails
+        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+      });
+  }
+
+  // Change Google Translate language
+  function changeGoogleTranslateLanguage(languageCode) {
+    if (typeof google !== 'undefined' && google.translate) {
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = languageCode;
+        combo.dispatchEvent(new Event('change'));
+      }
+    } else {
+      // Retry after a delay if Google Translate isn't loaded yet
+      setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+    }
+  }
+
+  // Initialize Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      includedLanguages: countries.map(c => c.code).join(',')
+    }, 'google_translate_element');
+  }
+
+  // Navbar functions
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function toggleSearch() {
+    const searchContainer = document.getElementById('searchContainer');
+    searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function handleResponsive() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('mobileMenuButton').style.display = 'block';
+      document.getElementById('desktopNav').style.display = 'none';
+    } else {
+      document.getElementById('mobileMenuButton').style.display = 'none';
+      document.getElementById('desktopNav').style.display = 'flex';
+      document.getElementById('mobileMenu').style.display = 'none';
+      document.getElementById('searchContainer').style.display = 'none';
+    }
+  }
+
+  // Initialize everything when DOM loads
+  document.addEventListener('DOMContentLoaded', function() {
+    initLanguageSelection();
+    handleResponsive();
+    document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+    window.addEventListener('resize', handleResponsive);
+    
+    // Load Google Translate script
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(script);
+  });
+</script>
+
+<!-- Google Translate element (hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<!-- =================================================================================== -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optic Bee Soft Tech PVT LTD | Digital Transformation & Technology Solutions</title>
+    <meta name="description" content="Optic Bee Soft Tech delivers innovative digital solutions, cloud services, AI and enterprise software to transform your business for the digital age.">
+    <meta name="keywords" content="software development, digital transformation, cloud services, AI solutions, enterprise software, technology consulting">
+
+</head>
+<body>
+
+    <section style="display: flex; align-items: center; justify-content: space-between; background-color: black; color: white; padding: 100px 40px; font-family: Arial, sans-serif; overflow: hidden;">
+          <!-- Left Side: Bold Text with Animations -->
+          <div style="flex: 1; max-width: 50%;">
+            <div style="font-size: 60px; font-weight: bold; line-height: 1.2;">
+              <div style="opacity: 0; transform: translateX(-50px); animation: fadeInLeft 0.8s ease-out forwards 0.2s;">OPTIC BEE</div>
+              <div style="opacity: 0; transform: translateX(-50px); animation: fadeInLeft 0.8s ease-out forwards 0.4s;">SOFT TECH PVT LTD</div>
+              <div style="opacity: 0; transform: translateX(-50px); animation: fadeInLeft 0.8s ease-out forwards 0.6s;">
+                <span style="color: white;">REIN</span>
+                <span style="color:white;">
+                  <img src="images/ob_logo_icon_emoji_transparent.png" alt="icon" style="height: 1em; vertical-align: middle;">
+                </span>
+                <span style="color: white;">VENTING</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Description and Link with Animations -->
+          <div style="flex: 1; max-width: 45%; padding-left: 40px;">
+            <div style="height: 4px; width: 0; background-color: #a259ff; margin-bottom: 20px; animation: expandWidth 0.6s ease-out forwards 0.8s;"></div>
+            <p style="font-size: 16px; line-height: 1.8; color: #d1d1d1; opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s ease-out forwards 1s;">
+              At Optic Bee Tech PVT LTD, we rethink technology to transform experiences. From intelligent automation to immersive interfaces, from scalable software to sustainable solutions—we're not just adapting to change, we're driving it forward. Together, we reinvent possibilities.
+            </p>
+            <a href="home_subpage.html" style="margin-top: 20px; display: inline-flex; align-items: center; text-decoration: none; font-weight: bold; color: white; opacity: 0; transform: translateX(-20px); animation: fadeInRight 0.8s ease-out forwards 1.2s;">
+              Discover Our Work 
+              <span style="background-color: #a259ff; color: white; padding: 4px 10px; margin-left: 8px; border-radius: 4px; animation: pulse 2s infinite 1.8s;">&gt;</span>
+            </a>
+          </div>
+
+          <style>
+            @keyframes fadeInLeft {
+              from {
+                opacity: 0;
+                transform: translateX(-50px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+            
+            @keyframes fadeInRight {
+              from {
+                opacity: 0;
+                transform: translateX(20px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+            
+            @keyframes fadeInUp {
+              from {
+                opacity: 0;
+                transform: translateY(20px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            @keyframes expandWidth {
+              from {
+                width: 0;
+              }
+              to {
+                width: 30px;
+              }
+            }
+            
+            @keyframes pulse {
+              0% {
+                transform: scale(1);
+                opacity: 1;
+              }
+              50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+              }
+              100% {
+                transform: scale(1);
+                opacity: 1;
+              }
+            }
+            
+            /* Hover animation for the link */
+            a:hover {
+              transform: translateX(5px);
+              transition: transform 0.3s ease;
+            }
+            
+            a:hover span {
+              background-color: #8a3ffc;
+              transition: background-color 0.3s ease;
+            }
+          </style>
+    </section>
+
+    <section id="interview-section" style="background-color:#ffffff; color:#000000; padding:40px; font-family:Arial, sans-serif; display:flex; flex-wrap:wrap; gap:40px; justify-content:center; align-items:flex-start; overflow:hidden;">
+
+      <!-- Main Interview Content (Left) -->
+      <div class="animate-on-scroll" style="flex:1 1 600px; max-width:640px;">
+        <div style="position:relative;">
+          <img src="images/interview.png" alt="Interview Thumbnail" style="width:100%; border:2px solid #444; border-radius:8px;" class="animate-on-scroll zoom">
+        </div>
+        <div style="margin-top:10px;" class="animate-on-scroll">
+          <a href="#" style="color:#474747; font-size:14px; text-decoration:underline; transition:color 0.3s ease;">View transcript</a>
+        </div>
+        <p style="font-size:18px; line-height:1.6; margin-top:20px;" class="animate-on-scroll">
+          Julie Sweet sits down with the leadership team of <strong style="color:#a259ff;">Optic Bee Soft Tech Pvt. Ltd.</strong> to explore the company's mission of building intelligent, inclusive, and future-ready digital ecosystems.
+        </p>
+        <div style="margin-top:20px;" class="animate-on-scroll">
+          <a href="#" style="display:inline-block; padding:12px 20px; background-color:#a259ff; color:#fff; text-decoration:none; font-weight:bold; border-radius:6px; transition:all 0.3s ease;">
+            Read More <span style="font-size:18px;">&#x2197;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Side Previews (Right) -->
+      <div style="flex:0 1 280px; display:flex; flex-direction:column; gap:20px;">
+        <div class="animate-on-scroll" style="display:flex; flex-direction:column;">
+          <img src="images/innovation.png" alt="Innovation in Payment" style="width:100%; height:30vh; border-radius:6px; transition:transform 0.3s ease;" 
+              onmouseover="this.style.transform='scale(1.03)'" 
+              onmouseout="this.style.transform='scale(1)'">
+          <a href="#" style="margin-top:8px; font-size:18px; color:#000000; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:color 0.3s ease;">
+            Revolutionizing Tech with AI & IoT <span style="font-size:24px;">&#x203A;</span>
+          </a>
+        </div>
+        
+        <div class="animate-on-scroll" style="display:flex; flex-direction:column;">
+          <img src="images/growth.png" alt="Legacy of Growth" style="width:100%; border-radius:6px; transition:transform 0.3s ease;" 
+              onmouseover="this.style.transform='scale(1.03)'" 
+              onmouseout="this.style.transform='scale(1)'">
+          <a href="#" style="margin-top:8px; font-size:18px; color:#000000; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:color 0.3s ease;">
+            Driving the next wave of digital transformation <span style="font-size:24px;">&#x203A;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CSS Animations -->
+      <style>
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.zoom {
+          transform: scale(0.95);
+        }
+
+        .animate-on-scroll.visible {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+
+        .animate-on-scroll.zoom.visible {
+          transform: scale(1) !important;
+        }
+
+        @media (max-width: 768px) {
+          #interview-section {
+            flex-direction: column;
+          }
+          div[style*="flex:0 1 280px"] {
+            flex: 1 1 auto !important;
+            max-width: 100% !important;
+            margin-top: 30px;
+          }
+        }
+      </style>
+
+      <!-- JavaScript Observer -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.1
+          });
+
+          document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        });
+      </script>
+    </section>
+
+    <section style="background-color: #f8f9fa; padding: 80px 40px; font-family: 'Arial', sans-serif; position: relative; overflow: hidden;">
+      <!-- Bubble Background -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
+        <!-- 10 Bubbles with staggered animations -->
+        <span style="position: absolute; width: 20px; height: 20px; background: rgb(90, 5, 201); border-radius: 50%; bottom: -150px; left: 10%; animation: float 15s linear infinite; animation-delay: 0s;"></span>
+        <span style="position: absolute; width: 25px; height: 25px; background: rgba(124, 33, 241, 0.945); border-radius: 50%; bottom: -150px; left: 30%; animation: float 13s linear infinite; animation-delay: 1s;"></span>
+        <span style="position: absolute; width: 15px; height: 15px; background: rgb(161, 89, 255); border-radius: 50%; bottom: -150px; left: 50%; animation: float 17s linear infinite; animation-delay: 2s;"></span>
+        <span style="position: absolute; width: 30px; height: 30px; background: rgb(161, 89, 255); border-radius: 50%; bottom: -150px; left: 70%; animation: float 20s linear infinite; animation-delay: 3s;"></span>
+        <span style="position: absolute; width: 18px; height: 18px; background: rgba(135, 48, 248, 0.726); border-radius: 50%; bottom: -150px; left: 85%; animation: float 16s linear infinite; animation-delay: 0.5s;"></span>
+        <span style="position: absolute; width: 22px; height: 22px; background: rgb(183, 134, 247); border-radius: 50%; bottom: -150px; left: 20%; animation: float 14s linear infinite; animation-delay: 1.5s;"></span>
+        <span style="position: absolute; width: 28px; height: 28px; background: rgba(161, 89, 255, 0.76); border-radius: 50%; bottom: -150px; left: 40%; animation: float 19s linear infinite; animation-delay: 2.5s;"></span>
+        <span style="position: absolute; width: 14px; height: 14px; background: rgb(102, 45, 177); border-radius: 50%; bottom: -150px; left: 60%; animation: float 18s linear infinite; animation-delay: 0.8s;"></span>
+        <span style="position: absolute; width: 26px; height: 26px; background: rgba(161, 89, 255, 0.918); border-radius: 50%; bottom: -150px; left: 75%; animation: float 21s linear infinite; animation-delay: 1.8s;"></span>
+        <span style="position: absolute; width: 16px; height: 16px; background: rgba(117, 34, 224, 0.938); border-radius: 50%; bottom: -150px; left: 90%; animation: float 12s linear infinite; animation-delay: 3.5s;"></span>
+      </div>
+
+      <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+        <!-- Section Header -->
+        <div class="fade-in-up" style="text-align: center; margin-bottom: 60px; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+          <h2 style="font-size: clamp(28px, 3vw, 42px); color: #1a1a1a;margin-top: -40px; margin-bottom: 15px; font-weight: 700;">PRODUCTS AND PLATFORMS</h2>
+          <p style="font-size: clamp(16px, 1.8vw, 20px); color: #666; max-width: 700px; margin: 0 auto; line-height: 1.5;">Cutting edge solutions to power up your business.</p>
+        </div>
+
+        <!-- Products Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; justify-content: center;">
+          <!-- Product Cards -->
+          <div class="product-card fade-in-up" style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); opacity: 0; transform: translateY(20px); transition: all 0.4s ease-out; position: relative; overflow: hidden; z-index: 1;">
+            <div class="product-content" style="position: relative; z-index: 2;">
+              <h3 style="font-size: 22px; color: #a259ff; margin-bottom: 12px; cursor: pointer; transition: color 0.3s ease; font-weight: 600;">OPTIC BEE OMNIQ™</h3>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; font-size: 16px;">The Foundation for Future Commerce. Unified. Ubiquitous. Intelligent.</p>
+              <div style="height: 2px; background: linear-gradient(90deg, #a259ff, transparent); opacity: 0.3;"></div>
+            </div>
+          </div>
+
+          <div class="product-card fade-in-up" style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); opacity: 0; transform: translateY(20px); transition: all 0.4s ease-out 0.1s; position: relative; overflow: hidden; z-index: 1;">
+            <div class="product-content" style="position: relative; z-index: 2;">
+              <h3 style="font-size: 22px; color: #a259ff; margin-bottom: 12px; cursor: pointer; transition: color 0.3s ease; font-weight: 600;">OPTIC BEE SHIELD™</h3>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; font-size: 16px;">Growth and Transformation in Insurance Enabled by Intelligent, Digital Solutions</p>
+              <div style="height: 2px; background: linear-gradient(90deg, #a259ff, transparent); opacity: 0.3;"></div>
+            </div>
+          </div>
+
+          <div class="product-card fade-in-up" style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); opacity: 0; transform: translateY(20px); transition: all 0.4s ease-out 0.2s; position: relative; overflow: hidden; z-index: 1;">
+            <div class="product-content" style="position: relative; z-index: 2;">
+              <h3 style="font-size: 22px; color: #a259ff; margin-bottom: 12px; cursor: pointer; transition: color 0.3s ease; font-weight: 600;">OPTIC BEE CHROMA™</h3>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; font-size: 16px;">Harness talent, collaborative work culture, invisible HR.</p>
+              <div style="height: 2px; background: linear-gradient(90deg, #a259ff, transparent); opacity: 0.3;"></div>
+            </div>
+          </div>
+
+          <div class="product-card fade-in-up" style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); opacity: 0; transform: translateY(20px); transition: all 0.4s ease-out 0.3s; position: relative; overflow: hidden; z-index: 1;">
+            <div class="product-content" style="position: relative; z-index: 2;">
+              <h3 style="font-size: 22px; color: #a259ff; margin-bottom: 12px; cursor: pointer; transition: color 0.3s ease; font-weight: 600;">OPTIC BEE HEALTH+™</h3>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; font-size: 16px;">Modern and open technology platforms for clinical research and drug development</p>
+              <div style="height: 2px; background: linear-gradient(90deg, #a259ff, transparent); opacity: 0.3;"></div>
+            </div>
+          </div>
+
+          <div class="product-card fade-in-up" style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); opacity: 0; transform: translateY(20px); transition: all 0.4s ease-out 0.4s; position: relative; overflow: hidden; z-index: 1;">
+            <div class="product-content" style="position: relative; z-index: 2;">
+              <h3 style="font-size: 22px; color: #a259ff; margin-bottom: 12px; cursor: pointer; transition: color 0.3s ease; font-weight: 600;">OPTIC BEE FINIQ™</h3>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; font-size: 16px;">Power the Banking, Financial Services, Insurance Customer Journey.</p>
+              <div style="height: 2px; background: linear-gradient(90deg, #a259ff, transparent); opacity: 0.3;"></div>
+            </div>
+          </div>
+
+          <div class="product-card fade-in-up" style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); opacity: 0; transform: translateY(20px); transition: all 0.4s ease-out 0.5s; position: relative; overflow: hidden; z-index: 1;">
+            <div class="product-content" style="position: relative; z-index: 2;">
+              <h3 style="font-size: 22px; color: #a259ff; margin-bottom: 12px; cursor: pointer; transition: color 0.3s ease; font-weight: 600;">OPTIC BEE INSIGHT™</h3>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; font-size: 16px;">Deliver personalized experiences to build loyalty and drive growth.</p>
+              <div style="height: 2px; background: linear-gradient(90deg, #a259ff, transparent); opacity: 0.3;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        /* Keyframes for animations */
+        @keyframes float {
+          0% {
+            transform: translateY(0) scale(1);
+            opacity: 0;
+          }
+          20% {
+            opacity: 0.5;
+          }
+          100% {
+            transform: translateY(-100vh) scale(0.8);
+            opacity: 0;
+          }
+        }
+
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* Product card hover effects */
+        .product-card:hover {
+          transform: translateY(-8px) !important;
+          box-shadow: 0 15px 30px rgba(162, 89, 255, 0.15) !important;
+        }
+
+        .product-card:hover h3 {
+          color: #7a3dff !important;
+        }
+
+        .product-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(162,89,255,0.03) 0%, rgba(255,255,255,0) 100%);
+          z-index: 1;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover::before {
+          opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+          section {
+            padding: 60px 30px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          section {
+            padding: 50px 20px;
+          }
+          
+          div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+          
+          .product-card {
+            padding: 20px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          section {
+            padding: 40px 15px;
+          }
+          
+          h2 {
+            font-size: 24px !important;
+            margin-bottom: 10px !important;
+          }
+          
+          p {
+            font-size: 15px !important;
+          }
+        }
+      </style>
+
+      <script>
+        // Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+          const fadeElements = document.querySelectorAll('.fade-in-up');
+          
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+              }
+            });
+          }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          });
+
+          fadeElements.forEach(el => observer.observe(el));
+          
+          // Add hover effect to product cards
+          const productCards = document.querySelectorAll('.product-card');
+          productCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+              this.style.transform = 'translateY(-8px)';
+              this.style.boxShadow = '0 15px 30px rgba(162, 89, 255, 0.15)';
+              this.querySelector('h3').style.color = '#7a3dff';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+              const delay = this.style.transition.match(/delay\s*:\s*([\d.]+)s/);
+              const transform = delay ? `translateY(0)` : 'translateY(0)';
+              this.style.transform = transform;
+              this.style.boxShadow = '0 5px 20px rgba(0,0,0,0.05)';
+              this.querySelector('h3').style.color = '#a259ff';
+            });
+          });
+        });
+      </script>
+    </section>
+    
+
+    <section id="opticBeeSection" style="background: black; color: white; font-family: Arial, sans-serif; padding: 30px 20px;">
+      <h2 style="text-align: center; font-size: 2.8em; margin-bottom: 40px;">Grow your future at Optic Bee</h2>
+
+      <div style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: center; gap: 20px;">
+        
+        <!-- Left: Image -->
+        <div style="flex: 1; max-width: 50%;">
+          <img id="opticImage" src="images/office.png" alt="Optic Bee Careers"
+            style="width: 900px; height: auto; display: block; transition: transform 0.6s ease;">
+        </div>
+
+        <!-- Right: Text beside image -->
+        <div id="opticText" class="text-box"
+          style="flex: 1; max-width: 50%; padding: 20px; transform: translate(20px, 20px); transition: transform 0.6s ease;">
+          <p style="font-size: 0.9em; letter-spacing: 2px; color: gray;">CAREERS</p>
+          <h3 style="font-size: 1.7em; margin-bottom: 15px;">Join the Optic Bee revolution</h3>
+          <p style="font-size: 1.1em; color: #ddd; margin-bottom: 15px;">
+            Your innovation matters. Be part of a team fusing AI with advanced optics to redefine how the world sees data.
+          </p>
+          <p style="font-size: 1em; color: #bbb; margin-bottom: 15px;">
+            Shape a smarter tomorrow — with your vision, passion, and bold ideas at Optic Bee. Let's build the future together.
+          </p>
+          <p style="font-size: 1em; color: #aaa;">
+            Explore roles in AI integration, lens systems, research engineering, and machine learning ops. Your growth path begins here.
+          </p>
+          <p style="font-size: 1em; color: #999;">
+            We invest in people who invest in possibility. Discover how your career can shine with us.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+      const image = document.getElementById('opticImage');
+      const textBox = document.getElementById('opticText');
+      let lastScroll = window.scrollY;
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+
+        if (currentScroll > lastScroll) {
+          // Scroll down — shrink image to top-left
+          image.style.transform = 'scale(0.5) translate(-40%, -40%)';
+          
+          // Enlarge and move up text
+          textBox.style.transform = 'scale(1.1) translate(20px, -50px)';
+          textBox.style.transition = 'transform 0.6s ease, font-size 0.6s ease';
+          
+          // Increase font size dynamically
+          textBox.querySelectorAll('p, h3').forEach(el => {
+            el.style.transition = 'font-size 0.6s ease';
+            if (el.tagName === 'H3') {
+              el.style.fontSize = '2em';
+            } else {
+              el.style.fontSize = '1.2em';
+            }
+          });
+
+        } else {
+          // Scroll up — reset image and text
+          image.style.transform = 'scale(1) translate(0, 0)';
+          textBox.style.transform = 'scale(1) translate(20px, 20px)';
+          
+          textBox.querySelectorAll('p, h3').forEach(el => {
+            if (el.tagName === 'H3') {
+              el.style.fontSize = '1.7em';
+            } else {
+              el.style.fontSize = el.getAttribute('data-original-size') || '1em';
+            }
+          });
+        }
+
+        lastScroll = currentScroll;
+      });
+
+      // Save original font sizes once
+      document.querySelectorAll('#opticText p').forEach(el => {
+        el.setAttribute('data-original-size', window.getComputedStyle(el).fontSize);
+      });
+    </script>
+
+    <section style="background: white; color: black; font-family: Arial, sans-serif; padding: 60px 20px; overflow: hidden;">
+      <h2 style="font-size: 2em; margin-bottom: 30px;">Optic Bee News</h2>
+
+      <div style="display: flex; gap: 40px; animation: scrollCards 30s linear infinite; width: max-content;">
+        
+        <!-- Card 1 -->
+        <div style="flex: 0 0 300px;">
+          <p style="color: #a259ff; font-size: 0.9em;">June 1, 2025</p>
+          <h3 style="font-size: 1.3em; font-weight: bold; line-height: 1.4; color: black;">
+            Optic Bee Unveils AI-Powered Lens Tech for Smart Cities
+          </h3>
+        </div>
+
+        <!-- Card 2 -->
+        <div style="flex: 0 0 300px;">
+          <p style="color: #a259ff; font-size: 0.9em;">May 25, 2025</p>
+          <h3 style="font-size: 1.3em; font-weight: bold; line-height: 1.4; color: black;">
+            Optic Bee Labs Achieves Breakthrough in Neural Imaging
+          </h3>
+        </div>
+
+        <!-- Card 3 -->
+        <div style="flex: 0 0 300px;">
+          <p style="color: #a259ff; font-size: 0.9em;">May 18, 2025</p>
+          <h3 style="font-size: 1.3em; font-weight: bold; line-height: 1.4; color: black;">
+            Strategic Partnership with AI Visionaries Announced
+          </h3>
+        </div>
+
+        <!-- Card 4 -->
+        <div style="flex: 0 0 300px;">
+          <p style="color: #a259ff; font-size: 0.9em;">May 10, 2025</p>
+          <h3 style="font-size: 1.3em; font-weight: bold; line-height: 1.4; color: black;">
+            Optic Bee Launches Career Accelerator for AI Engineers
+          </h3>
+        </div>
+
+        <!-- Card 5 -->
+        <div style="flex: 0 0 300px;">
+          <p style="color: #a259ff; font-size: 0.9em;">April 30, 2025</p>
+          <h3 style="font-size: 1.3em; font-weight: bold; line-height: 1.4; color: black;">
+            AI-Driven Visual Analytics Platform Goes Global
+          </h3>
+        </div>
+
+      </div>
+
+      <style>
+        @keyframes scrollCards {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-100%); }
+        }
+      </style>
+    </section>
+</body>
+</html>

@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Optic Bee Soft Tech | Digital Transformation Leaders</title>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <meta name="description" content="Discover Optic Bee Soft Tech - A global leader in digital transformation, AI solutions, and enterprise technology services.">
+</head>
+<body style="margin:0;font-family:'Segoe UI',Arial,sans-serif;color:#333;line-height:1.6;background:#f9f9f9;">
+
+
+
+<!-- Navbar -->
+<header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+    <!-- Logo -->
+    <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+      <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+      <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
+
+    <!-- Desktop Navigation -->
+    <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+      <a href="/" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="Projects.html" class="nav-link">Projects</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="affiliate.html" class="nav-link">Affiliates</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      
+      <!-- Icons -->
+      <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+        <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+        <a href="register.html" class="nav-icon" title="Register">👤</a>
+        <button id="searchToggle" class="nav-icon">🔍</button>
+        
+        <!-- Desktop Language Selector -->
+        <div id="customDropdown" style="position:relative; user-select:none;">
+          <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+            <span id="currentLanguage">EN</span>
+            <span style="margin-left:5px;">▼</span>
+          </div>
+          <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="products.html" class="mobile-nav-link">Products</a>
+      <a href="Projects.html" class="mobile-nav-link">Projects</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+      <a href="insights.html" class="mobile-nav-link">Insights</a>
+      <a href="partners.html" class="mobile-nav-link">Partners</a>
+      <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+      <a href="industries.html" class="mobile-nav-link">Industries</a>
+      <a href="resources.html" class="mobile-nav-link">Resources</a>
+      
+      <div style="display:flex; justify-content:space-around; margin-top:15px;">
+        <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+        <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+      </div>
+      
+      <!-- Mobile Language Selector -->
+      <div style="margin-top:15px;">
+        <select id="mobileLanguageSelect" class="mobile-language-selector">
+          <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+          <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+          <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+          <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+          <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+          <!-- More languages will be added by JavaScript -->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Container -->
+  <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+    <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+  </div>
+</header>
+
+<style>
+  /* Common Styles */
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+  
+  .nav-icon {
+    color: white;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Styles */
+  .mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .mobile-nav-icon {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .mobile-language-selector {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  /* Language dropdown options */
+  #optionsList div {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #optionsList div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #optionsList img {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .nav-link {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #mobileMenuButton {
+      display: block;
+    }
+    
+    #desktopNav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Country/language data
+  const countries = [
+    {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+    {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+    {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+    {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+    {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+    {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+    {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+    {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+    {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+    {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+    {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+  ];
+
+  // Initialize language functionality
+  function initLanguageSelection() {
+    // Populate desktop dropdown
+    const optionsList = document.getElementById('optionsList');
+    countries.forEach(country => {
+      const option = document.createElement('div');
+      option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+      option.dataset.code = country.code;
+      option.dataset.flag = country.flag;
+      option.dataset.name = country.name;
+      option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+      optionsList.appendChild(option);
+    });
+
+    // Populate mobile dropdown
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    countries.forEach(country => {
+      if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+        const option = document.createElement('option');
+        option.value = country.code;
+        option.textContent = `${country.name} (${country.country})`;
+        option.dataset.flag = country.flag;
+        mobileSelect.appendChild(option);
+      }
+    });
+
+    // Set up event listeners
+    document.getElementById('selectedOption').onclick = function() {
+      optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+    };
+
+    document.getElementById('mobileLanguageSelect').onchange = function() {
+      const selectedOption = this.options[this.selectedIndex];
+      selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#customDropdown')) {
+        optionsList.style.display = 'none';
+      }
+    });
+
+    // Detect user's language
+    detectUserLanguage();
+  }
+
+  // Select language function
+  function selectLanguage(code, flag, name) {
+    // Update desktop display
+    document.getElementById('currentFlag').src = flag;
+    document.getElementById('currentLanguage').textContent = code.toUpperCase();
+    document.getElementById('optionsList').style.display = 'none';
+    
+    // Update mobile display
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    mobileSelect.value = code;
+    
+    // Store selection
+    localStorage.setItem('userLanguage', code);
+    localStorage.setItem('userLanguageFlag', flag);
+    localStorage.setItem('userLanguageName', name);
+    
+    // Change Google Translate language
+    changeGoogleTranslateLanguage(code);
+  }
+
+  // Detect user's language
+  function detectUserLanguage() {
+    // Check for stored preference first
+    const storedLanguage = localStorage.getItem('userLanguage');
+    if (storedLanguage) {
+      const storedFlag = localStorage.getItem('userLanguageFlag');
+      const storedName = localStorage.getItem('userLanguageName');
+      selectLanguage(storedLanguage, storedFlag, storedName);
+      return;
+    }
+
+    // Try to detect from browser
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    if (browserLanguage) {
+      const mainLang = browserLanguage.split('-')[0];
+      const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+      if (matchedCountry) {
+        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        return;
+      }
+    }
+
+    // Fallback to IP detection
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const countryCode = data.country;
+        const matchedCountry = countries.find(c => 
+          c.country.toLowerCase() === data.country_name.toLowerCase() || 
+          c.code === data.languages?.split(',')[0]
+        );
+        if (matchedCountry) {
+          selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        } else {
+          // Default to English
+          selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+        }
+      })
+      .catch(() => {
+        // Default to English if all detection fails
+        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+      });
+  }
+
+  // Change Google Translate language
+  function changeGoogleTranslateLanguage(languageCode) {
+    if (typeof google !== 'undefined' && google.translate) {
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = languageCode;
+        combo.dispatchEvent(new Event('change'));
+      }
+    } else {
+      // Retry after a delay if Google Translate isn't loaded yet
+      setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+    }
+  }
+
+  // Initialize Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      includedLanguages: countries.map(c => c.code).join(',')
+    }, 'google_translate_element');
+  }
+
+  // Navbar functions
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function toggleSearch() {
+    const searchContainer = document.getElementById('searchContainer');
+    searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function handleResponsive() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('mobileMenuButton').style.display = 'block';
+      document.getElementById('desktopNav').style.display = 'none';
+    } else {
+      document.getElementById('mobileMenuButton').style.display = 'none';
+      document.getElementById('desktopNav').style.display = 'flex';
+      document.getElementById('mobileMenu').style.display = 'none';
+      document.getElementById('searchContainer').style.display = 'none';
+    }
+  }
+
+  // Initialize everything when DOM loads
+  document.addEventListener('DOMContentLoaded', function() {
+    initLanguageSelection();
+    handleResponsive();
+    document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+    window.addEventListener('resize', handleResponsive);
+    
+    // Load Google Translate script
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(script);
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+  initLanguageSelection();
+  handleResponsive(); // ✅ ADD THIS LINE
+  document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+  window.addEventListener('resize', handleResponsive);
+});
+
+</script>
+
+<!-- Google Translate element (hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<!-- =================================================================================== -->
+
+
+
+
+
+<!-- Hero Section with Parallax Effect -->
+<section style="height:100vh;min-height:600px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover fixed;">
+  <div style="text-align:center;color:#fff;padding:20px;max-width:800px;margin:auto;position:relative;z-index:2;">
+    <h1 style="font-size:clamp(2.5rem,5vw,4rem);margin-bottom:20px;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,0.5);opacity:0;transform:translateY(30px);transition:opacity 1s ease,transform 1s ease;" id="hero-title">About Optic Bee</h1>
+    <p style="font-size:clamp(1rem,2vw,1.3rem);margin-bottom:30px;opacity:0;transform:translateY(30px);transition:opacity 1s ease 0.3s,transform 1s ease 0.3s;" id="hero-subtitle">Pioneering digital transformation through innovation, expertise, and cutting-edge technology solutions.</p>
+    <a href="#our-story" style="display:inline-block;background:#6a3093;color:#fff;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;box-shadow:0 5px 15px rgba(106,48,147,0.4);transition:all 0.3s ease;opacity:0;transform:translateY(30px);transition:opacity 1s ease 0.6s,transform 1s ease 0.6s;" id="hero-button" onmouseover="this.style.background='#7d3caf';this.style.transform='translateY(-5px)'" onmouseout="this.style.background='#6a3093';this.style.transform='translateY(0)'">Explore Our Story</a>
+  </div>
+</section>
+
+  <section style="background-color: #f9f9ff; padding: 80px 40px; font-family: 'Arial', sans-serif;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px;">
+
+        <!-- Text Content -->
+        <div style="flex: 1; min-width: 300px; text-align: left;">
+            <h2 style="font-size: 14px; letter-spacing: 2px; color: #4d4d4d; margin-bottom: 20px; text-transform: uppercase; text-shadow: 1px 1px 3px #a020f085;">
+            Optic Bee Soft Tech
+            </h2>
+            <div class="carousel-content" style="margin-bottom: 30px;">
+            <h3 style="font-size: 36px; line-height: 1.3; color: #1a1a1a; margin-bottom: 20px;">
+                <span class="dynamic-text">Innovative AI-Powered<br>Solutions for Digital<br>Transformation</span>
+            </h3>
+            <p style="font-size: 18px; color: #666; line-height: 1.6; text-shadow: 1px 1px 3px #a020f0;">
+                <span class="dynamic-desc">
+                At Optic Bee Soft Tech, we drive business evolution with smart technologies—combining AI, automation, and analytics to deliver future-ready digital ecosystems.
+                </span>
+            </p>
+            </div>
+        </div>
+
+        <!-- Image Content -->
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+            <img src="images/working.png" alt="Optic Bee Soft Tech Illustration"
+                style="max-width: 100%; height: 400px; border-radius: 10px; box-shadow: 0 4px 12px #a020f0; transition: transform 0.3s ease, filter 0.3s ease;"
+                onmouseover="this.style.transform='scale(1.05)'; this.style.filter='brightness(1.1)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(1)';" />
+        </div>
+        </div>
+
+
+      <!-- Animation Styles -->
+      <style>
+          .dynamic-text, .dynamic-desc {
+          display: inline-block;
+          min-height: 1em;
+          }
+          @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+          }
+          .text-change {
+          animation: fadeIn 0.8s ease-out;
+          }
+      </style>
+
+      <!-- Rotating Text Script -->
+      <script>
+          const textVariations = [
+          {
+              heading: "Harness scalable<br>agentic AI networks for<br>unmatched efficiency",
+              description: "From enabling adaptive operations to personalizing customer experiences—the future of enterprise AI is multi-agent systems."
+          },
+          {
+              heading: "Orchestrate intelligent<br>agent collaborations for<br>complex problem-solving",
+              description: "Break down silos and enable seamless coordination between specialized AI agents for comprehensive solutions."
+          },
+          {
+              heading: "Deploy autonomous<br>agent teams that learn<br>and improve continuously",
+              description: "Self-optimizing agent networks that evolve with your business needs and market dynamics."
+          },
+          {
+              heading: "Transform workflows with<br>self-organizing agent<br>ecosystems",
+              description: "Agents that dynamically allocate tasks, balance workloads, and optimize resource utilization in real-time."
+          }
+          ];
+
+          const textElement = document.querySelector('.dynamic-text');
+          const descElement = document.querySelector('.dynamic-desc');
+          let currentIndex = 0;
+
+          function rotateText() {
+          currentIndex = (currentIndex + 1) % textVariations.length;
+          textElement.classList.add('text-change');
+          descElement.classList.add('text-change');
+          textElement.innerHTML = textVariations[currentIndex].heading;
+          descElement.textContent = textVariations[currentIndex].description;
+          setTimeout(() => {
+              textElement.classList.remove('text-change');
+              descElement.classList.remove('text-change');
+          }, 800);
+          }
+
+          setInterval(rotateText, 5000);
+          setTimeout(() => {
+          textElement.classList.add('text-change');
+          descElement.classList.add('text-change');
+          setTimeout(() => {
+              textElement.classList.remove('text-change');
+              descElement.classList.remove('text-change');
+          }, 800);
+          }, 100);
+      </script>
+  </section>
+
+<!-- Our Story Section -->
+<section id="our-story" style="padding:100px 20px;background:#fff;position:relative;overflow:hidden;">
+  <!-- Decorative elements -->
+  <div style="position:absolute;top:-100px;left:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(106,48,147,0.1) 0%,transparent 70%);filter:blur(30px);"></div>
+  <div style="position:absolute;bottom:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(106,48,147,0.1) 0%,transparent 70%);filter:blur(20px);"></div>
+  
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:60px;position:relative;z-index:2;">
+    <!-- Left Column - Image -->
+    <div style="flex:1;min-width:300px;position:relative;">
+      <div style="border-radius:20px;overflow:hidden;box-shadow:15px 15px 0 rgba(106,48,147,0.1),30px 30px 0 rgba(106,48,147,0.05);transform:rotate(-2deg);transition:all 0.4s ease;" onmouseover="this.style.transform='rotate(0deg)';this.style.boxShadow='20px 20px 0 rgba(106,48,147,0.15),40px 40px 0 rgba(106,48,147,0.07)'" onmouseout="this.style.transform='rotate(-2deg)';this.style.boxShadow='15px 15px 0 rgba(106,48,147,0.1),30px 30px 0 rgba(106,48,147,0.05)'">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Team" style="width:100%;height:auto;display:block;">
+      </div>
+    </div>
+    
+    <!-- Right Column - Text -->
+    <div style="flex:1;min-width:300px;">
+      <h2 style="font-size:2.8rem;margin-bottom:25px;color:#6a3093;position:relative;display:inline-block;">
+        Our Story
+        <span style="position:absolute;bottom:-10px;left:0;width:80px;height:4px;background:linear-gradient(90deg,#6a3093,#9c7bbf);border-radius:2px;"></span>
+      </h2>
+      <p style="font-size:1.1rem;line-height:1.8;color:#555;margin-bottom:20px;">
+        Founded in 2024, Optic Bee Soft Tech began as a small startup with a bold vision: to revolutionize how businesses leverage technology. What started as a team of five passionate technologists has grown into a global enterprise with offices in 12 countries.
+      </p>
+      <p style="font-size:1.1rem;line-height:1.8;color:#555;margin-bottom:20px;">
+        Our journey has been marked by continuous innovation, strategic partnerships, and an unwavering commitment to delivering exceptional value to our clients. From our first breakthrough in AI-powered analytics to our current leadership in digital transformation, we've remained true to our core values.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:15px;margin-top:40px;">
+        <div style="flex:1;min-width:200px;background:#f9f5ff;padding:20px;border-radius:12px;border-left:4px solid #6a3093;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 20px rgba(106,48,147,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+          <h3 style="font-size:1.3rem;margin-bottom:10px;color:#6a3093;">2024</h3>
+          <p style="color:#666;">Company founded in Hyderabad</p>
+        </div>
+        <div style="flex:1;min-width:200px;background:#f9f5ff;padding:20px;border-radius:12px;border-left:4px solid #6a3093;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 20px rgba(106,48,147,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+          <h3 style="font-size:1.3rem;margin-bottom:10px;color:#6a3093;">2025</h3>
+          <p style="color:#666;">First international office opened</p>
+        </div>
+        <div style="flex:1;min-width:200px;background:#f9f5ff;padding:20px;border-radius:12px;border-left:4px solid #6a3093;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 20px rgba(106,48,147,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+          <h3 style="font-size:1.3rem;margin-bottom:10px;color:#6a3093;">2026</h3>
+          <p style="color:#666;">Recognized as industry leader</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Mission & Values Section -->
+<section style="padding:100px 20px;background:linear-gradient(135deg,#6a3093,#a259ff);color:#fff;position:relative;overflow:hidden;">
+  <!-- Decorative elements -->
+  <div style="position:absolute;top:20%;right:-150px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);filter:blur(40px);"></div>
+  <div style="position:absolute;bottom:10%;left:10%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);filter:blur(30px);"></div>
+  
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:2;">
+    <h2 style="font-size:2.8rem;text-align:center;margin-bottom:60px;text-shadow:0 2px 10px rgba(0,0,0,0.3);">Our Mission & Values</h2>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;">
+      <!-- Value 1 -->
+      <div style="background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:30px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)';this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.background='rgba(255,255,255,0.1)'">
+        <div style="width:60px;height:60px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:1.5rem;">💡</div>
+        <h3 style="font-size:1.5rem;margin-bottom:15px;">Innovation</h3>
+        <p style="opacity:0.9;">We push boundaries and challenge the status quo to develop groundbreaking solutions that drive progress.</p>
+      </div>
+      
+      <!-- Value 2 -->
+      <div style="background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:30px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)';this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.background='rgba(255,255,255,0.1)'">
+        <div style="width:60px;height:60px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:1.5rem;">🤝</div>
+        <h3 style="font-size:1.5rem;margin-bottom:15px;">Integrity</h3>
+        <p style="opacity:0.9;">We operate with honesty, transparency, and ethical practices in all our relationships.</p>
+      </div>
+      
+      <!-- Value 3 -->
+      <div style="background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:30px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)';this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.background='rgba(255,255,255,0.1)'">
+        <div style="width:60px;height:60px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:1.5rem;">🌍</div>
+        <h3 style="font-size:1.5rem;margin-bottom:15px;">Impact</h3>
+        <p style="opacity:0.9;">We measure success by the positive difference we make for our clients, employees, and communities.</p>
+      </div>
+    </div>
+    
+    <div style="margin-top:60px;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:40px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);">
+      <h3 style="font-size:1.8rem;margin-bottom:20px;text-align:center;">Our Mission Statement</h3>
+      <p style="font-size:1.2rem;text-align:center;max-width:800px;margin:0 auto;opacity:0.9;font-style:italic;">
+        "To empower organizations worldwide through transformative technology solutions that drive efficiency, innovation, and sustainable growth."
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <section style="background-color: #edeeee; padding: 60px 20px; font-family: 'Arial', sans-serif;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+          
+            <h2 style="font-size: 14px; letter-spacing: 2px; color: #555;margin-top: -50px; margin-bottom: 30px; text-transform: uppercase; text-align: center;">News</h2>
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+            <span style="font-size: 24px; font-weight: bold; color: #222;">optic bee<sup style="font-size: 12px;">®</sup></span>
+            </div>
+
+            <div class="news-carousel" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 0; scroll-snap-type: x mandatory;">
+              
+              <!-- News Item 1 -->
+              <div class="news-item" style="min-width: 240px; scroll-snap-align: start; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: box-shadow 0.3s ease, transform 0.3s ease;"
+                  onmouseover="this.style.boxShadow='0 4px 20px rgba(138,43,226,0.3)'; this.style.transform='translateY(-4px)';"
+                  onmouseout="this.style.boxShadow='0 2px 10px rgba(0,0,0,0.05)'; this.style.transform='translateY(0)';">
+                <div style="font-size: 11px; color: #666; margin-bottom: 12px;">Press release: Jun 03, 2025</div>
+                <h3 style="font-size: 16px; line-height: 1.4; color: #222; margin-bottom: 12px;">Optic Bee Releases 2024 Sustainability and Digital Innovation Report</h3>
+                <p style="font-size: 13px; color: #555; line-height: 1.5;">June 2, 2025 — Optic Bee Soft Tech released its 2024 Sustainability and Digital Innovation Report today...</p>
+              </div>
+
+              <!-- News Item 2 -->
+              <div class="news-item" style="min-width: 240px; scroll-snap-align: start; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: box-shadow 0.3s ease, transform 0.3s ease;"
+                  onmouseover="this.style.boxShadow='0 4px 20px rgba(138,43,226,0.3)'; this.style.transform='translateY(-4px)';"
+                  onmouseout="this.style.boxShadow='0 2px 10px rgba(0,0,0,0.05)'; this.style.transform='translateY(0)';">
+                <div style="font-size: 11px; color: #666; margin-bottom: 12px;">Press release: Jun 02, 2025</div>
+                <h3 style="font-size: 16px; line-height: 1.4; color: #222; margin-bottom: 12px;">Optic Bee Recognized as AI Innovation Leader at Tech Summit 2025</h3>
+                <p style="font-size: 13px; color: #555; line-height: 1.5;">Hyderabad, June 1, 2025 — Optic Bee Soft Tech has been awarded the AI Innovation Leader award...</p>
+              </div>
+
+              <!-- News Item 3 -->
+              <div class="news-item" style="min-width: 240px; scroll-snap-align: start; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: box-shadow 0.3s ease, transform 0.3s ease;"
+                  onmouseover="this.style.boxShadow='0 4px 20px rgba(138,43,226,0.3)'; this.style.transform='translateY(-4px)';"
+                  onmouseout="this.style.boxShadow='0 2px 10px rgba(0,0,0,0.05)'; this.style.transform='translateY(0)';">
+                <div style="font-size: 11px; color: #666; margin-bottom: 12px;">Press release: Jun 01, 2025</div>
+                <h3 style="font-size: 16px; line-height: 1.4; color: #222; margin-bottom: 12px;">Optic Bee Named Among India's Top 50 Most Innovative Companies</h3>
+                <p style="font-size: 13px; color: #555; line-height: 1.5;">NEW DELHI, May 30, 2025 — Optic Bee Soft Tech has secured a spot in the prestigious list...</p>
+              </div>
+            </div>
+        </div>
+
+            <style>
+                /* Custom scrollbar for carousel */
+                .news-carousel::-webkit-scrollbar {
+                height: 6px;
+                }
+                .news-carousel::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                }
+                .news-carousel::-webkit-scrollbar-thumb {
+                background: #a259ff;
+                border-radius: 3px;
+                }
+                
+                /* Hover effects */
+                .news-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(162, 89, 255, 0.1);
+                transition: all 0.3s ease;
+                }
+                
+                a:hover {
+                color: #8a3ffc;
+                }
+                a:hover span {
+                transform: translateX(3px);
+                transition: transform 0.3s ease;
+                }
+            </style>
+    </section>
+
+    <section style="background-color: #f8f9fa; padding: 80px 20px; font-family: 'Arial', sans-serif;">
+      <div style="max-width: 1400px; margin: 0 auto; text-align: center;margin-top: -30px; overflow: hidden;">
+       
+        <h2 style="font-size: 32px; color: #222; margin-bottom: 50px; font-weight: 600;">Analyst Speak</h2>
+
+        <div class="carousel-container" style="position: relative;">
+        
+          <div class="cards-wrapper" style="display: flex; transition: transform 0.5s ease; width: 3060px;">
+    
+            <div class="analyst-card active" style="width: 1000px; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 40px; margin-right: 30px;">
+              <div style="flex: 1;">
+                <h3 style="font-size: 20px; color: #555; margin-bottom: 5px;">Gartner</h3>
+                <h2 style="font-size: 26px; color: #222; margin-bottom: 10px;">Sarah Thompson</h2>
+                <p style="font-size: 16px; color: #777; margin-bottom: 20px;">Vice President and Distinguished Analyst at Gartner</p>
+                <p style="font-size: 18px; line-height: 1.6; color: #444; font-style: italic;">
+                  "Optic Bee's multi-agent AI platform demonstrates exceptional capabilities in the 2025 Gartner Magic Quadrant for Enterprise AI Solutions."
+                </p>
+              </div>
+              <div>
+                <img src="images/thomson.png" alt="Sarah Thompson" style="width: 400px; height: 300px; object-fit: cover; border-radius: 4px;">
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="analyst-card" style="width: 1000px; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 40px; margin-right: 30px;">
+              <div style="flex: 1;">
+                <h3 style="font-size: 20px; color: #555; margin-bottom: 5px;">Forrester</h3>
+                <h2 style="font-size: 26px; color: #222; margin-bottom: 10px;">Michael Chen</h2>
+                <p style="font-size: 16px; color: #777; margin-bottom: 20px;">Principal Analyst at Forrester Research</p>
+                <p style="font-size: 18px; line-height: 1.6; color: #444; font-style: italic;">
+                  "In our evaluation, Optic Bee emerged as a Leader in The Forrester Wave™: AI-First Platforms, Q2 2025."
+                </p>
+              </div>
+              <div>
+                <img src="images/michel.png" alt="Michael Chen" style="width: 400px; height: 300px; object-fit: cover; border-radius: 4px;">
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="analyst-card" style="width: 1000px; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 40px;">
+              <div style="flex: 1;">
+                <h3 style="font-size: 20px; color: #555; margin-bottom: 5px;">IDC</h3>
+                <h2 style="font-size: 26px; color: #222; margin-bottom: 10px;">Priya Sharma</h2>
+                <p style="font-size: 16px; color: #777; margin-bottom: 20px;">Research Director at IDC</p>
+                <p style="font-size: 18px; line-height: 1.6; color: #444; font-style: italic;">
+                  "Optic Bee's agentic workflow automation solution sets new benchmarks in IDC's MarketScape for Intelligent Process Automation."
+                </p>
+              </div>
+              <div>
+                <img src="images/priya.png" alt="Priya Sharma" style="width: 400px; height: 300px; object-fit: cover; border-radius: 4px;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Dots -->
+          <div style="display: flex; justify-content: center; margin-top: 30px; gap: 10px;">
+            <span class="dot active" style="width: 12px; height: 12px; background-color: #a259ff; border-radius: 50%; cursor: pointer;"></span>
+            <span class="dot" style="width: 12px; height: 12px; background-color: #ddd; border-radius: 50%; cursor: pointer;"></span>
+            <span class="dot" style="width: 12px; height: 12px; background-color: #ddd; border-radius: 50%; cursor: pointer;"></span>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .carousel-container {
+          width: 1000px;
+          margin: 0 auto;
+          overflow: hidden;
+        }
+
+        .analyst-card {
+          transition: all 0.3s ease;
+          flex-shrink: 0;
+        }
+
+        .analyst-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 30px rgba(162, 89, 255, 0.15);
+        }
+
+        .dot.active {
+          background-color: #a259ff !important;
+        }
+      </style>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const cardsWrapper = document.querySelector('.cards-wrapper');
+          const cards = document.querySelectorAll('.analyst-card');
+          const dots = document.querySelectorAll('.dot');
+          let currentIndex = 0;
+          const cardWidth = 1030; // card width (1000) + margin-right (30)
+
+          // Auto-rotate cards every 5 seconds
+          setInterval(() => {
+            currentIndex = (currentIndex + 1) % cards.length;
+            updateCarousel();
+          }, 5000);
+
+          // Dot click handler
+          dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+              currentIndex = index;
+              updateCarousel();
+            });
+          });
+
+          function updateCarousel() {
+            cardsWrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+            // Toggle active state
+            cards.forEach((card, index) => {
+              card.classList.toggle('active', index === currentIndex);
+            });
+
+            dots.forEach((dot, index) => {
+              dot.classList.toggle('active', index === currentIndex);
+            });
+          }
+        });
+      </script>
+    </section>
+
+
+<!-- Leadership Team Section -->
+<section style="padding:100px 20px;background:#fff;position:relative;overflow:hidden;">
+  <!-- Decorative elements -->
+  <div style="position:absolute;top:30%;left:-150px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(106,48,147,0.1) 0%,transparent 70%);filter:blur(40px);"></div>
+  
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:2;">
+    <h2 style="font-size:2.8rem;text-align:center;margin-bottom:15px;color:#6a3093;">Leadership Team</h2>
+    <p style="text-align:center;max-width:700px;margin:0 auto 60px;font-size:1.1rem;color:#666;">Visionary leaders driving innovation and growth</p>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;margin-top:50px;">
+      <!-- Leader 1 -->
+      <div style="background:#fff;border-radius:15px;padding:30px;text-align:center;transition:all 0.4s ease;box-shadow:0 10px 30px rgba(106,48,147,0.15);position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 40px rgba(106,48,147,0.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 10px 30px rgba(106,48,147,0.15)'">
+        <div style="width:150px;height:150px;border-radius:50%;margin:0 auto 25px;overflow:hidden;border:5px solid #f1e8ff;box-shadow:0 5px 15px rgba(106,48,147,0.2);">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Param Gadi" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 style="font-size:1.5rem;margin-bottom:10px;color:#6a3093;">Param Gadi</h3>
+        <p style="color:#9c7bbf;font-weight:500;margin-bottom:15px;">CEO & Founder</p>
+        <p style="color:#666;line-height:1.6;">Visionary leader with 22+ years in AI and data analytics, driving Optic Bee's strategic direction.</p>
+        <div style="margin-top:20px;display:flex;justify-content:center;gap:15px;">
+          <a href="#" style="width:40px;height:40px;background:#f1e8ff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6a3093;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='#6a3093';this.style.color='#fff'" onmouseout="this.style.background='#f1e8ff';this.style.color='#6a3093'">in</a>
+          <a href="#" style="width:40px;height:40px;background:#f1e8ff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6a3093;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='#6a3093';this.style.color='#fff'" onmouseout="this.style.background='#f1e8ff';this.style.color='#6a3093'">@</a>
+        </div>
+      </div>
+      
+      <!-- Leader 2 -->
+      <div style="background:#fff;border-radius:15px;padding:30px;text-align:center;transition:all 0.4s ease;box-shadow:0 10px 30px rgba(106,48,147,0.15);position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 40px rgba(106,48,147,0.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 10px 30px rgba(106,48,147,0.15)'">
+        <div style="width:150px;height:150px;border-radius:50%;margin:0 auto 25px;overflow:hidden;border:5px solid #f1e8ff;box-shadow:0 5px 15px rgba(106,48,147,0.2);">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ganapathi Vuta" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 style="font-size:1.5rem;margin-bottom:10px;color:#6a3093;">Ganapathi Vuta</h3>
+        <p style="color:#9c7bbf;font-weight:500;margin-bottom:15px;">CTO</p>
+        <p style="color:#666;line-height:1.6;">Technology innovator with expertise in machine learning and scalable architecture.</p>
+        <div style="margin-top:20px;display:flex;justify-content:center;gap:15px;">
+          <a href="#" style="width:40px;height:40px;background:#f1e8ff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6a3093;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='#6a3093';this.style.color='#fff'" onmouseout="this.style.background='#f1e8ff';this.style.color='#6a3093'">in</a>
+          <a href="#" style="width:40px;height:40px;background:#f1e8ff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6a3093;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='#6a3093';this.style.color='#fff'" onmouseout="this.style.background='#f1e8ff';this.style.color='#6a3093'">@</a>
+        </div>
+      </div>
+      
+      <!-- Leader 3 -->
+      <div style="background:#fff;border-radius:15px;padding:30px;text-align:center;transition:all 0.4s ease;box-shadow:0 10px 30px rgba(106,48,147,0.15);position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 40px rgba(106,48,147,0.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 10px 30px rgba(106,48,147,0.15)'">
+        <div style="width:150px;height:150px;border-radius:50%;margin:0 auto 25px;overflow:hidden;border:5px solid #f1e8ff;box-shadow:0 5px 15px rgba(106,48,147,0.2);">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Naveen Teja" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 style="font-size:1.5rem;margin-bottom:10px;color:#6a3093;">Naveen Teja</h3>
+        <p style="color:#9c7bbf;font-weight:500;margin-bottom:15px;">Chief Data Scientist</p>
+        <p style="color:#666;line-height:1.6;">Data science pioneer developing cutting-edge algorithms for predictive analytics.</p>
+        <div style="margin-top:20px;display:flex;justify-content:center;gap:15px;">
+          <a href="#" style="width:40px;height:40px;background:#f1e8ff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6a3093;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='#6a3093';this.style.color='#fff'" onmouseout="this.style.background='#f1e8ff';this.style.color='#6a3093'">in</a>
+          <a href="#" style="width:40px;height:40px;background:#f1e8ff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6a3093;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='#6a3093';this.style.color='#fff'" onmouseout="this.style.background='#f1e8ff';this.style.color='#6a3093'">@</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global Presence Section -->
+<section style="padding:100px 20px;background:#f9f5ff;position:relative;overflow:hidden;">
+  <!-- Decorative blur effect -->
+  <div style="position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(106,48,147,0.1) 0%,transparent 70%);filter:blur(30px);"></div>
+
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:2;">
+    <h2 style="font-size:2.8rem;text-align:center;margin-bottom:15px;color:#6a3093;">Global Presence</h2>
+    <p style="text-align:center;max-width:700px;margin:0 auto 60px;font-size:1.1rem;color:#666;">
+      Serving clients across 5 continents with 12 offices worldwide
+    </p>
+
+    <!-- World map with markers -->
+    <div style="position:relative;height:500px;
+      background:url('images/worldMap.png') center/contain no-repeat;
+      border-radius:20px;overflow:hidden;">
+
+      <!-- FontAwesome icons must be loaded -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+      <!-- Marker: Hyderabad -->
+      <i class="fas fa-map-marker-alt" title="Hyderabad, India"
+        style="position:absolute;top:48.2%;left:65.2%;color:#6a3093;font-size:26px;transform:translate(-50%, -50%);"></i>
+
+      <!-- Marker: New York -->
+      <i class="fas fa-map-marker-alt" title="New York, USA"
+        style="position:absolute;top:32.3%;left:28.7%;color:#6a3093;font-size:26px;transform:translate(-50%, -50%);"></i>
+
+      <!-- Marker: San Francisco -->
+      <i class="fas fa-map-marker-alt" title="San Francisco, USA"
+        style="position:absolute;top:33.8%;left:23.4%;color:#6a3093;font-size:26px;transform:translate(-50%, -50%);"></i>
+
+      <!-- Marker: Toronto -->
+      <i class="fas fa-map-marker-alt" title="Toronto, Canada"
+        style="position:absolute;top:26.8%;left:27.2%;color:#6a3093;font-size:26px;transform:translate(-50%, -50%);"></i>
+
+      <!-- Marker: London -->
+      <i class="fas fa-map-marker-alt" title="London, UK"
+        style="position:absolute;top:27.5%;left:45.4%;color:#6a3093;font-size:26px;transform:translate(-50%, -50%);"></i>
+
+      <!-- Marker: Berlin -->
+      <i class="fas fa-map-marker-alt" title="Berlin, Germany"
+        style="position:absolute;top:28.2%;left:48.3%;color:#6a3093;font-size:26px;transform:translate(-50%, -50%);"></i>
+
+      <!-- Marker: Dubai -->
+      <i class="fas fa-map-marker-alt" title="Dubai, UAE"
+        style="position:absolute;top:38.8%;left:58.9%;color:#6a3093;font-size:26px;transform:translate(-50%, -50%);"></i>
+
+      <!-- Marker: Singapore -->
+      <i class="fas fa-map-marker-alt" title="Singapore"
+        style="position:absolute;top:60.2%;left:79.4%;color:#6a3093;font-size:26px;transform:translate(-50%, -50%);"></i>
+
+      <!-- Marker: Sydney -->
+      <i class="fas fa-map-marker-alt" title="Sydney, Australia"
+        style="position:absolute;top:78.6%;left:75.1%;color:#6a3093;font-size:26px;transform:translate(-50%, -50%);"></i>
+    </div>
+
+
+    <!-- Office Lists -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:60px;">
+      <!-- Asia-Pacific -->
+      <div style="background:#fff;border-radius:15px;padding:30px;box-shadow:0 10px 30px rgba(106,48,147,0.1);transition:all 0.3s ease;">
+        <h3 style="font-size:1.5rem;color:#6a3093;margin-bottom:15px;display:flex;align-items:center;">
+          <span style="display:inline-block;width:20px;height:20px;background:#6a3093;border-radius:50%;margin-right:10px;"></span> Asia-Pacific
+        </h3>
+        <ul style="color:#666;padding-left:20px;">
+          <li>Hyderabad, India (HQ)</li>
+          <li>Singapore</li>
+          <li>Sydney, Australia</li>
+        </ul>
+      </div>
+      
+      <!-- Americas -->
+      <div style="background:#fff;border-radius:15px;padding:30px;box-shadow:0 10px 30px rgba(106,48,147,0.1);transition:all 0.3s ease;">
+        <h3 style="font-size:1.5rem;color:#6a3093;margin-bottom:15px;display:flex;align-items:center;">
+          <span style="display:inline-block;width:20px;height:20px;background:#6a3093;border-radius:50%;margin-right:10px;"></span> Americas
+        </h3>
+        <ul style="color:#666;padding-left:20px;">
+          <li>New York, USA</li>
+          <li>San Francisco, USA</li>
+          <li>Toronto, Canada</li>
+        </ul>
+      </div>
+
+      <!-- EMEA -->
+      <div style="background:#fff;border-radius:15px;padding:30px;box-shadow:0 10px 30px rgba(106,48,147,0.1);transition:all 0.3s ease;">
+        <h3 style="font-size:1.5rem;color:#6a3093;margin-bottom:15px;display:flex;align-items:center;">
+          <span style="display:inline-block;width:20px;height:20px;background:#6a3093;border-radius:50%;margin-right:10px;"></span> EMEA
+        </h3>
+        <ul style="color:#666;padding-left:20px;">
+          <li>London, UK</li>
+          <li>Berlin, Germany</li>
+          <li>Dubai, UAE</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Awards & Recognition Section -->
+<section style="padding:100px 20px;background:#fff;position:relative;overflow:hidden;">
+  <!-- Decorative elements -->
+  <div style="position:absolute;bottom:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(106,48,147,0.1) 0%,transparent 70%);filter:blur(30px);"></div>
+  
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:2;">
+    <h2 style="font-size:2.8rem;text-align:center;margin-bottom:15px;color:#6a3093;">Awards & Recognition</h2>
+    <p style="text-align:center;max-width:700px;margin:0 auto 60px;font-size:1.1rem;color:#666;">Our commitment to excellence has been recognized by industry leaders worldwide</p>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;">
+      <!-- Award 1 -->
+      <div style="background:#fff;border-radius:15px;padding:30px;box-shadow:0 10px 30px rgba(106,48,147,0.1);transition:all 0.3s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-10px)';this.querySelector('.award-overlay').style.opacity='1'" onmouseout="this.style.transform='translateY(0)';this.querySelector('.award-overlay').style.opacity='0'">
+        <div style="width:80px;height:80px;background:#f1e8ff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;">🏆</div>
+        <h3 style="font-size:1.3rem;text-align:center;color:#6a3093;margin-bottom:15px;">Best Tech Employer 2023</h3>
+        <p style="text-align:center;color:#666;font-size:0.9rem;">Recognized by Tech Awards Global for our workplace culture and employee benefits</p>
+        <div class="award-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(106,48,147,0.9),rgba(162,89,255,0.9));display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;">
+          <a href="#" style="color:#fff;text-decoration:none;font-weight:600;padding:10px 20px;border:2px solid #fff;border-radius:50px;">Learn More</a>
+        </div>
+      </div>
+      
+      <!-- Award 2 -->
+      <div style="background:#fff;border-radius:15px;padding:30px;box-shadow:0 10px 30px rgba(106,48,147,0.1);transition:all 0.3s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-10px)';this.querySelector('.award-overlay').style.opacity='1'" onmouseout="this.style.transform='translateY(0)';this.querySelector('.award-overlay').style.opacity='0'">
+        <div style="width:80px;height:80px;background:#f1e8ff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;">🌟</div>
+        <h3 style="font-size:1.3rem;text-align:center;color:#6a3093;margin-bottom:15px;">Innovation Excellence</h3>
+        <p style="text-align:center;color:#666;font-size:0.9rem;">Awarded by Global Innovation Forum for our AI-powered solutions</p>
+        <div class="award-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(106,48,147,0.9),rgba(162,89,255,0.9));display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;">
+          <a href="#" style="color:#fff;text-decoration:none;font-weight:600;padding:10px 20px;border:2px solid #fff;border-radius:50px;">Learn More</a>
+        </div>
+      </div>
+      
+      <!-- Award 3 -->
+      <div style="background:#fff;border-radius:15px;padding:30px;box-shadow:0 10px 30px rgba(106,48,147,0.1);transition:all 0.3s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-10px)';this.querySelector('.award-overlay').style.opacity='1'" onmouseout="this.style.transform='translateY(0)';this.querySelector('.award-overlay').style.opacity='0'">
+        <div style="width:80px;height:80px;background:#f1e8ff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;">🏅</div>
+        <h3 style="font-size:1.3rem;text-align:center;color:#6a3093;margin-bottom:15px;">Sustainability Leader</h3>
+        <p style="text-align:center;color:#666;font-size:0.9rem;">Recognized by Green Tech Alliance for our eco-friendly initiatives</p>
+        <div class="award-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(106,48,147,0.9),rgba(162,89,255,0.9));display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;">
+          <a href="#" style="color:#fff;text-decoration:none;font-weight:600;padding:10px 20px;border:2px solid #fff;border-radius:50px;">Learn More</a>
+        </div>
+      </div>
+      
+      <!-- Award 4 -->
+      <div style="background:#fff;border-radius:15px;padding:30px;box-shadow:0 10px 30px rgba(106,48,147,0.1);transition:all 0.3s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-10px)';this.querySelector('.award-overlay').style.opacity='1'" onmouseout="this.style.transform='translateY(0)';this.querySelector('.award-overlay').style.opacity='0'">
+        <div style="width:80px;height:80px;background:#f1e8ff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;">🚀</div>
+        <h3 style="font-size:1.3rem;text-align:center;color:#6a3093;margin-bottom:15px;">Fastest Growing Tech</h3>
+        <p style="text-align:center;color:#666;font-size:0.9rem;">Ranked #5 in Deloitte Technology Fast 500 for APAC region</p>
+        <div class="award-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(106,48,147,0.9),rgba(162,89,255,0.9));display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;">
+          <a href="#" style="color:#fff;text-decoration:none;font-weight:600;padding:10px 20px;border:2px solid #fff;border-radius:50px;">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section style="padding:100px 20px;background:linear-gradient(135deg,#6a3093,#a259ff);color:#fff;text-align:center;">
+  <div style="max-width:800px;margin:0 auto;">
+    <h2 style="font-size:2.5rem;margin-bottom:20px;">Ready to Transform Your Business?</h2>
+    <p style="font-size:1.2rem;margin-bottom:40px;opacity:0.9;">Discover how Optic Bee's innovative solutions can drive your digital transformation journey.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;">
+      <a href="contact.html" style="display:inline-block;background:#fff;color:#6a3093;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;box-shadow:0 5px 15px rgba(0,0,0,0.2);transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 5px 15px rgba(0,0,0,0.2)'">Contact Us</a>
+      <a href="services.html" style="display:inline-block;background:transparent;color:#fff;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;border:2px solid #fff;transition:all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background:#050505;color:#fff;padding:60px 20px 30px;">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;">
+    <div>
+      <h3 style="font-size:1.3rem;margin-bottom:20px;color:#a259ff;">Optic Bee</h3>
+      <p style="color:#aaa;line-height:1.6;font-size:0.9rem;">Pioneering digital transformation through innovation, expertise, and cutting-edge technology solutions.</p>
+    </div>
+    
+    <div>
+      <h3 style="font-size:1.3rem;margin-bottom:20px;color:#a259ff;">Quick Links</h3>
+      <ul style="list-style:none;padding:0;margin:0;color:#aaa;">
+        <li style="margin-bottom:10px;"><a href="index.html" style="color:#aaa;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">Home</a></li>
+        <li style="margin-bottom:10px;"><a href="about.html" style="color:#aaa;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">About</a></li>
+        <li style="margin-bottom:10px;"><a href="services.html" style="color:#aaa;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">Services</a></li>
+        <li style="margin-bottom:10px;"><a href="contact.html" style="color:#aaa;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h3 style="font-size:1.3rem;margin-bottom:20px;color:#a259ff;">Contact Us</h3>
+      <address style="font-style:normal;color:#aaa;line-height:1.6;font-size:0.9rem;">
+        plot 21, Flat 102, CVR Residency,<br>
+        Pragathi Nagar, Hyderabad-500090<br>
+        <a href="mailto:info@opticbee.com" style="color:#aaa;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">info@opticbee.com</a><br>
+        <a href="tel:+918067556677" style="color:#aaa;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">+91 80 6755 6677</a>
+      </address>
+    </div>
+    
+    <div>
+      <h3 style="font-size:1.3rem;margin-bottom:20px;color:#a259ff;">Follow Us</h3>
+      <div style="display:flex;gap:15px;">
+        <a href="#" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='#4267B2'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">f</a>
+        <a href="#" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='#1DA1F2'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">t</a>
+        <a href="#" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='#0077B5'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">in</a>
+      </div>
+    </div>
+  </div>
+  
+  <div style="max-width:1200px;margin:60px auto 0;padding-top:30px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;color:#aaa;font-size:0.8rem;">
+    <p>&copy; 2023 Optic Bee Soft Tech Pvt Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Animate hero section elements on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('hero-title').style.opacity = '1';
+    document.getElementById('hero-title').style.transform = 'translateY(0)';
+    
+    document.getElementById('hero-subtitle').style.opacity = '1';
+    document.getElementById('hero-subtitle').style.transform = 'translateY(0)';
+    
+    document.getElementById('hero-button').style.opacity = '1';
+    document.getElementById('hero-button').style.transform = 'translateY(0)';
+    
+    // Show map marker tooltips on hover
+    const markers = document.querySelectorAll('[style*="position:absolute;top:30%"]');
+    markers.forEach(marker => {
+      marker.addEventListener('mouseover', function() {
+        this.querySelector('div').style.display = 'block';
+      });
+      marker.addEventListener('mouseout', function() {
+        this.querySelector('div').style.display = 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

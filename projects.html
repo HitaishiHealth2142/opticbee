@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Portfolio - Hitaishi Technologies</title>
+</head>
+<body style="max-width: 100%; margin:0;padding:0;font-family:'Inter','Helvetica Neue',Arial,sans-serif;background:linear-gradient(135deg,#f0f4ff,#e6edfa);color:#1a1a1a;line-height:1.7;">
+
+
+
+<!-- Navbar -->
+<header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+    <!-- Logo -->
+    <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+      <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+      <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
+
+    <!-- Desktop Navigation -->
+    <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+      <a href="/" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="Projects.html" class="nav-link">Projects</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="affiliate.html" class="nav-link">Affiliates</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      
+      <!-- Icons -->
+      <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+        <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+        <a href="register.html" class="nav-icon" title="Register">👤</a>
+        <button id="searchToggle" class="nav-icon">🔍</button>
+        
+        <!-- Desktop Language Selector -->
+        <div id="customDropdown" style="position:relative; user-select:none;">
+          <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+            <span id="currentLanguage">EN</span>
+            <span style="margin-left:5px;">▼</span>
+          </div>
+          <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="products.html" class="mobile-nav-link">Products</a>
+      <a href="Projects.html" class="mobile-nav-link">Projects</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+      <a href="partners-page.html" class="mobile-nav-link">Insights</a>
+      <a href="partners.html" class="mobile-nav-link">Partners</a>
+      <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+      <a href="industries.html" class="mobile-nav-link">Industries</a>
+      <a href="resources.html" class="mobile-nav-link">Resources</a>
+      
+      <div style="display:flex; justify-content:space-around; margin-top:15px;">
+        <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+        <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+      </div>
+      
+      <!-- Mobile Language Selector -->
+      <div style="margin-top:15px;">
+        <select id="mobileLanguageSelect" class="mobile-language-selector">
+          <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+          <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+          <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+          <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+          <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+          <!-- More languages will be added by JavaScript -->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Container -->
+  <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+    <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+  </div>
+</header>
+
+<style>
+  /* Common Styles */
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+  
+  .nav-icon {
+    color: white;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Styles */
+  .mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .mobile-nav-icon {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .mobile-language-selector {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  /* Language dropdown options */
+  #optionsList div {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #optionsList div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #optionsList img {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .nav-link {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #mobileMenuButton {
+      display: block;
+    }
+    
+    #desktopNav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Country/language data
+  const countries = [
+    {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+    {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+    {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+    {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+    {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+    {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+    {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+    {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+    {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+    {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+    {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+  ];
+
+  // Initialize language functionality
+  function initLanguageSelection() {
+    // Populate desktop dropdown
+    const optionsList = document.getElementById('optionsList');
+    countries.forEach(country => {
+      const option = document.createElement('div');
+      option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+      option.dataset.code = country.code;
+      option.dataset.flag = country.flag;
+      option.dataset.name = country.name;
+      option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+      optionsList.appendChild(option);
+    });
+
+    // Populate mobile dropdown
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    countries.forEach(country => {
+      if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+        const option = document.createElement('option');
+        option.value = country.code;
+        option.textContent = `${country.name} (${country.country})`;
+        option.dataset.flag = country.flag;
+        mobileSelect.appendChild(option);
+      }
+    });
+
+    // Set up event listeners
+    document.getElementById('selectedOption').onclick = function() {
+      optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+    };
+
+    document.getElementById('mobileLanguageSelect').onchange = function() {
+      const selectedOption = this.options[this.selectedIndex];
+      selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#customDropdown')) {
+        optionsList.style.display = 'none';
+      }
+    });
+
+    // Detect user's language
+    detectUserLanguage();
+  }
+
+  // Select language function
+  function selectLanguage(code, flag, name) {
+    // Update desktop display
+    document.getElementById('currentFlag').src = flag;
+    document.getElementById('currentLanguage').textContent = code.toUpperCase();
+    document.getElementById('optionsList').style.display = 'none';
+    
+    // Update mobile display
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    mobileSelect.value = code;
+    
+    // Store selection
+    localStorage.setItem('userLanguage', code);
+    localStorage.setItem('userLanguageFlag', flag);
+    localStorage.setItem('userLanguageName', name);
+    
+    // Change Google Translate language
+    changeGoogleTranslateLanguage(code);
+  }
+
+  // Detect user's language
+  function detectUserLanguage() {
+    // Check for stored preference first
+    const storedLanguage = localStorage.getItem('userLanguage');
+    if (storedLanguage) {
+      const storedFlag = localStorage.getItem('userLanguageFlag');
+      const storedName = localStorage.getItem('userLanguageName');
+      selectLanguage(storedLanguage, storedFlag, storedName);
+      return;
+    }
+
+    // Try to detect from browser
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    if (browserLanguage) {
+      const mainLang = browserLanguage.split('-')[0];
+      const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+      if (matchedCountry) {
+        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        return;
+      }
+    }
+
+    // Fallback to IP detection
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const countryCode = data.country;
+        const matchedCountry = countries.find(c => 
+          c.country.toLowerCase() === data.country_name.toLowerCase() || 
+          c.code === data.languages?.split(',')[0]
+        );
+        if (matchedCountry) {
+          selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        } else {
+          // Default to English
+          selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+        }
+      })
+      .catch(() => {
+        // Default to English if all detection fails
+        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+      });
+  }
+
+  // Change Google Translate language
+  function changeGoogleTranslateLanguage(languageCode) {
+    if (typeof google !== 'undefined' && google.translate) {
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = languageCode;
+        combo.dispatchEvent(new Event('change'));
+      }
+    } else {
+      // Retry after a delay if Google Translate isn't loaded yet
+      setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+    }
+  }
+
+  // Initialize Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      includedLanguages: countries.map(c => c.code).join(',')
+    }, 'google_translate_element');
+  }
+
+  // Navbar functions
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function toggleSearch() {
+    const searchContainer = document.getElementById('searchContainer');
+    searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function handleResponsive() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('mobileMenuButton').style.display = 'block';
+      document.getElementById('desktopNav').style.display = 'none';
+    } else {
+      document.getElementById('mobileMenuButton').style.display = 'none';
+      document.getElementById('desktopNav').style.display = 'flex';
+      document.getElementById('mobileMenu').style.display = 'none';
+      document.getElementById('searchContainer').style.display = 'none';
+    }
+  }
+
+  // Initialize everything when DOM loads
+  document.addEventListener('DOMContentLoaded', function() {
+    initLanguageSelection();
+    handleResponsive();
+    document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+    window.addEventListener('resize', handleResponsive);
+    
+    // Load Google Translate script
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(script);
+  });
+</script>
+
+<!-- Google Translate element (hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+
+    <!-- Portfolio Showcase Section -->
+    <div style="max-width:1140px;margin:40px auto;padding:0 15px;">
+        <h2 style="text-align:center;font-size:2.8em;font-weight:700;color:#1e3c72;margin-bottom:60px;position:relative;animation:fadeIn 1.2s ease;">Featured Case Studies</h2>
+        
+        <!-- Case Study Filter -->
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-bottom:40px;">
+            <button style="padding:10px 20px;background:linear-gradient(90deg,#2a5298,#3b82f6);color:white;border:none;border-radius:6px;font-weight:600;cursor:pointer;transition:all 0.3s ease;box-shadow:0 4px 8px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">All Projects</button>
+            <button style="padding:10px 20px;background:white;color:#1e3c72;border:1px solid #ddd;border-radius:6px;font-weight:600;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 12px rgba(0,0,0,0.1)';this.style.background='#f5f7ff'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.background='white'">AI Solutions</button>
+            <button style="padding:10px 20px;background:white;color:#1e3c72;border:1px solid #ddd;border-radius:6px;font-weight:600;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 12px rgba(0,0,0,0.1)';this.style.background='#f5f7ff'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.background='white'">IoT Platforms</button>
+            <button style="padding:10px 20px;background:white;color:#1e3c72;border:1px solid #ddd;border-radius:6px;font-weight:600;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 12px rgba(0,0,0,0.1)';this.style.background='#f5f7ff'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.background='white'">Enterprise Solutions</button>
+            <button style="padding:10px 20px;background:white;color:#1e3c72;border:1px solid #ddd;border-radius:6px;font-weight:600;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 12px rgba(0,0,0,0.1)';this.style.background='#f5f7ff'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.background='white'">Healthcare Tech</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:30px;margin-bottom:60px;">
+            <!-- Project Card 1 -->
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.1);transition:all 0.4s ease;position:relative;animation:fadeInUp 0.8s ease forwards;opacity:0;animation-delay:0.2s;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'">
+                <div style="position:relative;overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1140&h=285&q=80" alt="Consulting Banner" style="width:100%;height:200px;object-fit:cover;transition:transform 0.5s ease;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:20px;color:white;">
+                        <h3 style="margin:0;font-size:1.5em;font-weight:700;">Hitaishi Consulting</h3>
+                        <p style="margin:5px 0 0;opacity:0.9;">AI-Powered Strategic Advisory</p>
+                    </div>
+                    <div style="position:absolute;top:15px;right:15px;background:rgba(30,60,114,0.9);color:white;padding:5px 10px;border-radius:4px;font-size:0.9em;font-weight:600;">Case Study</div>
+                </div>
+                <div style="padding:20px;">
+                    <p style="color:#333;margin-bottom:15px;">Transformed decision-making for GlobalFin Corp with predictive analytics and automated strategic planning.</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+                        <span style="background:#f0f4ff;color:#1e3c72;padding:4px 10px;border-radius:4px;font-size:0.8em;font-weight:600;">AI/ML</span>
+                        <span style="background:#f0f4ff;color:#1e3c72;padding:4px 10px;border-radius:4px;font-size:0.8em;font-weight:600;">Data Analytics</span>
+                        <span style="background:#f0f4ff;color:#1e3c72;padding:4px 10px;border-radius:4px;font-size:0.8em;font-weight:600;">Cloud</span>
+                    </div>
+                    <a href="#" style="display:inline-block;text-decoration:none;color:white;background:linear-gradient(90deg,#2a5298,#3b82f6);padding:10px 24px;border-radius:6px;font-weight:600;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)';this.style.background='linear-gradient(90deg,#1e3c72,#2a5298)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.background='linear-gradient(90deg,#2a5298,#3b82f6)'">View Case Study</a>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.1);transition:all 0.4s ease;position:relative;animation:fadeInUp 0.8s ease forwards;opacity:0;animation-delay:0.3s;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'">
+                <div style="position:relative;overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1516321310763-4b6c0b47c0e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1140&h=285&q=80" alt="Technologies Banner" style="width:100%;height:200px;object-fit:cover;transition:transform 0.5s ease;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:20px;color:white;">
+                        <h3 style="margin:0;font-size:1.5em;font-weight:700;">LogiTech IoT Platform</h3>
+                        <p style="margin:5px 0 0;opacity:0.9;">Digital Transformation for Logistics</p>
+                    </div>
+                    <div style="position:absolute;top:15px;right:15px;background:rgba(30,60,114,0.9);color:white;padding:5px 10px;border-radius:4px;font-size:0.9em;font-weight:600;">Portfolio</div>
+                </div>
+                <div style="padding:20px;">
+                    <p style="color:#333;margin-bottom:15px;">Automated workflows and real-time monitoring for LogiTech Solutions' global operations.</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+                        <span style="background:#f0f4ff;color:#1e3c72;padding:4px 10px;border-radius:4px;font-size:0.8em;font-weight:600;">IoT</span>
+                        <span style="background:#f0f4ff;color:#1e3c72;padding:4px 10px;border-radius:4px;font-size:0.8em;font-weight:600;">Cloud</span>
+                        <span style="background:#f0f4ff;color:#1e3c72;padding:4px 10px;border-radius:4px;font-size:0.8em;font-weight:600;">Automation</span>
+                    </div>
+                    <a href="#" style="display:inline-block;text-decoration:none;color:white;background:linear-gradient(90deg,#2a5298,#3b82f6);padding:10px 24px;border-radius:6px;font-weight:600;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)';this.style.background='linear-gradient(90deg,#1e3c72,#2a5298)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.background='linear-gradient(90deg,#2a5298,#3b82f6)'">View Details</a>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.1);transition:all 0.4s ease;position:relative;animation:fadeInUp 0.8s ease forwards;opacity:0;animation-delay:0.4s;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'">
+                <div style="position:relative;overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1140&h=285&q=80" alt="Health Banner" style="width:100%;height:200px;object-fit:cover;transition:transform 0.5s ease;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:20px;color:white;">
+                        <h3 style="margin:0;font-size:1.5em;font-weight:700;">Hitaishi Health</h3>
+                        <p style="margin:5px 0 0;opacity:0.9;">AI-Powered Wellness Platform</p>
+                    </div>
+                    <div style="position:absolute;top:15px;right:15px;background:rgba(30,60,114,0.9);color:white;padding:5px 10px;border-radius:4px;font-size:0.9em;font-weight:600;">Case Study</div>
+                </div>
+                <div style="padding:20px;">
+                    <p style="color:#333;margin-bottom:15px;">Personalized wellness tracking and recommendations for FitLife's wearable devices.</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+                        <span style="background:#f0f4ff;color:#1e3c72;padding:4px 10px;border-radius:4px;font-size:0.8em;font-weight:600;">AI/ML</span>
+                        <span style="background:#f0f4ff;color:#1e3c72;padding:4px 10px;border-radius:4px;font-size:0.8em;font-weight:600;">Mobile</span>
+                        <span style="background:#f0f4ff;color:#1e3c72;padding:4px 10px;border-radius:4px;font-size:0.8em;font-weight:600;">Health Tech</span>
+                    </div>
+                    <a href="#" style="display:inline-block;text-decoration:none;color:white;background:linear-gradient(90deg,#2a5298,#3b82f6);padding:10px 24px;border-radius:6px;font-weight:600;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)';this.style.background='linear-gradient(90deg,#1e3c72,#2a5298)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.background='linear-gradient(90deg,#2a5298,#3b82f6)'">View Case Study</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Case Studies Section -->
+        <h2 style="text-align:center;font-size:2.8em;font-weight:700;color:#1e3c72;margin-bottom:60px;position:relative;animation:fadeIn 1.2s ease;">In-Depth Case Studies</h2>
+        
+        <!-- Case Study 1 -->
+        <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.1);margin-bottom:60px;animation:fadeInUp 0.8s ease forwards;opacity:0;animation-delay:0.2s;transition:all 0.4s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'">
+            <div style="display:flex;align-items:center;padding:30px;background:linear-gradient(90deg,#1e3c72,#2a5298);color:white;">
+                <img src="https://via.placeholder.com/80?text=CS" alt="Case Study" style="width:80px;height:80px;border-radius:8px;margin-right:25px;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                <div>
+                    <h2 style="font-size:2em;margin:0 0 10px;">GlobalFin Corp Digital Transformation</h2>
+                    <p style="margin:0;opacity:0.9;font-size:1.1em;">How Hitaishi Consulting revolutionized financial decision-making</p>
+                </div>
+            </div>
+            <div style="padding:40px;">
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-bottom:30px;">
+                    <div style="background:#f9faff;padding:20px;border-radius:8px;border-left:4px solid #3b82f6;">
+                        <h3 style="color:#1e3c72;margin-top:0;font-size:1.2em;">Challenge</h3>
+                        <p style="color:#333;">GlobalFin Corp faced slow decision-making processes with outdated analytics tools, leading to missed opportunities in fast-moving financial markets.</p>
+                    </div>
+                    <div style="background:#f9faff;padding:20px;border-radius:8px;border-left:4px solid #3b82f6;">
+                        <h3 style="color:#1e3c72;margin-top:0;font-size:1.2em;">Solution</h3>
+                        <p style="color:#333;">Implemented AI-powered predictive analytics platform with real-time data processing and customizable dashboards for different user roles.</p>
+                    </div>
+                    <div style="background:#f9faff;padding:20px;border-radius:8px;border-left:4px solid #3b82f6;">
+                        <h3 style="color:#1e3c72;margin-top:0;font-size:1.2em;">Impact</h3>
+                        <p style="color:#333;">30% faster decision-making, 25% improved client engagement, and $4M annual savings from optimized operations.</p>
+                    </div>
+                </div>
+                
+                <h3 style="font-size:1.4em;color:#1e3c72;margin:30px 0 15px;padding-bottom:10px;border-bottom:2px solid #f0f4ff;">Implementation Highlights</h3>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
+                    <div style="background:white;border:1px solid #eee;border-radius:8px;padding:20px;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 6px 16px rgba(0,0,0,0.1)';this.style.borderColor='#3b82f6'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='#eee'">
+                        <h4 style="color:#1e3c72;margin-top:0;display:flex;align-items:center;">
+                            <span style="display:inline-block;width:30px;height:30px;background:#1e3c72;color:white;border-radius:50%;text-align:center;line-height:30px;margin-right:10px;">1</span>
+                            Data Integration
+                        </h4>
+                        <p style="color:#555;">Consolidated 12 disparate data sources into unified data lake with real-time processing pipelines.</p>
+                    </div>
+                    <div style="background:white;border:1px solid #eee;border-radius:8px;padding:20px;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 6px 16px rgba(0,0,0,0.1)';this.style.borderColor='#3b82f6'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='#eee'">
+                        <h4 style="color:#1e3c72;margin-top:0;display:flex;align-items:center;">
+                            <span style="display:inline-block;width:30px;height:30px;background:#1e3c72;color:white;border-radius:50%;text-align:center;line-height:30px;margin-right:10px;">2</span>
+                            Predictive Modeling
+                        </h4>
+                        <p style="color:#555;">Developed 15 custom ML models for market trend prediction and risk assessment.</p>
+                    </div>
+                    <div style="background:white;border:1px solid #eee;border-radius:8px;padding:20px;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 6px 16px rgba(0,0,0,0.1)';this.style.borderColor='#3b82f6'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='#eee'">
+                        <h4 style="color:#1e3c72;margin-top:0;display:flex;align-items:center;">
+                            <span style="display:inline-block;width:30px;height:30px;background:#1e3c72;color:white;border-radius:50%;text-align:center;line-height:30px;margin-right:10px;">3</span>
+                            User Adoption
+                        </h4>
+                        <p style="color:#555;">Trained 250+ users across 5 departments with customized onboarding flows.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top:40px;background:#f9faff;padding:30px;border-radius:8px;border-left:4px solid #3b82f6;">
+                    <h3 style="color:#1e3c72;margin-top:0;font-size:1.3em;">Client Testimonial</h3>
+                    <p style="color:#333;font-style:italic;position:relative;padding-left:30px;">"Hitaishi's solution transformed our analytics capabilities. The predictive models have become indispensable to our daily operations, and the intuitive interface drove rapid adoption across our teams."</p>
+                    <p style="color:#1e3c72;font-weight:600;margin-top:15px;">— Sarah Johnson, CTO, GlobalFin Corp</p>
+                </div>
+                
+                <div style="text-align:center;margin-top:40px;">
+                    <a href="#" style="display:inline-block;text-decoration:none;color:white;background:linear-gradient(90deg,#2a5298,#3b82f6);padding:12px 30px;border-radius:6px;font-weight:600;font-size:1.1em;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(42,82,152,0.3);" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 16px rgba(42,82,152,0.4)';this.style.background='linear-gradient(90deg,#1e3c72,#2a5298)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(42,82,152,0.3)';this.style.background='linear-gradient(90deg,#2a5298,#3b82f6)'">Download Full Case Study (PDF)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Showcase Section -->
+        <h2 style="text-align:center;font-size:2.8em;font-weight:700;color:#1e3c72;margin-bottom:60px;position:relative;animation:fadeIn 1.2s ease;">Our Valued Clients</h2>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:60px;">
+            <div style="background:white;border-radius:8px;padding:30px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.05);transition:all 0.3s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.05)'">
+                <img src="https://via.placeholder.com/120x60?text=GlobalFin" alt="GlobalFin Corp" style="height:50px;margin-bottom:15px;filter:grayscale(100%) contrast(120%);transition:filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(100%) contrast(120%)'">
+                <p style="color:#555;margin:0;">Financial Services</p>
+                <p style="color:#1e3c72;font-weight:600;margin:5px 0 0;">Since 2021</p>
+            </div>
+            <div style="background:white;border-radius:8px;padding:30px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.05);transition:all 0.3s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.05)'">
+                <img src="https://via.placeholder.com/120x60?text=LogiTech" alt="LogiTech Solutions" style="height:50px;margin-bottom:15px;filter:grayscale(100%) contrast(120%);transition:filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(100%) contrast(120%)'">
+                <p style="color:#555;margin:0;">Logistics</p>
+                <p style="color:#1e3c72;font-weight:600;margin:5px 0 0;">Since 2020</p>
+            </div>
+            <div style="background:white;border-radius:8px;padding:30px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.05);transition:all 0.3s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.05)'">
+                <img src="https://via.placeholder.com/120x60?text=BuildCorp" alt="BuildCorp" style="height:50px;margin-bottom:15px;filter:grayscale(100%) contrast(120%);transition:filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(100%) contrast(120%)'">
+                <p style="color:#555;margin:0;">Construction</p>
+                <p style="color:#1e3c72;font-weight:600;margin:5px 0 0;">Since 2022</p>
+            </div>
+            <div style="background:white;border-radius:8px;padding:30px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.05);transition:all 0.3s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.05)'">
+                <img src="https://via.placeholder.com/120x60?text=RetailGiant" alt="RetailGiant Inc." style="height:50px;margin-bottom:15px;filter:grayscale(100%) contrast(120%);transition:filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(100%) contrast(120%)'">
+                <p style="color:#555;margin:0;">Retail</p>
+                <p style="color:#1e3c72;font-weight:600;margin:5px 0 0;">Since 2021</p>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div style="background:linear-gradient(135deg,#1e3c72,#2a5298);color:white;border-radius:12px;padding:60px 30px;text-align:center;margin-bottom:60px;box-shadow:0 8px 24px rgba(0,0,0,0.2);">
+            <h2 style="font-size:2.2em;margin-top:0;margin-bottom:40px;">By The Numbers</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;">
+                <div style="padding:20px;">
+                    <div style="font-size:3em;font-weight:700;margin-bottom:10px;color:#3b82f6;">150+</div>
+                    <p style="margin:0;font-size:1.1em;opacity:0.9;">Projects Completed</p>
+                </div>
+                <div style="padding:20px;">
+                    <div style="font-size:3em;font-weight:700;margin-bottom:10px;color:#3b82f6;">40+</div>
+                    <p style="margin:0;font-size:1.1em;opacity:0.9;">Industries Served</p>
+                </div>
+                <div style="padding:20px;">
+                    <div style="font-size:3em;font-weight:700;margin-bottom:10px;color:#3b82f6;">95%</div>
+                    <p style="margin:0;font-size:1.1em;opacity:0.9;">Client Retention</p>
+                </div>
+                <div style="padding:20px;">
+                    <div style="font-size:3em;font-weight:700;margin-bottom:10px;color:#3b82f6;">50+</div>
+                    <p style="margin:0;font-size:1.1em;opacity:0.9;">Technology Experts</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div style="text-align:center;margin-bottom:60px;">
+            <h2 style="font-size:2.2em;color:#1e3c72;margin-bottom:20px;">Ready to Start Your Project?</h2>
+            <p style="font-size:1.2em;color:#555;max-width:700px;margin:0 auto 30px;">Let's discuss how we can transform your business with cutting-edge technology solutions tailored to your needs.</p>
+            <a href="contact.html" style="display:inline-block;text-decoration:none;color:white;background:linear-gradient(90deg,#2a5298,#3b82f6);padding:15px 40px;border-radius:8px;font-weight:600;font-size:1.1em;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(42,82,152,0.3);" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 16px rgba(42,82,152,0.4)';this.style.background='linear-gradient(90deg,#1e3c72,#2a5298)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(42,82,152,0.3)';this.style.background='linear-gradient(90deg,#2a5298,#3b82f6)'">Get in Touch</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:linear-gradient(90deg,#1e3c72,#2a5298);color:#ffffff;text-align:center;padding:40px 25px;margin-top:60px;box-shadow:0 -4px 12px rgba(0,0,0,0.1);">
+        <div style="max-width:1140px;margin:0 auto;">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:left;margin-bottom:30px;">
+                <div>
+                    <h3 style="color:#3b82f6;margin-top:0;margin-bottom:15px;">Hitaishi</h3>
+                    <p style="opacity:0.8;line-height:1.6;">Transforming businesses through innovative technology solutions and strategic consulting.</p>
+                </div>
+                <div>
+                    <h3 style="color:#3b82f6;margin-top:0;margin-bottom:15px;">Quick Links</h3>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:8px;"><a href="index.html" style="color:white;text-decoration:none;opacity:0.8;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Home</a></li>
+                        <li style="margin-bottom:8px;"><a href="about.html" style="color:white;text-decoration:none;opacity:0.8;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">About Us</a></li>
+                        <li style="margin-bottom:8px;"><a href="services.html" style="color:white;text-decoration:none;opacity:0.8;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Services</a></li>
+                        <li style="margin-bottom:8px;"><a href="projects.html" style="color:white;text-decoration:none;opacity:1;font-weight:600;">Projects</a></li>
+                        <li style="margin-bottom:8px;"><a href="contact.html" style="color:white;text-decoration:none;opacity:0.8;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:#3b82f6;margin-top:0;margin-bottom:15px;">Contact Us</h3>
+                    <p style="opacity:0.8;margin:0 0 10px;">123 Tech Park, Innovation City</p>
+                    <p style="opacity:0.8;margin:0 0 10px;">info@hitaishi.com</p>
+                    <p style="opacity:0.8;margin:0;">+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;">
+                <p style="margin:0;opacity:0.8;">© 2025 Hitaishi Technologies. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animation Keyframes -->
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</body>
+</html>

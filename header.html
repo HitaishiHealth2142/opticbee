@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flag Icons Country-Language Google Translate</title>
+</head>
+<body style="margin:0; font-family: Arial, sans-serif;">
+
+<!-- Navbar -->
+<!-- Navbar -->
+<!-- Navbar -->
+  <header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #000000, #6a1b9a);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 20px;max-width:1200px;margin:auto;">
+
+      <!-- Animated Logo -->
+      <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Logo" style="height:40px;width:auto;transition:transform 0.3s ease;">
+        <div id="logoText" style="display:none;margin-top:5px;color:white;font-weight:bold;font-size:18px;text-shadow:1px 1px 2px rgba(0,0,0,0.3);">OPTIC BEE</div>
+      </div>
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <!-- Navigation Links -->
+    <a href="#" style="color: white; text-decoration: none; padding: 8px 12px; transition: all 0.2s; border-radius: 4px;" 
+       onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'" 
+       onmouseout="this.style.backgroundColor='transparent'">Home</a>
+    
+    <a href="#" style="color: white; text-decoration: none; padding: 8px 12px; transition: all 0.2s; border-radius: 4px;" 
+       onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'" 
+       onmouseout="this.style.backgroundColor='transparent'">About</a>
+    
+    <!-- Products Dropdown -->
+    <div style="position: relative;" onmouseover="showDropdown('productsDropdown')" onmouseout="hideDropdown('productsDropdown')">
+      <button style="background: none; border: none; color: white; padding: 8px 12px; cursor: pointer; transition: all 0.2s; border-radius: 4px;" 
+              onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'">Products ▼</button>
+      <div id="productsDropdown" style="position: absolute; background: white; color: black; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: none; min-width: 180px; z-index: 1001; right: 0;">
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Software Suite</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">AI Tools</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Cloud Solutions</a>
+      </div>
+    </div>
+
+    <!-- Projects Dropdown -->
+    <div style="position: relative;" onmouseover="showDropdown('projectsDropdown')" onmouseout="hideDropdown('projectsDropdown')">
+      <button style="background: none; border: none; color: white; padding: 8px 12px; cursor: pointer; transition: all 0.2s; border-radius: 4px;" 
+              onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'">Projects ▼</button>
+      <div id="projectsDropdown" style="position: absolute; background: white; color: black; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: none; min-width: 180px; z-index: 1001; right: 0;">
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Case Studies</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Portfolio</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Client Work</a>
+      </div>
+    </div>
+
+    <!-- Services Dropdown -->
+    <div style="position: relative;" onmouseover="showDropdown('servicesDropdown')" onmouseout="hideDropdown('servicesDropdown')">
+      <button style="background: none; border: none; color: white; padding: 8px 12px; cursor: pointer; transition: all 0.2s; border-radius: 4px;" 
+              onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'">Services ▼</button>
+      <div id="servicesDropdown" style="position: absolute; background: white; color: black; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: none; min-width: 180px; z-index: 1001; right: 0;">
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Web Design</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Development</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Consulting</a>
+      </div>
+    </div>
+
+    <!-- Services Dropdown -->
+    <div style="position: relative;" onmouseover="showDropdown('servicesDropdown')" onmouseout="hideDropdown('servicesDropdown')">
+      <button style="background: none; border: none; color: white; padding: 8px 12px; cursor: pointer; transition: all 0.2s; border-radius: 4px;" 
+              onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'">Services ▼</button>
+      <div id="servicesDropdown" style="position: absolute; background: white; color: black; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: none; min-width: 180px; z-index: 1001; right: 0;">
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Web Design</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Development</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Consulting</a>
+      </div>
+    </div>
+        <!-- Services Dropdown -->
+    <div style="position: relative;" onmouseover="showDropdown('servicesDropdown')" onmouseout="hideDropdown('servicesDropdown')">
+      <button style="background: none; border: none; color: white; padding: 8px 12px; cursor: pointer; transition: all 0.2s; border-radius: 4px;" 
+              onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'">Services ▼</button>
+      <div id="servicesDropdown" style="position: absolute; background: white; color: black; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: none; min-width: 180px; z-index: 1001; right: 0;">
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Web Design</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Development</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Consulting</a>
+      </div>
+    </div>
+        <!-- Services Dropdown -->
+    <div style="position: relative;" onmouseover="showDropdown('servicesDropdown')" onmouseout="hideDropdown('servicesDropdown')">
+      <button style="background: none; border: none; color: white; padding: 8px 12px; cursor: pointer; transition: all 0.2s; border-radius: 4px;" 
+              onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'">Services ▼</button>
+      <div id="servicesDropdown" style="position: absolute; background: white; color: black; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: none; min-width: 180px; z-index: 1001; right: 0;">
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Web Design</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Development</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Consulting</a>
+      </div>
+    </div>
+        <!-- Services Dropdown -->
+    <div style="position: relative;" onmouseover="showDropdown('servicesDropdown')" onmouseout="hideDropdown('servicesDropdown')">
+      <button style="background: none; border: none; color: white; padding: 8px 12px; cursor: pointer; transition: all 0.2s; border-radius: 4px;" 
+              onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'">Services ▼</button>
+      <div id="servicesDropdown" style="position: absolute; background: white; color: black; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: none; min-width: 180px; z-index: 1001; right: 0;">
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Web Design</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Development</a>
+        <a href="#" style="display: block; padding: 10px 15px; color: #333; text-decoration: none; transition: all 0.2s;" 
+           onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.paddingLeft='20px'" 
+           onmouseout="this.style.backgroundColor='white'; this.style.paddingLeft='15px'">Consulting</a>
+      </div>
+    </div>
+    <!-- Search Button -->
+    <div style="position: relative;">
+      <input type="text" placeholder="Search..." style="padding: 8px 15px; border-radius: 20px; border: none; min-width: 200px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);">
+      <button style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #9c27b0; cursor: pointer; font-weight: bold;">🔍</button>
+    </div>
+
+    <!-- Language Dropdown (unchanged) -->
+    <div id="customDropdown" style="position: relative; user-select:none;">
+      <div id="selectedOption" 
+           style="background:rgba(0,0,0,0.2); padding: 8px 15px; cursor:pointer; min-width: 180px; display: flex; align-items: center; gap:8px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3);">
+        <img src="https://flagcdn.com/us.svg" alt="US Flag" style="width:24px; height:18px; object-fit:cover;"/>
+        <span>United States</span>
+        <span style="margin-left:auto;">▼</span>
+      </div>
+      <div id="optionsList" 
+           style="position: absolute; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top: 2px; max-height: 320px; overflow-y:auto; width: 100%; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display:none; z-index: 1000;">
+        <!-- options inserted by JS -->
+      </div>
+    </div>
+  </div>
+</div>
+  </header>
+<script>
+  // Generalized dropdown functions
+  function showDropdown(dropdownId) {
+    document.getElementById(dropdownId).style.display = 'block';
+  }
+  
+  function hideDropdown(dropdownId) {
+    document.getElementById(dropdownId).style.display = 'none';
+  }
+
+  // Logo animation (existing)
+  document.getElementById('companyLogo').addEventListener('click', function() {
+    this.style.transform = 'translateY(10px)';
+    this.style.opacity = '0.7';
+    setTimeout(() => {
+      this.style.transform = 'translateY(0)';
+      this.style.opacity = '1';
+      this.style.color = getRandomColor();
+    }, 300);
+  });
+
+  function getRandomColor() {
+    const colors = ['#ffffff', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+</script>
+<script>
+    window.onclick = function(event) {
+      if (!event.target.closest("#languageBtn")) {
+        document.getElementById("languageDropdown").style.display = "none";
+      }
+    }
+
+    function toggleMobileMenu() {
+      const nav = document.querySelector("nav");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
+
+    function toggleLogoText() {
+      const text = document.getElementById("logoText");
+      text.style.display = text.style.display === "none" ? "block" : "none";
+    }
+
+    window.addEventListener('resize', () => {
+      const mobileBtn = document.getElementById("mobileMenuBtn");
+      const nav = document.querySelector("nav");
+      if (window.innerWidth < 768) {
+        nav.style.display = "none";
+        mobileBtn.style.display = "block";
+      } else {
+        nav.style.display = "flex";
+        mobileBtn.style.display = "none";
+      }
+    });
+
+    window.dispatchEvent(new Event('resize'));
+  </script>
+
+  
+
+<!-- Google Translate element container (hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<script type="text/javascript">
+  // Load Google Translate script
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      includedLanguages: 'en,es,fr,de,zh-CN,hi,ja,it,pt,ru,ar,ko,nl,tr,sv,pl,vi,th,id,ms,fa,he,uk'
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  // Country list with flag image URLs and language codes
+  const countries = [
+    {code: 'en', name: 'United States', flag: 'https://flagcdn.com/us.svg'},
+    {code: 'es', name: 'Spain', flag: 'https://flagcdn.com/es.svg'},
+    {code: 'fr', name: 'France', flag: 'https://flagcdn.com/fr.svg'},
+    {code: 'de', name: 'Germany', flag: 'https://flagcdn.com/de.svg'},
+    {code: 'zh-CN', name: 'China', flag: 'https://flagcdn.com/cn.svg'},
+    {code: 'hi', name: 'India (Hindi)', flag: 'https://flagcdn.com/in.svg'},
+    {code: 'ja', name: 'Japan', flag: 'https://flagcdn.com/jp.svg'},
+    {code: 'it', name: 'Italy', flag: 'https://flagcdn.com/it.svg'},
+    {code: 'pt', name: 'Portugal', flag: 'https://flagcdn.com/pt.svg'},
+    {code: 'ru', name: 'Russia', flag: 'https://flagcdn.com/ru.svg'},
+    {code: 'ar', name: 'Saudi Arabia (Arabic)', flag: 'https://flagcdn.com/sa.svg'},
+    {code: 'ko', name: 'South Korea', flag: 'https://flagcdn.com/kr.svg'},
+    {code: 'nl', name: 'Netherlands', flag: 'https://flagcdn.com/nl.svg'},
+    {code: 'tr', name: 'Turkey', flag: 'https://flagcdn.com/tr.svg'},
+    {code: 'sv', name: 'Sweden', flag: 'https://flagcdn.com/se.svg'},
+    {code: 'pl', name: 'Poland', flag: 'https://flagcdn.com/pl.svg'},
+    {code: 'vi', name: 'Vietnam', flag: 'https://flagcdn.com/vn.svg'},
+    {code: 'th', name: 'Thailand', flag: 'https://flagcdn.com/th.svg'},
+    {code: 'id', name: 'Indonesia', flag: 'https://flagcdn.com/id.svg'},
+    {code: 'ms', name: 'Malaysia', flag: 'https://flagcdn.com/my.svg'},
+    {code: 'fa', name: 'Iran (Persian)', flag: 'https://flagcdn.com/ir.svg'},
+    {code: 'he', name: 'Israel (Hebrew)', flag: 'https://flagcdn.com/il.svg'},
+    {code: 'uk', name: 'Ukraine', flag: 'https://flagcdn.com/ua.svg'}
+  ];
+
+  const selectedOptionDiv = document.getElementById('selectedOption');
+  const optionsListDiv = document.getElementById('optionsList');
+
+  // Populate dropdown options
+  countries.forEach(c => {
+    const optionDiv = document.createElement('div');
+    optionDiv.style.cssText = "padding:8px 12px; cursor:pointer; display:flex; align-items:center; gap:8px;";
+    optionDiv.innerHTML = <img src="${c.flag}" alt="${c.name} Flag" style="width:24px; height:18px; object-fit:cover;" /><span>${c.name}</span>;
+    optionDiv.dataset.code = c.code;
+    optionDiv.dataset.name = c.name;
+    optionDiv.dataset.flag = c.flag;
+
+    optionDiv.onmouseenter = () => { optionDiv.style.backgroundColor = '#ddd'; }
+    optionDiv.onmouseleave = () => { optionDiv.style.backgroundColor = '#fff'; }
+
+    optionDiv.onclick = () => {
+      // Update selected display
+      selectedOptionDiv.innerHTML = <img src="${c.flag}" alt="${c.name} Flag" style="width:24px; height:18px; object-fit:cover;" /><span>${c.name}</span><span style="margin-left:auto;">▼</span>;
+      optionsListDiv.style.display = 'none';
+
+      // Trigger Google Translate change
+      setTimeout(() => {
+        let combo = document.querySelector('.goog-te-combo');
+        if(combo){
+          combo.value = c.code;
+          combo.dispatchEvent(new Event('change'));
+        }
+      }, 200);
+    };
+
+    optionsListDiv.appendChild(optionDiv);
+  });
+
+  // Toggle dropdown on click
+  selectedOptionDiv.onclick = () => {
+    optionsListDiv.style.display = optionsListDiv.style.display === 'block' ? 'none' : 'block';
+  };
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('customDropdown').contains(e.target)) {
+      optionsListDiv.style.display = 'none';
+    }
+  });
+
+  // Set initial language to US English
+  window.onload = () => {
+    setTimeout(() => {
+      let combo = document.querySelector('.goog-te-combo');
+      if(combo){
+        combo.value = 'en';
+        combo.dispatchEvent(new Event('change'));
+      }
+    }, 500);
+  }
+</script>
+
+</body>
+</html>
