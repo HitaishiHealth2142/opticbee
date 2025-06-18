@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optic Bee Soft Tech - Digital Marketing Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; color: #333; line-height: 1.6;">
+    <!-- Preloader -->
+    <!-- <div id="preloader" style="position: fixed; width: 100%; height: 100%; background: #fff url('https://i.gifer.com/ZZ5H.gif') no-repeat center center; z-index: 9999; transition: opacity 0.5s ease; opacity: 1;">
+        <div style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <h3 style="color: #0066cc; font-size: 22px; margin-top: 20px;">Optic Bee Soft Tech</h3>
+            <p style="color: #666; font-size: 16px;">Loading our digital excellence...</p>
+        </div>
+    </div> -->
+
+    <!-- Navbar (Same as web.html) -->
+    <header style="position:sticky;top:0;z-index:1000;background:#6a1b9a; background:linear-gradient(to right, #fff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+            <!-- Logo -->
+            <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+                <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+                <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
+
+            <!-- Desktop Navigation -->
+            <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+                <a href="/" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="Projects.html" class="nav-link">Projects</a>
+                <div style="position:relative;">
+                    <a id="servicesLink" href="#" class="nav-link" style="position:relative; z-index: 2000;">
+                        Services ▼
+                    </a>
+                    <div id="servicesDropdown"
+                        style="display:none; position:absolute; top:100%; left:0; background:rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow:0 4px 20px rgba(0,0,0,0.2); border-radius:8px; padding:20px; gap:20px; z-index:1500; flex-wrap:wrap; width:500px; justify-content:space-between;">
+                        <!-- One box per service -->
+                        <a href="web.html" style="text-decoration:none;  width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s; background:transparent;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=cpVpi7QV06BF&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">Web Development</span>
+                            </div>
+                        </a>
+                        <a href="marketing.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=gwrZ0uDVPabM&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000; font-weight:bold;">Digital Marketing</span>
+                            </div>
+                        </a>
+                        <a href="api.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=4jPFChei3uGs&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">API Services</span>
+                            </div>
+                        </a>
+                        <a href="cloud.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=ChinPmQHgZjj&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">Cloud Services</span>
+                            </div>
+                        </a>
+                        <a href="analytics.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=KoFr2bTvYl8Q&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">Data Analytics</span>
+                            </div>
+                        </a>
+                        <a href="iot.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=klZ231qlWc3O&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">IoT Solutions</span>
+                            </div>
+                        </a>
+                        <a href="mobile.html" style="text-decoration:none, width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=p8O28EWerfzK&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">Mobile Development</span>
+                            </div>
+                        </a>
+                        <a href="ai.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=YKHF3ARqA4fd&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">AI Solutions</span>
+                            </div>
+                        </a>
+                        <a href="quantum.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=dAIe2P09btNH&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">Quantum Computing</span>
+                            </div>
+                        </a>
+                        <a href="training.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/ios-filled/24/000000/classroom.png" style="width:20px; height:20px;">
+                                <span style="color:#000;">Corporate Training</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+                <a href="insights.html" class="nav-link">Insights</a>
+                <a href="partners.html" class="nav-link">Partners</a>
+                <a href="affiliate.html" class="nav-link">Affiliates</a>
+                <a href="industries.html" class="nav-link">Industries</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                
+                <!-- Icons -->
+                <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+                    <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+                    <a href="register.html" class="nav-icon" title="Register">👤</a>
+                    <button id="searchToggle" class="nav-icon">🔍</button>
+                    
+                    <!-- Desktop Language Selector -->
+                    <div id="customDropdown" style="position:relative; user-select:none;">
+                        <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+                            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+                            <span id="currentLanguage">EN</span>
+                            <span style="margin-left:5px;">▼</span>
+                        </div>
+                        <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+            <div style="display:flex; flex-direction:column; gap:12px;">
+                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="about.html" class="mobile-nav-link">About</a>
+                <a href="products.html" class="mobile-nav-link">Products</a>
+                <a href="Projects.html" class="mobile-nav-link">Projects</a>
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+                <a href="insights.html" class="mobile-nav-link">Insights</a>
+                <a href="partners.html" class="mobile-nav-link">Partners</a>
+                <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+                <a href="industries.html" class="mobile-nav-link">Industries</a>
+                <a href="resources.html" class="mobile-nav-link">Resources</a>
+                
+                <div style="display:flex; justify-content:space-around; margin-top:15px;">
+                    <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+                    <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+                </div>
+                
+                <!-- Mobile Language Selector -->
+                <div style="margin-top:15px;">
+                    <select id="mobileLanguageSelect" class="mobile-language-selector">
+                        <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+                        <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+                        <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+                        <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+                        <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+                        <!-- More languages will be added by JavaScript -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Container -->
+        <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+            <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+        </div>
+    </header>
+
+    <style>
+        /* Common Styles */
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 6px 10px;
+            white-space: nowrap;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        .nav-icon {
+            color: white;
+            font-size: 18px;
+            padding: 6px;
+            cursor: pointer;
+        }
+        
+        /* Mobile Styles */
+        .mobile-nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .mobile-nav-icon {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .mobile-language-selector {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Language dropdown options */
+        #optionsList div {
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        #optionsList div:hover {
+            background-color: #f0f0f0;
+        }
+        
+        #optionsList img {
+            width: 20px;
+            height: 15px;
+            object-fit: cover;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .nav-link {
+                padding: 6px 8px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #mobileMenuButton {
+                display: block;
+            }
+            
+            #desktopNav {
+                display: none;
+            }
+        }
+
+        /* Navbar scrolled style */
+        .navbar.scrolled {
+            background: #fff; /* or rgba(255,255,255,0.95) */
+            color: #222;
+            opacity: 1;
+        }
+    </style>
+
+    <script>
+        // Country/language data
+        const countries = [
+            {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+            {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+            {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+            {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+            {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+            {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+            {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+            {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+            {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+            {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+            {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+        ];
+
+        // Initialize language functionality
+        function initLanguageSelection() {
+            // Populate desktop dropdown
+            const optionsList = document.getElementById('optionsList');
+            countries.forEach(country => {
+            const option = document.createElement('div');
+            option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+            option.dataset.code = country.code;
+            option.dataset.flag = country.flag;
+            option.dataset.name = country.name;
+            option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+            optionsList.appendChild(option);
+            });
+
+            // Populate mobile dropdown
+            const mobileSelect = document.getElementById('mobileLanguageSelect');
+            countries.forEach(country => {
+            if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+                const option = document.createElement('option');
+                option.value = country.code;
+                option.textContent = `${country.name} (${country.country})`;
+                option.dataset.flag = country.flag;
+                mobileSelect.appendChild(option);
+            }
+            });
+
+            // Set up event listeners
+            document.getElementById('selectedOption').onclick = function() {
+            optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+            };
+
+            document.getElementById('mobileLanguageSelect').onchange = function() {
+            const selectedOption = this.options[this.selectedIndex];
+            selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+            };
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+            if (!e.target.closest('#customDropdown')) {
+                optionsList.style.display = 'none';
+            }
+            });
+
+            // Detect user's language
+            detectUserLanguage();
+        }
+
+        // Select language function
+        function selectLanguage(code, flag, name) {
+            // Update desktop display
+            document.getElementById('currentFlag').src = flag;
+            document.getElementById('currentLanguage').textContent = code.toUpperCase();
+            document.getElementById('optionsList').style.display = 'none';
+            
+            // Update mobile display
+            const mobileSelect = document.getElementById('mobileLanguageSelect');
+            mobileSelect.value = code;
+            
+            // Store selection
+            localStorage.setItem('userLanguage', code);
+            localStorage.setItem('userLanguageFlag', flag);
+            localStorage.setItem('userLanguageName', name);
+            
+            // Change Google Translate language
+            changeGoogleTranslateLanguage(code);
+        }
+
+        // Detect user's language
+        function detectUserLanguage() {
+            // Check for stored preference first
+            const storedLanguage = localStorage.getItem('userLanguage');
+            if (storedLanguage) {
+            const storedFlag = localStorage.getItem('userLanguageFlag');
+            const storedName = localStorage.getItem('userLanguageName');
+            selectLanguage(storedLanguage, storedFlag, storedName);
+            return;
+            }
+
+            // Try to detect from browser
+            const browserLanguage = navigator.language || navigator.userLanguage;
+            if (browserLanguage) {
+            const mainLang = browserLanguage.split('-')[0];
+            const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+            if (matchedCountry) {
+                selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+                return;
+            }
+            }
+
+            // Fallback to IP detection
+            fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                const countryCode = data.country;
+                const matchedCountry = countries.find(c => 
+                c.country.toLowerCase() === data.country_name.toLowerCase() || 
+                c.code === data.languages?.split(',')[0]
+                );
+                if (matchedCountry) {
+                selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+                } else {
+                // Default to English
+                selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+                }
+            })
+            .catch(() => {
+                // Default to English if all detection fails
+                selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+            });
+        }
+
+        // Change Google Translate language
+        function changeGoogleTranslateLanguage(languageCode) {
+            if (typeof google !== 'undefined' && google.translate) {
+            const combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.value = languageCode;
+                combo.dispatchEvent(new Event('change'));
+            }
+            } else {
+            // Retry after a delay if Google Translate isn't loaded yet
+            setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+            }
+        }
+
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            autoDisplay: false,
+            includedLanguages: countries.map(c => c.code).join(',')
+            }, 'google_translate_element');
+        }
+
+        // Navbar functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function toggleSearch() {
+            const searchContainer = document.getElementById('searchContainer');
+            searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function handleResponsive() {
+            if (window.innerWidth <= 768) {
+            document.getElementById('mobileMenuButton').style.display = 'block';
+            document.getElementById('desktopNav').style.display = 'none';
+            } else {
+            document.getElementById('mobileMenuButton').style.display = 'none';
+            document.getElementById('desktopNav').style.display = 'flex';
+            document.getElementById('mobileMenu').style.display = 'none';
+            document.getElementById('searchContainer').style.display = 'none';
+            }
+        }
+
+        // Initialize everything when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguageSelection();
+            handleResponsive();
+            document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+            window.addEventListener('resize', handleResponsive);
+            
+            // Load Google Translate script
+            const script = document.createElement('script');
+            script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.head.appendChild(script);
+        });
+
+        window.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar');
+            if(window.scrollY > 50){
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+<!-- Google Translate element (hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<!-- =================================================================================== -->
+
+
+
+    <!-- Hero Section -->
+    <section id="home" style="padding: 180px 20px 100px; background: linear-gradient(135deg, #f9f0ff, #f0e1ff); text-align: center; position: relative; overflow: hidden;">
+        <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+            <div style="display: inline-block; background-color: #f3e6ff; color: #9933ff; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px; animation: float 3s ease-in-out infinite;">Digital Growth Experts</div>
+            <h1 style="font-size: 48px; margin: 0 0 20px; color: #222; line-height: 1.2; animation: fadeInUp 1s ease;">
+                Transform Your <span style="color: #9933ff;">Online Presence</span> With Our Marketing
+            </h1>
+            <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto 40px; animation: fadeInUp 1s ease 0.2s forwards; opacity: 0;">Optic Bee Soft Tech delivers cutting-edge digital marketing strategies tailored to your business needs. We create data-driven campaigns that drive traffic, engagement, and conversions.</p>
+            <div style="display: flex; justify-content: center; gap: 20px; animation: fadeInUp 1s ease 0.4s forwards; opacity: 0;">
+                <button onclick="window.location.href='contact.html'" style="background: linear-gradient(135deg, #9933ff, #7a00cc); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(153, 51, 255, 0.3);">Get Free Audit</button>
+                <button onclick="window.location.href='contact.html'" style="background: white; color: #9933ff; border: 2px solid #9933ff; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Contact Us</button>
+            </div>
+        </div>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; z-index: 1; opacity: 0.1;">
+            <div style="position: absolute; top: 20%; left: 10%; width: 100px; height: 100px; border-radius: 50%; background-color: #9933ff; filter: blur(60px); animation: float 6s ease-in-out infinite;"></div>
+            <div style="position: absolute; bottom: 15%; right: 15%; width: 150px; height: 150px; border-radius: 50%; background-color: #ff9900; filter: blur(80px); animation: float 8s ease-in-out infinite 2s;"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section style="padding: 80px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: #f9f9f9; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                <div style="font-size: 48px; font-weight: 700; color: #9933ff; margin-bottom: 15px; transition: all 0.3s ease;">300+</div>
+                <h3 style="margin: 0; color: #444; font-size: 18px;">Successful Campaigns</h3>
+            </div>
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: #f9f9f9; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                <div style="font-size: 48px; font-weight: 700; color: #9933ff; margin-bottom: 15px; transition: all 0.3s ease;">95%</div>
+                <h3 style="margin: 0; color: #444; font-size: 18px;">Client Satisfaction</h3>
+            </div>
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: #f9f9f9; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                <div style="font-size: 48px; font-weight: 700; color: #9933ff; margin-bottom: 15px; transition: all 0.3s ease;">5M+</div>
+                <h3 style="margin: 0; color: #444; font-size: 18px;">Leads Generated</h3>
+            </div>
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: #f9f9f9; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                <div style="font-size: 48px; font-weight: 700; color: #9933ff; margin-bottom: 15px; transition: all 0.3s ease;">8+</div>
+                <h3 style="margin: 0; color: #444; font-size: 18px;">Years of Experience</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" style="padding: 100px 20px; background-color: #faf5ff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e6ff; color: #9933ff; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">OUR SERVICES</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Comprehensive <span style="color: #9933ff;">Digital Marketing</span> Solutions</h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We offer end-to-end digital marketing services to help your business establish a powerful online presence and drive measurable results.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                <!-- Service Card 1 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #9933ff, #7a00cc); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-search" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">SEO Services</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Comprehensive search engine optimization to improve your website's visibility and organic rankings.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">On-page & technical SEO</li>
+                            <li style="margin-bottom: 8px;">Keyword research & strategy</li>
+                            <li style="margin-bottom: 8px;">Link building & off-page SEO</li>
+                            <li>Local SEO optimization</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9933ff; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #ff6666, #cc3333); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-ad" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; bottom: -50px; left: -50px; width: 150px; height: 150px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">PPC Advertising</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Targeted pay-per-click campaigns to drive qualified traffic and maximize ROI.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Google Ads management</li>
+                            <li style="margin-bottom: 8px;">Social media advertising</li>
+                            <li style="margin-bottom: 8px;">Remarketing campaigns</li>
+                            <li>Conversion rate optimization</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #ff6666; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #33cc33, #29a329); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-hashtag" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Social Media Marketing</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Strategic social media campaigns to build brand awareness and engage your audience.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Content strategy & creation</li>
+                            <li style="margin-bottom: 8px;">Community management</li>
+                            <li style="margin-bottom: 8px;">Influencer partnerships</li>
+                            <li>Performance analytics</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #33cc33; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #ff9900, #e68a00); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-envelope-open-text" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Email Marketing</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Targeted email campaigns to nurture leads and drive customer retention.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Automated email sequences</li>
+                            <li style="margin-bottom: 8px;">List segmentation</li>
+                            <li style="margin-bottom: 8px;">A/B testing</li>
+                            <li>Performance tracking</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #ff9900; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #0066cc, #004d99); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-pen-fancy" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; top: -40px; right: -40px; width: 120px; height: 120px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Content Marketing</h3>
+                        <p style="color: #666; margin-bottom: 20px;">High-quality content that attracts, engages, and converts your target audience.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Blog writing & strategy</li>
+                            <li style="margin-bottom: 8px;">Video content production</li>
+                            <li style="margin-bottom: 8px;">Infographics & visual content</li>
+                            <li>Content distribution</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #0066cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #9933cc, #7a00a3); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-chart-line" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Analytics & Reporting</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Data-driven insights to measure performance and optimize your marketing strategy.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Campaign tracking</li>
+                            <li style="margin-bottom: 8px;">Conversion analysis</li>
+                            <li style="margin-bottom: 8px;">ROI measurement</li>
+                            <li>Custom dashboards</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9933cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Deep Dive Section -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e6ff; color: #9933ff; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">SEO EXPERTISE</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Comprehensive <span style="color: #9933ff;">Search Engine Optimization</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Our SEO strategies combine technical excellence with creative content to drive organic growth.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 60px;">
+                <div>
+                    <h3 style="font-size: 28px; margin: 0 0 20px; color: #222;">On-Page SEO</h3>
+                    <p style="color: #555; margin-bottom: 25px; line-height: 1.7;">We optimize every element on your website to improve search engine visibility and user experience.</p>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 24px; height: 24px; background-color: #9933ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Keyword Optimization</h4>
+                                <p style="margin: 0; color: #555; font-size: 15px;">Strategic placement of targeted keywords in titles, headers, and content.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 24px; height: 24px; background-color: #9933ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Content Quality</h4>
+                                <p style="margin: 0; color: #555; font-size: 15px;">Creating valuable, relevant content that answers user queries.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 24px; height: 24px; background-color: #9933ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Meta Tags</h4>
+                                <p style="margin: 0; color: #555; font-size: 15px;">Optimizing title tags, meta descriptions, and schema markup.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="width: 24px; height: 24px; background-color: #9933ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Internal Linking</h4>
+                                <p style="margin: 0; color: #555; font-size: 15px;">Strategic linking structure to improve site architecture and page authority.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="font-size: 28px; margin: 0 0 20px; color: #222;">Off-Page SEO</h3>
+                    <p style="color: #555; margin-bottom: 25px; line-height: 1.7;">We build your website's authority and reputation through external signals and relationships.</p>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 24px; height: 24px; background-color: #9933ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Link Building</h4>
+                                <p style="margin: 0; color: #555; font-size: 15px;">Acquiring high-quality backlinks from authoritative sources.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 24px; height: 24px; background-color: #9933ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Social Signals</h4>
+                                <p style="margin: 0; color: #555; font-size: 15px;">Leveraging social media to amplify content and build brand awareness.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 24px; height: 24px; background-color: #9933ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Local Citations</h4>
+                                <p style="margin: 0; color: #555; font-size: 15px;">Ensuring consistent NAP (Name, Address, Phone) across directories.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="width: 24px; height: 24px; background-color: #9933ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Brand Mentions</h4>
+                                <p style="margin: 0; color: #555; font-size: 15px;">Monitoring and capitalizing on unlinked brand references.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background-color: #f9f5ff; border-radius: 15px; padding: 40px; text-align: center;">
+                <h3 style="font-size: 28px; margin: 0 0 20px; color: #222;">Technical SEO</h3>
+                <p style="color: #555; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">We ensure your website's technical foundation is optimized for search engine crawlers and users alike.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <div style="background-color: white; border-radius: 10px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                        <div style="width: 60px; height: 60px; background-color: #f3e6ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px;">
+                            <i class="fas fa-rocket" style="color: #9933ff; font-size: 24px;"></i>
+                        </div>
+                        <h4 style="margin: 0 0 10px; font-size: 18px; color: #222;">Site Speed</h4>
+                        <p style="margin: 0; color: #555; font-size: 14px;">Optimizing loading times for better rankings and user experience.</p>
+                    </div>
+                    
+                    <div style="background-color: white; border-radius: 10px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                        <div style="width: 60px; height: 60px; background-color: #f3e6ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px;">
+                            <i class="fas fa-mobile-alt" style="color: #9933ff; font-size: 24px;"></i>
+                        </div>
+                        <h4 style="margin: 0 0 10px; font-size: 18px; color: #222;">Mobile Optimization</h4>
+                        <p style="margin: 0; color: #555; font-size: 14px;">Ensuring flawless performance on all mobile devices.</p>
+                    </div>
+                    
+                    <div style="background-color: white; border-radius: 10px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                        <div style="width: 60px; height: 60px; background-color: #f3e6ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px;">
+                            <i class="fas fa-sitemap" style="color: #9933ff; font-size: 24px;"></i>
+                        </div>
+                        <h4 style="margin: 0 0 10px; font-size: 18px; color: #222;">Site Architecture</h4>
+                        <p style="margin: 0; color: #555; font-size: 14px;">Logical structure for easy crawling and indexing.</p>
+                    </div>
+                    
+                    <div style="background-color: white; border-radius: 10px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                        <div style="width: 60px; height: 60px; background-color: #f3e6ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px;">
+                            <i class="fas fa-shield-alt" style="color: #9933ff; font-size: 24px;"></i>
+                        </div>
+                        <h4 style="margin: 0 0 10px; font-size: 18px; color: #222;">Security</h4>
+                        <p style="margin: 0; color: #555; font-size: 14px;">HTTPS implementation and security best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Strategy Section -->
+    <section style="padding: 100px 20px; background-color: #f5f9ff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">OUR APPROACH</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Data-Driven <span style="color: #0066cc;">Marketing Strategy</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We combine creativity with analytics to deliver measurable marketing results.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px;">
+                <div style="background-color: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div style="width: 60px; height: 60px; background-color: #e6f2ff; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                        <i class="fas fa-bullseye" style="color: #0066cc; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Goal Definition</h3>
+                    <p style="color: #555; margin: 0;">We start by understanding your business objectives and defining clear, measurable marketing goals.</p>
+                </div>
+                
+                <div style="background-color: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div style="width: 60px; height: 60px; background-color: #e6f2ff; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                        <i class="fas fa-chart-pie" style="color: #0066cc; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Audience Analysis</h3>
+                    <p style="color: #555; margin: 0;">We research your target audience to create detailed buyer personas and journey maps.</p>
+                </div>
+                
+                <div style="background-color: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div style="width: 60px; height: 60px; background-color: #e6f2ff; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                        <i class="fas fa-chess" style="color: #0066cc; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Strategy Development</h3>
+                    <p style="color: #555; margin: 0;">We create a customized marketing strategy tailored to your business and audience.</p>
+                </div>
+                
+                <div style="background-color: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div style="width: 60px; height: 60px; background-color: #e6f2ff; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                        <i class="fas fa-tools" style="color: #0066cc; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Implementation</h3>
+                    <p style="color: #555; margin: 0;">Our team executes the strategy with precision across all selected channels.</p>
+                </div>
+                
+                <div style="background-color: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div style="width: 60px; height: 60px; background-color: #e6f2ff; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                        <i class="fas fa-chart-line" style="color: #0066cc; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Performance Tracking</h3>
+                    <p style="color: #555; margin: 0;">We monitor all campaigns in real-time to measure effectiveness and ROI.</p>
+                </div>
+                
+                <div style="background-color: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div style="width: 60px; height: 60px; background-color: #e6f2ff; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                        <i class="fas fa-sync-alt" style="color: #0066cc; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Optimization</h3>
+                    <p style="color: #555; margin: 0;">We continuously refine our approach based on data insights and performance.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <button onclick="window.location.href='contact.html'" style="background: linear-gradient(135deg, #0066cc, #004d99); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);">Get Your Custom Strategy</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e6ff; color: #9933ff; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">INDUSTRIES</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Industries We <span style="color: #9933ff;">Serve</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Our digital marketing expertise spans across various industries, each with unique challenges and opportunities.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div style="background-color: #f9f5ff; border-radius: 15px; padding: 30px; text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #e6ccff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px;">
+                        <i class="fas fa-shopping-cart" style="color: #9933ff; font-size: 30px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">E-Commerce</h3>
+                    <p style="color: #555; margin: 0;">Drive traffic, conversions, and customer loyalty for your online store.</p>
+                </div>
+                
+                <div style="background-color: #f9f5ff; border-radius: 15px; padding: 30px; text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #e6ccff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px;">
+                        <i class="fas fa-briefcase-medical" style="color: #9933ff; font-size: 30px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Healthcare</h3>
+                    <p style="color: #555; margin: 0;">Compliant marketing solutions for medical practices and providers.</p>
+                </div>
+                
+                <div style="background-color: #f9f5ff; border-radius: 15px; padding: 30px; text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #e6ccff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px;">
+                        <i class="fas fa-graduation-cap" style="color: #9933ff; font-size: 30px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Education</h3>
+                    <p style="color: #555; margin: 0;">Attract students and promote educational programs effectively.</p>
+                </div>
+                
+                <div style="background-color: #f9f5ff; border-radius: 15px; padding: 30px; text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #e6ccff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px;">
+                        <i class="fas fa-home" style="color: #9933ff; font-size: 30px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Real Estate</h3>
+                    <p style="color: #555; margin: 0;">Generate leads and showcase properties with targeted campaigns.</p>
+                </div>
+                
+                <div style="background-color: #f9f5ff; border-radius: 15px; padding: 30px; text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #e6ccff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px;">
+                        <i class="fas fa-utensils" style="color: #9933ff; font-size: 30px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Restaurants</h3>
+                    <p style="color: #555; margin: 0;">Boost reservations and local visibility for your dining establishment.</p>
+                </div>
+                
+                <div style="background-color: #f9f5ff; border-radius: 15px; padding: 30px; text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #e6ccff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px;">
+                        <i class="fas fa-laptop-code" style="color: #9933ff; font-size: 30px;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Technology</h3>
+                    <p style="color: #555; margin: 0;">Position your tech brand as an industry leader with our expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="padding: 100px 20px; background-color: #f5f9ff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">CLIENT FEEDBACK</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">What Our <span style="color: #0066cc;">Clients Say</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Hear from businesses that have transformed their digital presence with our marketing services.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" style="background-color: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px;">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Sarah Johnson</h4>
+                            <p style="margin: 0; color: #666; font-size: 14px;">Marketing Director, TechSolutions Inc.</p>
+                        </div>
+                    </div>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"Optic Bee's SEO strategy tripled our organic traffic in just 6 months. Their team's expertise in technical SEO and content marketing delivered measurable results that directly impacted our bottom line."</p>
+                    <div style="color: #ff9900;">
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" style="background-color: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px;">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Michael Chen</h4>
+                            <p style="margin: 0; color: #666; font-size: 14px;">CEO, Global Retail</p>
+                        </div>
+                    </div>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"The PPC campaigns managed by Optic Bee have exceeded our expectations. Their team's data-driven approach reduced our cost per acquisition by 40% while increasing conversion rates."</p>
+                    <div style="color: #ff9900;">
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" style="background-color: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px;">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Emily Rodriguez</h4>
+                            <p style="margin: 0; color: #666; font-size: 14px;">Founder, Startup Ventures</p>
+                        </div>
+                    </div>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"As a startup, we needed a marketing partner who could grow with us. Optic Bee has been instrumental in building our brand awareness and lead generation from the ground up."</p>
+                    <div style="color: #ff9900;">
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star-half-alt" style="margin-right: 3px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 100px 20px; background: linear-gradient(135deg, #9933ff, #7a00cc); text-align: center; color: white;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 36px; margin: 0 0 20px;">Ready to Transform Your <span style="color: #ffcc00;">Marketing Results</span>?</h2>
+            <p style="font-size: 18px; margin-bottom: 40px; opacity: 0.9;">Let's discuss how we can help you achieve your business goals with our expert digital marketing services.</p>
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <button onclick="window.location.href='contact.html'" style="background: white; color: #9933ff; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">Get Free Consultation</button>
+                <button onclick="window.location.href='tel:+918790170525'" style="background: transparent; color: white; border: 2px solid white; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Call Us Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e6ff; color: #9933ff; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">FAQ</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Frequently Asked <span style="color: #9933ff;">Questions</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Answers to common questions about our digital marketing services.</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                    <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        <h3 style="margin: 0; font-size: 20px; color: #222;">How long does it take to see results from SEO?</h3>
+                        <i class="fas fa-plus" style="color: #9933ff; font-size: 20px;"></i>
+                    </div>
+                    <div class="faq-answer" style="display: none; padding-top: 15px;">
+                        <p style="color: #555; margin: 0;">SEO is a long-term strategy, and results typically begin to appear within 3-6 months. However, this timeline can vary based on factors like your industry competitiveness, website age, and the current state of your SEO. We often see initial improvements in technical SEO metrics within the first month, with rankings and traffic improvements following in subsequent months.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                    <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        <h3 style="margin: 0; font-size: 20px; color: #222;">What's the difference between SEO and PPC?</h3>
+                        <i class="fas fa-plus" style="color: #9933ff; font-size: 20px;"></i>
+                    </div>
+                    <div class="faq-answer" style="display: none; padding-top: 15px;">
+                        <p style="color: #555; margin: 0;">SEO (Search Engine Optimization) focuses on improving your website's organic (unpaid) search rankings through technical optimizations, content creation, and link building. PPC (Pay-Per-Click) involves paid advertising where you pay each time someone clicks on your ad. SEO delivers long-term sustainable results, while PPC provides immediate traffic but stops when you stop paying. The most effective strategy often combines both approaches.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                    <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        <h3 style="margin: 0; font-size: 20px; color: #222;">How do you measure marketing campaign success?</h3>
+                        <i class="fas fa-plus" style="color: #9933ff; font-size: 20px;"></i>
+                    </div>
+                    <div class="faq-answer" style="display: none; padding-top: 15px;">
+                        <p style="color: #555; margin: 0;">We measure success through key performance indicators (KPIs) aligned with your business goals. These may include website traffic, conversion rates, lead generation, sales revenue, return on ad spend (ROAS), customer acquisition cost (CAC), and engagement metrics. Before launching any campaign, we establish clear benchmarks and goals to ensure we can accurately measure performance and ROI.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                    <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        <h3 style="margin: 0; font-size: 20px; color: #222;">How much should I budget for digital marketing?</h3>
+                        <i class="fas fa-plus" style="color: #9933ff; font-size: 20px;"></i>
+                    </div>
+                    <div class="faq-answer" style="display: none; padding-top: 15px;">
+                        <p style="color: #555; margin: 0;">Digital marketing budgets vary widely depending on your industry, competition, business size, and goals. As a general guideline, businesses typically allocate 7-12% of total revenue to marketing, with digital marketing representing 40-60% of that budget. During our consultation, we'll analyze your specific needs and recommend a budget that maximizes your return on investment.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        <h3 style="margin: 0; font-size: 20px; color: #222;">Do you offer local SEO services?</h3>
+                        <i class="fas fa-plus" style="color: #9933ff; font-size: 20px;"></i>
+                    </div>
+                    <div class="faq-answer" style="display: none; padding-top: 15px;">
+                        <p style="color: #555; margin: 0;">Yes, we specialize in local SEO strategies that help businesses improve their visibility in local search results. Our local SEO services include Google My Business optimization, local citations, review management, localized content creation, and geo-targeted campaigns. These strategies are particularly effective for businesses with physical locations or those serving specific geographic areas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="padding: 100px 20px; background-color: #f5f9ff;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+            <div>
+                <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px;">CONTACT US</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Get In <span style="color: #0066cc;">Touch</span></h2>
+                <p style="color: #555; margin-bottom: 40px; font-size: 16px; line-height: 1.7;">Have questions about our digital marketing services or ready to get started? Reach out to our team—we'd love to hear from you!</p>
+                
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+                        <div style="width: 50px; height: 50px; background-color: #f0f7ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 20px; flex-shrink: 0;">
+                            <i class="fas fa-map-marker-alt" style="color: #0066cc; font-size: 20px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Our Location</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">21 102 CVR Residency, Pragathi Nagar, Kukatpally, HYD 500090, IND</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+                        <div style="width: 50px; height: 50px; background-color: #f0f7ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 20px; flex-shrink: 0;">
+                            <i class="fas fa-envelope" style="color: #0066cc; font-size: 20px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Email Us</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">info@opticbeesofttech.com<br>support@opticbeesofttech.com</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start;">
+                        <div style="width: 50px; height: 50px; background-color: #f0f7ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 20px; flex-shrink: 0;">
+                            <i class="fas fa-phone-alt" style="color: #0066cc; font-size: 20px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Call Us</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">+91 8790170525 <br>+91 8790170525</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f0f7ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #0066cc; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f0f7ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #0066cc; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f0f7ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #0066cc; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f0f7ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #0066cc; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div style="background-color: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                <h3 style="margin: 0 0 30px; font-size: 24px; color: #222;">Send Us a Message</h3>
+                <form>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Your Name</label>
+                        <input type="text" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Your Email</label>
+                        <input type="email" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Subject</label>
+                        <input type="text" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Your Message</label>
+                        <textarea rows="5" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;"></textarea>
+                    </div>
+                    <button type="submit" style="background: linear-gradient(135deg, #9933ff, #7a00cc); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(153, 51, 255, 0.3); width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #222; color: #aaa; padding: 80px 20px 30px;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+            <div>
+                <div class="logo" style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 40px; height: 40px; background-color: #9933ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 10px;">
+                        <i class="fas fa-eye" style="color: white; font-size: 18px;"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 24px; color: white; font-weight: 700;">Optic<span style="color: #ff9900;">Bee</span></h2>
+                </div>
+                <p style="margin-bottom: 25px; line-height: 1.7;">Optic Bee Soft Tech is a leading digital marketing agency dedicated to creating innovative strategies that drive business growth and measurable results.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 style="color: white; font-size: 20px; margin-bottom: 25px;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="#home" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Home</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#services" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Services</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#about" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">About Us</a></li>
+                    <li><a href="#contact" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 style="color: white; font-size: 20px; margin-bottom: 25px;">Marketing Services</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">SEO Services</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">PPC Advertising</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Social Media Marketing</a></li>
+                    <li><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Content Marketing</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 style="color: white; font-size: 20px; margin-bottom: 25px;">Newsletter</h3>
+                <p style="margin-bottom: 20px;">Subscribe to our newsletter for the latest marketing insights and tips.</p>
+                <form style="display: flex;">
+                    <input type="email" placeholder="Your Email" style="flex-grow: 1; padding: 12px 15px; border: none; border-radius: 30px 0 0 30px; font-size: 14px;">
+                    <button type="submit" style="background: #9933ff; color: white; border: none; padding: 0 20px; border-radius: 0 30px 30px 0; cursor: pointer; transition: all 0.3s ease;">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div style="max-width: 1200px; margin: 50px auto 0; padding-top: 30px; border-top: 1px solid #333; text-align: center;">
+            <p style="margin: 0; font-size: 14px;">&copy; 2023 Optic Bee Soft Tech. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top" style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background-color: #9933ff; color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; box-shadow: 0 5px 15px rgba(153, 51, 255, 0.3); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(function() {
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    answer.style.display = 'block';
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+
+        // Hover Effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
+            });
+        });
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+                const number = this.querySelector('div:first-child');
+                number.style.color = '#ff9900';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+                const number = this.querySelector('div:first-child');
+                number.style.color = '#9933ff';
+            });
+        });
+
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+            });
+        });
+
+        // Animation on Scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('[style*="animation: fadeInUp"]');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.animationPlayState = 'running';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on page load
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Search Toggle
+        function toggleSearch() {
+            const searchContainer = document.getElementById('searchContainer');
+            searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Responsive Adjustments
+        function handleResponsive() {
+            if (window.innerWidth <= 768) {
+                document.getElementById('mobileMenuButton').style.display = 'block';
+                document.getElementById('desktopNav').style.display = 'none';
+            } else {
+                document.getElementById('mobileMenuButton').style.display = 'none';
+                document.getElementById('desktopNav').style.display = 'flex';
+                document.getElementById('mobileMenu').style.display = 'none';
+                document.getElementById('searchContainer').style.display = 'none';
+            }
+        }
+
+        // Initialize everything when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            handleResponsive();
+            document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+            window.addEventListener('resize', handleResponsive);
+            
+            // Initialize language functionality (same as in web.html)
+            initLanguageSelection();
+        });
+
+        // Language functionality (same as in web.html)
+        const countries = [
+            {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+            {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+            {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+            {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+            {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+            {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+            {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+            {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+            {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+            {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+            {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+        ];
+
+        function initLanguageSelection() {
+            // Populate desktop dropdown
+            const optionsList = document.getElementById('optionsList');
+            countries.forEach(country => {
+                const option = document.createElement('div');
+                option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+                option.dataset.code = country.code;
+                option.dataset.flag = country.flag;
+                option.dataset.name = country.name;
+                option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+                optionsList.appendChild(option);
+            });
+
+            // Populate mobile dropdown
+            const mobileSelect = document.getElementById('mobileLanguageSelect');
+            countries.forEach(country => {
+                if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+                    const option = document.createElement('option');
+                    option.value = country.code;
+                    option.textContent = `${country.name} (${country.country})`;
+                    option.dataset.flag = country.flag;
+                    mobileSelect.appendChild(option);
+                }
+            });
+
+            // Set up event listeners
+            document.getElementById('selectedOption').onclick = function() {
+                optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+            };
+
+            document.getElementById('mobileLanguageSelect').onchange = function() {
+                const selectedOption = this.options[this.selectedIndex];
+                selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+            };
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#customDropdown')) {
+                    optionsList.style.display = 'none';
+                }
+            });
+
+            // Detect user's language
+            detectUserLanguage();
+        }
+
+        function selectLanguage(code, flag, name) {
+            // Update desktop display
+            document.getElementById('currentFlag').src = flag;
+            document.getElementById('currentLanguage').textContent = code.toUpperCase();
+            document.getElementById('optionsList').style.display = 'none';
+            
+            // Update mobile display
+            const mobileSelect = document.getElementById('mobileLanguageSelect');
+            mobileSelect.value = code;
+            
+            // Store selection
+            localStorage.setItem('userLanguage', code);
+            localStorage.setItem('userLanguageFlag', flag);
+            localStorage.setItem('userLanguageName', name);
+            
+            // Change Google Translate language
+            changeGoogleTranslateLanguage(code);
+        }
+
+        function detectUserLanguage() {
+            // Check for stored preference first
+            const storedLanguage = localStorage.getItem('userLanguage');
+            if (storedLanguage) {
+                const storedFlag = localStorage.getItem('userLanguageFlag');
+                const storedName = localStorage.getItem('userLanguageName');
+                selectLanguage(storedLanguage, storedFlag, storedName);
+                return;
+            }
+
+            // Try to detect from browser
+            const browserLanguage = navigator.language || navigator.userLanguage;
+            if (browserLanguage) {
+                const mainLang = browserLanguage.split('-')[0];
+                const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+                if (matchedCountry) {
+                    selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+                    return;
+                }
+            }
+
+            // Fallback to IP detection
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = data.country;
+                    const matchedCountry = countries.find(c => 
+                        c.country.toLowerCase() === data.country_name.toLowerCase() || 
+                        c.code === data.languages?.split(',')[0]
+                    );
+                    if (matchedCountry) {
+                        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+                    } else {
+                        // Default to English
+                        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+                    }
+                })
+                .catch(() => {
+                    // Default to English if all detection fails
+                    selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+                });
+        }
+
+        function changeGoogleTranslateLanguage(languageCode) {
+            if (typeof google !== 'undefined' && google.translate) {
+                const combo = document.querySelector('.goog-te-combo');
+                if (combo) {
+                    combo.value = languageCode;
+                    combo.dispatchEvent(new Event('change'));
+                }
+            } else {
+                // Retry after a delay if Google Translate isn't loaded yet
+                setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+            }
+        }
+
+        // Services dropdown functionality
+        document.addEventListener("DOMContentLoaded", function () {
+            const servicesLink = document.getElementById("servicesLink");
+            const dropdown = document.getElementById("servicesDropdown");
+
+            servicesLink.addEventListener("mouseenter", () => {
+                dropdown.style.display = "flex";
+            });
+            servicesLink.addEventListener("mouseleave", () => {
+                setTimeout(() => {
+                    if (!dropdown.matches(':hover')) {
+                        dropdown.style.display = "none";
+                    }
+                }, 100);
+            });
+
+            dropdown.addEventListener("mouseleave", () => {
+                dropdown.style.display = "none";
+            });
+
+            dropdown.addEventListener("mouseenter", () => {
+                dropdown.style.display = "flex";
+            });
+        });
+    </script>
+
+     <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        
+        [style*="animation: fadeInUp"] {
+            animation: fadeInUp 1s ease forwards;
+            animation-play-state: paused;
+        }
+        
+        .service-card:hover a {
+            color: inherit;
+        }
+        
+        .service-card:hover a i {
+            transform: translateX(5px);
+        }
+        
+        .portfolio-item:hover a {
+            color: inherit;
+        }
+        
+        .portfolio-item:hover a i {
+            transform: translateX(5px);
+        }
+        
+        footer a:hover {
+            color: white !important;
+        }
+        
+        footer .social-links a:hover {
+            background-color: #0066cc !important;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 102, 204, 0.4) !important;
+        }
+        
+        #back-to-top:hover {
+            background-color: #004d99;
+            transform: translateY(-5px);
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #0066cc !important;
+            box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+        }
+        
+        button:not(.cta-button):hover {
+            background-color: #0066cc !important;
+            color: white !important;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const servicesLink = document.getElementById("servicesLink");
+            const dropdown = document.getElementById("servicesDropdown");
+
+            servicesLink.addEventListener("mouseenter", () => {
+            dropdown.style.display = "flex";
+            });
+            servicesLink.addEventListener("mouseleave", () => {
+            setTimeout(() => {
+                if (!dropdown.matches(':hover')) {
+                dropdown.style.display = "none";
+                }
+            }, 100);
+            });
+
+            dropdown.addEventListener("mouseleave", () => {
+            dropdown.style.display = "none";
+            });
+
+            dropdown.addEventListener("mouseenter", () => {
+            dropdown.style.display = "flex";
+            });
+        });
+    </script>
+
+</body>
+</html>

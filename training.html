@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optic Bee Soft Tech - Training & Development Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; color: #333; line-height: 1.6;">
+    <!-- Preloader -->
+    <div id="preloader" style="position: fixed; width: 100%; height: 100%; background: #fff url('https://i.gifer.com/ZZ5H.gif') no-repeat center center; z-index: 9999; transition: opacity 0.5s ease; opacity: 1;">
+        <div style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <h3 style="color: #0066cc; font-size: 22px; margin-top: 20px;">Optic Bee Soft Tech</h3>
+            <p style="color: #666; font-size: 16px;">Loading training resources...</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+            <!-- Logo -->
+            <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+                <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+                <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
+
+            <!-- Desktop Navigation -->
+            <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+                <a href="/" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="Projects.html" class="nav-link">Projects</a>
+                <div style="position:relative;">
+                    <a href="#" class="nav-link" style="position:relative;" 
+                      onmouseover="document.getElementById('servicesDropdown').style.display='flex'" 
+                      onmouseout="document.getElementById('servicesDropdown').style.display='none'">
+                      Services ▼
+                    </a>
+
+                    <div id="servicesDropdown" 
+                        onmouseover="this.style.display='flex'" 
+                        onmouseout="this.style.display='none'"
+                        style="display:none; position:absolute; top:100%; left:0; background:white; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px; padding:20px; gap:20px; z-index:1000; flex-wrap:wrap; width:500px; justify-content:space-between;">
+
+                      <!-- One box per service -->
+                      <a href="web.html" style="text-decoration:none;  width:48%;">
+                        <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s; background:transparent;" 
+                            onmouseover="this.style.background='#f0f0f0'" 
+                            onmouseout="this.style.background='transparent'">
+                          <img src="https://img.icons8.com/?size=100&id=cpVpi7QV06BF&format=png&color=000000" style="width:20px; height:20px;">
+                          <span style="color:#000;">Web Development</span>
+                        </div>
+                      </a>
+
+                      <a href="api.html" style="text-decoration:none; width:48%;">
+                        <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                            onmouseover="this.style.background='#f0f0f0'" 
+                            onmouseout="this.style.background='transparent'">
+                          <img src="https://img.icons8.com/?size=100&id=4jPFChei3uGs&format=png&color=000000" style="width:20px; height:20px;">
+                          <span style="color:#000;">API Services</span>
+                        </div>
+                      </a>
+
+                      <a href="cloud.html" style="text-decoration:none; width:48%;">
+                        <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                            onmouseover="this.style.background='#f0f0f0'" 
+                            onmouseout="this.style.background='transparent'">
+                          <img src="https://img.icons8.com/?size=100&id=ChinPmQHgZjj&format=png&color=000000" style="width:20px; height:20px;">
+                          <span style="color:#000;">Cloud Services</span>
+                        </div>
+                      </a>
+
+                      <a href="analytics.html" style="text-decoration:none; width:48%;">
+                        <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                            onmouseover="this.style.background='#f0f0f0'" 
+                            onmouseout="this.style.background='transparent'">
+                          <img src="https://img.icons8.com/?size=100&id=KoFr2bTvYl8Q&format=png&color=000000" style="width:20px; height:20px;">
+                          <span style="color:#000;">Data Analytics</span>
+                        </div>
+                      </a>
+
+                      <a href="iot.html" style="text-decoration:none; width:48%;">
+                        <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                            onmouseover="this.style.background='#f0f0f0'" 
+                            onmouseout="this.style.background='transparent'">
+                          <img src="https://img.icons8.com/?size=100&id=klZ231qlWc3O&format=png&color=000000" style="width:20px; height:20px;">
+                          <span style="color:#000;">IoT Solutions</span>
+                        </div>
+                      </a>
+
+                      <a href="mobile.html" style="text-decoration:none; width:48%;">
+                        <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                            onmouseover="this.style.background='#f0f0f0'" 
+                            onmouseout="this.style.background='transparent'">
+                          <img src="https://img.icons8.com/?size=100&id=p8O28EWerfzK&format=png&color=000000" style="width:20px; height:20px;">
+                          <span style="color:#000;">Mobile Development</span>
+                        </div>
+                      </a>
+
+                      <a href="ai.html" style="text-decoration:none; width:48%;">
+                        <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                            onmouseover="this.style.background='#f0f0f0'" 
+                            onmouseout="this.style.background='transparent'">
+                          <img src="https://img.icons8.com/?size=100&id=YKHF3ARqA4fd&format=png&color=000000" style="width:20px; height:20px;">
+                          <span style="color:#000;">AI Solutions</span>
+                        </div>
+                      </a>
+
+                      <a href="quantum.html" style="text-decoration:none; width:48%;">
+                        <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                            onmouseover="this.style.background='#f0f0f0'" 
+                            onmouseout="this.style.background='transparent'">
+                          <img src="https://img.icons8.com/?size=100&id=dAIe2P09btNH&format=png&color=000000" style="width:20px; height:20px;">
+                          <span style="color:#000;">Quantum Computing</span>
+                        </div>
+                      </a>
+
+                      <a href="marketing.html" style="text-decoration:none; width:48%;">
+                        <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                            onmouseover="this.style.background='#f0f0f0'" 
+                            onmouseout="this.style.background='transparent'">
+                          <img src="https://img.icons8.com/?size=100&id=gwrZ0uDVPabM&format=png&color=000000" style="width:20px; height:20px;">
+                          <span style="color:#000;">Digital Marketing</span>
+                        </div>
+                      </a>
+
+                      <a href="training.html" style="text-decoration:none; width:48%;">
+                        <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                            onmouseover="this.style.background='#f0f0f0'" 
+                            onmouseout="this.style.background='transparent'">
+                          <img src="https://img.icons8.com/ios-filled/24/000000/classroom.png" style="width:20px; height:20px;">
+                          <span style="color:#000;">Corporate Training</span>
+                        </div>
+                      </a>
+
+                    </div>
+                </div>
+
+
+                <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+                <a href="insights.html" class="nav-link">Insights</a>
+                <a href="partners.html" class="nav-link">Partners</a>
+                <a href="affiliate.html" class="nav-link">Affiliates</a>
+                <a href="industries.html" class="nav-link">Industries</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                
+                <!-- Icons -->
+                <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+                    <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+                    <a href="register.html" class="nav-icon" title="Register">👤</a>
+                    <button id="searchToggle" class="nav-icon">🔍</button>
+                    
+                    <!-- Desktop Language Selector -->
+                    <div id="customDropdown" style="position:relative; user-select:none;">
+                        <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+                            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+                            <span id="currentLanguage">EN</span>
+                            <span style="margin-left:5px;">▼</span>
+                        </div>
+                        <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+            <div style="display:flex; flex-direction:column; gap:12px;">
+                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="about.html" class="mobile-nav-link">About</a>
+                <a href="products.html" class="mobile-nav-link">Products</a>
+                <a href="Projects.html" class="mobile-nav-link">Projects</a>
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+                <a href="insights.html" class="mobile-nav-link">Insights</a>
+                <a href="partners.html" class="mobile-nav-link">Partners</a>
+                <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+                <a href="industries.html" class="mobile-nav-link">Industries</a>
+                <a href="resources.html" class="mobile-nav-link">Resources</a>
+                
+                <div style="display:flex; justify-content:space-around; margin-top:15px;">
+                    <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+                    <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+                </div>
+                
+                <!-- Mobile Language Selector -->
+                <div style="margin-top:15px;">
+                    <select id="mobileLanguageSelect" class="mobile-language-selector">
+                        <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+                        <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+                        <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+                        <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+                        <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+                        <!-- More languages will be added by JavaScript -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Container -->
+        <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+            <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+        </div>
+    </header>
+
+    <style>
+        /* Common Styles */
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 6px 10px;
+            white-space: nowrap;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .nav-icon {
+            color: white;
+            font-size: 18px;
+            padding: 6px;
+            cursor: pointer;
+        }
+        
+        /* Mobile Styles */
+        .mobile-nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .mobile-nav-icon {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .mobile-language-selector {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Language dropdown options */
+        #optionsList div {
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        #optionsList div:hover {
+            background-color: #f0f0f0;
+        }
+        
+        #optionsList img {
+            width: 20px;
+            height: 15px;
+            object-fit: cover;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .nav-link {
+                padding: 6px 8px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #mobileMenuButton {
+                display: block;
+            }
+            
+            #desktopNav {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Hero Section -->
+    <section id="home" style="padding: 180px 20px 100px; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); text-align: center; position: relative; overflow: hidden;">
+        <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+            <div style="display: inline-block; background-color: rgba(123, 31, 162, 0.2); color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px; animation: float 3s ease-in-out infinite; border: 1px solid #9c27b0;">Empowering Growth</div>
+            <h1 style="font-size: 48px; margin: 0 0 20px; color: white; line-height: 1.2; animation: fadeInUp 1s ease;">
+                Transformative <span style="color: #9c27b0;">Training Solutions</span>
+            </h1>
+            <p style="font-size: 18px; color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto 40px; animation: fadeInUp 1s ease 0.2s forwards; opacity: 0;">Optic Bee Soft Tech delivers cutting-edge training programs that empower individuals and organizations with future-ready skills. Experience world-class training tailored to your needs.</p>
+            <div style="display: flex; justify-content: center; gap: 20px; animation: fadeInUp 1s ease 0.4s forwards; opacity: 0;">
+                <button onclick="window.location.href='contact.html'" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);">Request Training Info</button>
+                <button onclick="window.location.href='services.html'" style="background: transparent; color: white; border: 2px solid #9c27b0; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Explore Programs</button>
+            </div>
+        </div>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; z-index: 1; opacity: 0.1;">
+            <div style="position: absolute; top: 20%; left: 10%; width: 100px; height: 100px; border-radius: 50%; background-color: #9c27b0; filter: blur(60px); animation: float 6s ease-in-out infinite;"></div>
+            <div style="position: absolute; bottom: 15%; right: 15%; width: 150px; height: 150px; border-radius: 50%; background-color: #00bcd4; filter: blur(80px); animation: float 8s ease-in-out infinite 2s;"></div>
+        </div>
+    </section>
+
+    <!-- Training Introduction -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+            <div style="position: relative;">
+                <div style="width: 100%; height: 500px; background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; border-radius: 15px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);"></div>
+                <div style="position: absolute; bottom: -30px; right: -30px; width: 200px; height: 200px; background-color: #9c27b0; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; box-shadow: 0 10px 30px rgba(156, 39, 176, 0.3);">
+                    <div style="font-size: 48px; font-weight: 700;">10K+</div>
+                    <div style="font-size: 18px; text-align: center;">Professionals Trained</div>
+                </div>
+            </div>
+            <div>
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px;">LEARNING REVOLUTION</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Building <span style="color: #9c27b0;">Future-Ready</span> Skills</h2>
+                <p style="color: #555; margin-bottom: 25px; font-size: 16px; line-height: 1.7;">In today's rapidly evolving digital landscape, continuous learning is no longer optional. At Optic Bee Soft Tech, we bridge the skills gap with comprehensive training programs designed for the workforce of tomorrow.</p>
+                
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                        <div style="width: 24px; height: 24px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-chalkboard-teacher" style="color: white; font-size: 12px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Expert Instructors</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">Learn from industry practitioners with real-world experience.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                        <div style="width: 24px; height: 24px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-laptop-code" style="color: white; font-size: 12px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Hands-on Learning</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">Practical, project-based training for immediate application.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start;">
+                        <div style="width: 24px; height: 24px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-certificate" style="color: white; font-size: 12px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Industry-Recognized</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">Certifications that validate your skills and knowledge.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="window.location.href='about.html'" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);">Discover Our Methodology</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Stats -->
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #0f0c29, #302b63); color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: rgba(255,255,255,0.05); transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); border: 1px solid rgba(156, 39, 176, 0.3);">
+                <div style="font-size: 48px; font-weight: 700; color: #9c27b0; margin-bottom: 15px; transition: all 0.3s ease;">97%</div>
+                <h3 style="margin: 0; color: rgba(255,255,255,0.9); font-size: 18px;">Satisfaction Rate</h3>
+            </div>
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: rgba(255,255,255,0.05); transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); border: 1px solid rgba(156, 39, 176, 0.3);">
+                <div style="font-size: 48px; font-weight: 700; color: #9c27b0; margin-bottom: 15px; transition: all 0.3s ease;">50+</div>
+                <h3 style="margin: 0; color: rgba(255,255,255,0.9); font-size: 18px;">Training Programs</h3>
+            </div>
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: rgba(255,255,255,0.05); transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); border: 1px solid rgba(156, 39, 176, 0.3);">
+                <div style="font-size: 48px; font-weight: 700; color: #9c27b0; margin-bottom: 15px; transition: all 0.3s ease;">200+</div>
+                <h3 style="margin: 0; color: rgba(255,255,255,0.9); font-size: 18px;">Industry Experts</h3>
+            </div>
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: rgba(255,255,255,0.05); transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); border: 1px solid rgba(156, 39, 176, 0.3);">
+                <div style="font-size: 48px; font-weight: 700; color: #9c27b0; margin-bottom: 15px; transition: all 0.3s ease;">24/7</div>
+                <h3 style="margin: 0; color: rgba(255,255,255,0.9); font-size: 18px;">Learning Support</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs -->
+    <section id="programs" style="padding: 100px 20px; background-color: #f5f9ff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">OUR PROGRAMS</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Comprehensive <span style="color: #9c27b0;">Training Solutions</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We offer tailored training programs to meet diverse learning needs across industries and skill levels.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                <!-- Program Card 1 -->
+                <div class="program-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #9c27b0, #7b1fa2); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-building" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Corporate Training</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Customized training solutions designed to upskill your workforce and drive organizational growth.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Tailored curriculum</li>
+                            <li style="margin-bottom: 8px;">On-site or virtual delivery</li>
+                            <li style="margin-bottom: 8px;">Team-based learning</li>
+                            <li>ROI-focused outcomes</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9c27b0; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Program Card 2 -->
+                <div class="program-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #673ab7, #5e35b1); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-user-graduate" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; bottom: -50px; left: -50px; width: 150px; height: 150px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Professional Certification</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Industry-recognized certification programs to validate and enhance professional skills.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Exam preparation</li>
+                            <li style="margin-bottom: 8px;">Hands-on labs</li>
+                            <li style="margin-bottom: 8px;">Career advancement</li>
+                            <li>Globally recognized</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #673ab7; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Program Card 3 -->
+                <div class="program-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #3f51b5, #3949ab); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-laptop" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Technical Bootcamps</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Immersive, intensive training programs to fast-track technical skills development.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Full-time/part-time options</li>
+                            <li style="margin-bottom: 8px;">Project-based learning</li>
+                            <li style="margin-bottom: 8px;">Mentorship</li>
+                            <li>Career services</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #3f51b5; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Program Card 4 -->
+                <div class="program-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #2196f3, #1e88e5); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-chalkboard" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Leadership Development</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Transform your high-potential employees into effective leaders with our executive training.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Strategic thinking</li>
+                            <li style="margin-bottom: 8px;">Emotional intelligence</li>
+                            <li style="margin-bottom: 8px;">Change management</li>
+                            <li>Executive coaching</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #2196f3; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Program Card 5 -->
+                <div class="program-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #00bcd4, #00acc1); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-globe" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; top: -40px; right: -40px; width: 120px; height: 120px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Online Learning</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Self-paced digital courses with interactive content and expert support.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Flexible scheduling</li>
+                            <li style="margin-bottom: 8px;">Interactive content</li>
+                            <li style="margin-bottom: 8px;">Community forums</li>
+                            <li>Progress tracking</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #00bcd4; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Program Card 6 -->
+                <div class="program-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #4caf50, #43a047); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-hands-helping" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Soft Skills Training</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Develop essential interpersonal skills that complement technical expertise.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Communication</li>
+                            <li style="margin-bottom: 8px;">Team collaboration</li>
+                            <li style="margin-bottom: 8px;">Problem-solving</li>
+                            <li>Time management</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #4caf50; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Domains -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">EXPERTISE AREAS</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Our <span style="color: #9c27b0;">Training Domains</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We offer specialized training across key technology and business domains.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                <!-- Domain 1 -->
+                <div class="domain-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Software Development</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Master modern programming languages, frameworks, and development methodologies.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Python</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">JavaScript</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Java</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">.NET</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">DevOps</span>
+                        </div>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9c27b0; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Explore Courses <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Domain 2 -->
+                <div class="domain-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Data Science & AI</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Unlock the power of data with our comprehensive analytics and AI training programs.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Machine Learning</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Deep Learning</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Big Data</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Data Visualization</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">NLP</span>
+                        </div>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9c27b0; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Explore Courses <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Domain 3 -->
+                <div class="domain-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Cloud & DevOps</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Master cloud platforms and DevOps practices to build scalable, resilient systems.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">AWS</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Azure</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">GCP</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Kubernetes</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Docker</span>
+                        </div>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9c27b0; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Explore Courses <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Approach -->
+    <section style="padding: 80px 20px; background-color: #f5f9ff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 36px; margin: 0 0 15px; color: #222;">Our <span style="color: #9c27b0;">Training Methodology</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We combine proven learning techniques with innovative approaches for maximum impact.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; position: relative;">
+                <!-- Process Line -->
+                <div style="position: absolute; top: 40px; left: 125px; right: 125px; height: 3px; background-color: #f3e5f5; z-index: 1;"></div>
+                
+                <!-- Approach Step 1 -->
+                <div class="approach-step" style="text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 80px; height: 80px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(156, 39, 176, 0.2);">
+                        <i class="fas fa-search" style="font-size: 30px; color: white;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Needs Assessment</h3>
+                    <p style="color: #555; margin: 0;">We analyze your specific requirements to design the perfect training solution.</p>
+                </div>
+                
+                <!-- Approach Step 2 -->
+                <div class="approach-step" style="text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 80px; height: 80px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(156, 39, 176, 0.2);">
+                        <i class="fas fa-pencil-ruler" style="font-size: 30px; color: white;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Custom Curriculum</h3>
+                    <p style="color: #555; margin: 0;">Tailored content development based on your industry and objectives.</p>
+                </div>
+                
+                <!-- Approach Step 3 -->
+                <div class="approach-step" style="text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 80px; height: 80px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(156, 39, 176, 0.2);">
+                        <i class="fas fa-chalkboard-teacher" style="font-size: 30px; color: white;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Interactive Delivery</h3>
+                    <p style="color: #555; margin: 0;">Engaging sessions with hands-on exercises and real-world scenarios.</p>
+                </div>
+                
+                <!-- Approach Step 4 -->
+                <div class="approach-step" style="text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 80px; height: 80px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(156, 39, 176, 0.2);">
+                        <i class="fas fa-chart-line" style="font-size: 30px; color: white;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Performance Evaluation</h3>
+                    <p style="color: #555; margin: 0;">Continuous assessment to measure learning outcomes and ROI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Testimonials -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">CLIENT FEEDBACK</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">What Our <span style="color: #9c27b0;">Clients Say</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Hear from organizations and individuals who have transformed through our training programs.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" style="background-color: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px;">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Sarah Johnson</h4>
+                            <p style="margin: 0; color: #666; font-size: 14px;">HR Director, TechCorp</p>
+                        </div>
+                    </div>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"Optic Bee's corporate training program transformed our engineering team's skills in just 3 months. Their hands-on approach and real-world projects made all the difference in immediate application."</p>
+                    <div style="color: #ff9900;">
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" style="background-color: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px;">
+                            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Client" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Michael Rodriguez</h4>
+                            <p style="margin: 0; color: #666; font-size: 14px;">Software Engineer</p>
+                        </div>
+                    </div>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"The AWS certification training from Optic Bee was exceptional. The instructor's depth of knowledge and the practical labs prepared me perfectly for the certification exam, which I passed on my first attempt."</p>
+                    <div style="color: #ff9900;">
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" style="background-color: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px;">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Client" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Emily Chen</h4>
+                            <p style="margin: 0; color: #666; font-size: 14px;">CTO, Startup Ventures</p>
+                        </div>
+                    </div>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"We partnered with Optic Bee for leadership training for our management team. The customized program addressed our specific challenges and resulted in measurable improvements in team performance and morale."</p>
+                    <div style="color: #ff9900;">
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star-half-alt" style="margin-right: 3px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training CTA -->
+    <section style="padding: 100px 20px; background: linear-gradient(135deg, #0f0c29, #302b63); text-align: center; color: white;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 36px; margin: 0 0 20px;">Ready to <span style="color: #9c27b0;">Transform</span> Your Workforce?</h2>
+            <p style="font-size: 18px; margin-bottom: 40px; opacity: 0.9;">Schedule a consultation with our training experts to design the perfect learning solution for your organization.</p>
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <button onclick="window.location.href='contact.html'" style="background: #9c27b0; color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">Request Training Proposal</button>
+                <button onclick="window.location.href='tel:+918790170525'" style="background: transparent; color: white; border: 2px solid #9c27b0; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Call Training Experts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training FAQ -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">TRAINING FAQ</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Frequently Asked <span style="color: #9c27b0;">Questions</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Answers to common questions about our training programs and services.</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+                    <button class="faq-question" style="width: 100%; padding: 20px; text-align: left; background-color: #f9f9f9; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 18px; color: #222;">
+                        <span>What makes Optic Bee's training programs different?</span>
+                        <i class="fas fa-chevron-down" style="transition: all 0.3s ease;"></i>
+                    </button>
+                    <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px 0; color: #555;">
+                            <p>Our training programs stand out through:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Industry-experienced instructors who are practitioners, not just trainers</li>
+                                <li style="margin-bottom: 8px;">Customized content tailored to your specific needs and challenges</li>
+                                <li style="margin-bottom: 8px;">Hands-on, project-based learning approach</li>
+                                <li style="margin-bottom: 8px;">Focus on practical application and measurable outcomes</li>
+                                <li>Continuous support and resources beyond the training sessions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+                    <button class="faq-question" style="width: 100%; padding: 20px; text-align: left; background-color: #f9f9f9; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 18px; color: #222;">
+                        <span>Can you customize training programs for our specific needs?</span>
+                        <i class="fas fa-chevron-down" style="transition: all 0.3s ease;"></i>
+                    </button>
+                    <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px 0; color: #555;">
+                            <p>Absolutely! Customization is at the heart of our approach. We begin with a thorough needs assessment to understand:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Your business objectives and challenges</li>
+                                <li style="margin-bottom: 8px;">Current skill levels of participants</li>
+                                <li style="margin-bottom: 8px;">Specific tools or technologies you use</li>
+                                <li>Your preferred learning formats and schedules</li>
+                            </ul>
+                            <p>We then design a program that precisely addresses your requirements, incorporating your case studies, workflows, and real-world scenarios.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+                    <button class="faq-question" style="width: 100%; padding: 20px; text-align: left; background-color: #f9f9f9; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 18px; color: #222;">
+                        <span>What training delivery options do you offer?</span>
+                        <i class="fas fa-chevron-down" style="transition: all 0.3s ease;"></i>
+                    </button>
+                    <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px 0; color: #555;">
+                            <p>We offer flexible delivery options to suit different learning preferences and logistical needs:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>In-person training:</strong> At your location or our training centers</li>
+                                <li style="margin-bottom: 8px;"><strong>Virtual instructor-led training:</strong> Live online sessions with interactive elements</li>
+                                <li style="margin-bottom: 8px;"><strong>Hybrid training:</strong> Combination of in-person and online components</li>
+                                <li style="margin-bottom: 8px;"><strong>Self-paced eLearning:</strong> Comprehensive online courses with mentor support</li>
+                                <li><strong>Blended learning:</strong> Mix of different modalities for optimal results</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+                    <button class="faq-question" style="width: 100%; padding: 20px; text-align: left; background-color: #f9f9f9; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 18px; color: #222;">
+                        <span>How do you measure training effectiveness?</span>
+                        <i class="fas fa-chevron-down" style="transition: all 0.3s ease;"></i>
+                    </button>
+                    <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px 0; color: #555;">
+                            <p>We employ a comprehensive evaluation framework based on the Kirkpatrick model:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>Level 1 - Reaction:</strong> Participant feedback and satisfaction surveys</li>
+                                <li style="margin-bottom: 8px;"><strong>Level 2 - Learning:</strong> Pre- and post-assessments to measure knowledge gain</li>
+                                <li style="margin-bottom: 8px;"><strong>Level 3 - Behavior:</strong> On-the-job application and behavioral changes</li>
+                                <li><strong>Level 4 - Results:</strong> Business impact metrics aligned with your objectives</li>
+                            </ul>
+                            <p>For corporate clients, we provide detailed analytics reports showing ROI and recommendations for continuous improvement.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+                    <button class="faq-question" style="width: 100%; padding: 20px; text-align: left; background-color: #f9f9f9; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 18px; color: #222;">
+                        <span>Do you provide training certifications?</span>
+                        <i class="fas fa-chevron-down" style="transition: all 0.3s ease;"></i>
+                    </button>
+                    <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px 0; color: #555;">
+                            <p>Yes, we offer several certification options:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>Optic Bee Certifications:</strong> For our proprietary training programs, recognized by industry partners</li>
+                                <li style="margin-bottom: 8px;"><strong>Vendor Certifications:</strong> Preparation for AWS, Microsoft, Google, and other technology certifications</li>
+                                <li style="margin-bottom: 8px;"><strong>Custom Corporate Certifications:</strong> Designed specifically for your organization's internal standards</li>
+                                <li><strong>Digital Badges:</strong> Shareable credentials that verify specific skill acquisitions</li>
+                            </ul>
+                            <p>All certifications require successful completion of assessments and, where applicable, practical projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Contact -->
+    <section id="contact" style="padding: 100px 20px; background-color: #f5f9ff;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+            <div>
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px;">TRAINING TEAM</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Talk to Our <span style="color: #9c27b0;">Training Experts</span></h2>
+                <p style="color: #555; margin-bottom: 40px; font-size: 16px; line-height: 1.7;">Have questions about our training programs or want to discuss a custom solution? Our team of learning specialists is ready to help.</p>
+                
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+                        <div style="width: 50px; height: 50px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 20px; flex-shrink: 0;">
+                            <i class="fas fa-map-marker-alt" style="color: #9c27b0; font-size: 20px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Training Center</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">21 102 CVR Residency, Pragathi Nagar, Kukatpally, HYD 500090, IND</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+                        <div style="width: 50px; height: 50px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 20px; flex-shrink: 0;">
+                            <i class="fas fa-envelope" style="color: #9c27b0; font-size: 20px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Email Us</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">training@opticbeesofttech.com<br>support@opticbeesofttech.com</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start;">
+                        <div style="width: 50px; height: 50px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 20px; flex-shrink: 0;">
+                            <i class="fas fa-phone-alt" style="color: #9c27b0; font-size: 20px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Call Us</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">+91 8790170525 (Training Division)<br>+91 8790170525 (General)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #9c27b0; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #9c27b0; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #9c27b0; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #9c27b0; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div style="background-color: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                <h3 style="margin: 0 0 30px; font-size: 24px; color: #222;">Training Inquiry Form</h3>
+                <form>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Your Name</label>
+                        <input type="text" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Your Email</label>
+                        <input type="email" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Company</label>
+                        <input type="text" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Training Interest</label>
+                        <select style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                            <option value="">Select training type</option>
+                            <option value="corporate">Corporate Training</option>
+                            <option value="certification">Professional Certification</option>
+                            <option value="technical">Technical Bootcamp</option>
+                            <option value="leadership">Leadership Development</option>
+                            <option value="online">Online Learning</option>
+                            <option value="softskills">Soft Skills Training</option>
+                            <option value="custom">Custom Program</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Your Training Needs</label>
+                        <textarea rows="5" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;"></textarea>
+                    </div>
+                    <button type="submit" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3); width: 100%;">Submit Training Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #222; color: #aaa; padding: 80px 20px 30px;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+            <div>
+                <div class="logo" style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 40px; height: 40px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 10px;">
+                        <i class="fas fa-graduation-cap" style="color: white; font-size: 18px;"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 24px; color: white; font-weight: 700;">Optic<span style="color: #9c27b0;">Bee</span> Training</h2>
+                </div>
+                <p style="margin-bottom: 25px; line-height: 1.7;">Optic Bee Soft Tech is a leading provider of corporate and professional training solutions, helping individuals and organizations develop future-ready skills.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 style="color: white; font-size: 20px; margin-bottom: 25px;">Training Links</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="#home" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Training Home</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#programs" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Training Programs</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#domains" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Training Domains</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#methodology" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Training Methodology</a></li>
+                    <li><a href="#contact" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Training Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 style="color: white; font-size: 20px; margin-bottom: 25px;">Training Programs</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Corporate Training</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Professional Certification</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Technical Bootcamps</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Leadership Development</a></li>
+                    <li><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Online Learning</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 style="color: white; font-size: 20px; margin-bottom: 25px;">Training Newsletter</h3>
+                <p style="margin-bottom: 20px;">Subscribe to our training newsletter for the latest courses, learning tips, and industry insights.</p>
+                <form style="display: flex;">
+                    <input type="email" placeholder="Your Email" style="flex-grow: 1; padding: 12px 15px; border: none; border-radius: 30px 0 0 30px; font-size: 14px;">
+                    <button type="submit" style="background: #9c27b0; color: white; border: none; padding: 0 20px; border-radius: 0 30px 30px 0; cursor: pointer; transition: all 0.3s ease;">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div style="max-width: 1200px; margin: 50px auto 0; padding-top: 30px; border-top: 1px solid #333; text-align: center;">
+            <p style="margin: 0; font-size: 14px;">&copy; 2023 Optic Bee Soft Tech Training Division. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top" style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background-color: #9c27b0; color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(function() {
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+                
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                    item.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                    item.style.boxShadow = '0 5px 15px rgba(156, 39, 176, 0.1)';
+                }
+            });
+        });
+
+        // Hover Effects
+        document.querySelectorAll('.program-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
+            });
+        });
+
+        document.querySelectorAll('.domain-card').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const imgDiv = this.querySelector('div:first-child');
+                imgDiv.style.transform = 'scale(1.05)';
+            });
+            item.addEventListener('mouseleave', function() {
+                const imgDiv = this.querySelector('div:first-child');
+                imgDiv.style.transform = 'scale(1)';
+            });
+        });
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+                const number = this.querySelector('div:first-child');
+                number.style.color = '#00bcd4';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+                const number = this.querySelector('div:first-child');
+                number.style.color = '#9c27b0';
+            });
+        });
+
+        document.querySelectorAll('.approach-step').forEach(step => {
+            step.addEventListener('mouseenter', function() {
+                const iconDiv = this.querySelector('div:first-child');
+                iconDiv.style.transform = 'scale(1.1) rotate(5deg)';
+                iconDiv.style.boxShadow = '0 15px 30px rgba(156, 39, 176, 0.3)';
+            });
+            step.addEventListener('mouseleave', function() {
+                const iconDiv = this.querySelector('div:first-child');
+                iconDiv.style.transform = 'scale(1) rotate(0)';
+                iconDiv.style.boxShadow = '0 10px 20px rgba(156, 39, 176, 0.2)';
+            });
+        });
+
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+            });
+        });
+
+        // Animation on Scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('[style*="animation: fadeInUp"]');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.animationPlayState = 'running';
+                }
+            });
+        }
+
+        // Initialize everything when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-10px) translateX(10px);
+            }
+            50% {
+                transform: translateY(5px) translateX(-10px);
+            }
+            75% {
+                transform: translateY(-5px) translateX(5px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+        
+        [style*="animation: fadeInUp"] {
+            animation: fadeInUp 1s ease forwards;
+            animation-play-state: paused;
+        }
+        
+        .program-card:hover a {
+            color: inherit;
+        }
+        
+        .program-card:hover a i {
+            transform: translateX(5px);
+        }
+        
+        .domain-card:hover a {
+            color: inherit;
+        }
+        
+        .domain-card:hover a i {
+            transform: translateX(5px);
+        }
+        
+        footer a:hover {
+            color: #9c27b0 !important;
+        }
+        
+        footer .social-links a:hover {
+            background-color: #9c27b0 !important;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(156, 39, 176, 0.4) !important;
+        }
+        
+        #back-to-top:hover {
+            background-color: #7b1fa2;
+            transform: translateY(-5px);
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #9c27b0 !important;
+            box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.2);
+        }
+        
+        button:not(.cta-button):hover {
+            background-color: #9c27b0 !important;
+            color: white !important;
+        }
+    </style>
+
+    <script>
+        // Country/language data
+        const countries = [
+            {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+            {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+            {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+            {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+            {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+            {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+            {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+            {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+            {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+            {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+            {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+        ];
+
+        // Initialize language functionality
+        function initLanguageSelection() {
+            // Populate desktop dropdown
+            const optionsList = document.getElementById('optionsList');
+            countries.forEach(country => {
+                const option = document.createElement('div');
+                option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+                option.dataset.code = country.code;
+                option.dataset.flag = country.flag;
+                option.dataset.name = country.name;
+                option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+                optionsList.appendChild(option);
+            });
+
+            // Populate mobile dropdown
+            const mobileSelect = document.getElementById('mobileLanguageSelect');
+            countries.forEach(country => {
+                if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+                    const option = document.createElement('option');
+                    option.value = country.code;
+                    option.textContent = `${country.name} (${country.country})`;
+                    option.dataset.flag = country.flag;
+                    mobileSelect.appendChild(option);
+                }
+            });
+
+            // Set up event listeners
+            document.getElementById('selectedOption').onclick = function() {
+                optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+            };
+
+            document.getElementById('mobileLanguageSelect').onchange = function() {
+                const selectedOption = this.options[this.selectedIndex];
+                selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+            };
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#customDropdown')) {
+                    optionsList.style.display = 'none';
+                }
+            });
+
+            // Detect user's language
+            detectUserLanguage();
+        }
+
+        // Select language function
+        function selectLanguage(code, flag, name) {
+            // Update desktop display
+            document.getElementById('currentFlag').src = flag;
+            document.getElementById('currentLanguage').textContent = code.toUpperCase();
+            document.getElementById('optionsList').style.display = 'none';
+            
+            // Update mobile display
+            const mobileSelect = document.getElementById('mobileLanguageSelect');
+            mobileSelect.value = code;
+            
+            // Store selection
+            localStorage.setItem('userLanguage', code);
+            localStorage.setItem('userLanguageFlag', flag);
+            localStorage.setItem('userLanguageName', name);
+            
+            // Change Google Translate language
+            changeGoogleTranslateLanguage(code);
+        }
+
+        // Detect user's language
+        function detectUserLanguage() {
+            // Check for stored preference first
+            const storedLanguage = localStorage.getItem('userLanguage');
+            if (storedLanguage) {
+                const storedFlag = localStorage.getItem('userLanguageFlag');
+                const storedName = localStorage.getItem('userLanguageName');
+                selectLanguage(storedLanguage, storedFlag, storedName);
+                return;
+            }
+
+            // Try to detect from browser
+            const browserLanguage = navigator.language || navigator.userLanguage;
+            if (browserLanguage) {
+                const mainLang = browserLanguage.split('-')[0];
+                const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+                if (matchedCountry) {
+                    selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+                    return;
+                }
+            }
+
+            // Fallback to IP detection
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = data.country;
+                    const matchedCountry = countries.find(c => 
+                        c.country.toLowerCase() === data.country_name.toLowerCase() || 
+                        c.code === data.languages?.split(',')[0]
+                    );
+                    if (matchedCountry) {
+                        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+                    } else {
+                        // Default to English
+                        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+                    }
+                })
+                .catch(() => {
+                    // Default to English if all detection fails
+                    selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+                });
+        }
+
+        // Change Google Translate language
+        function changeGoogleTranslateLanguage(languageCode) {
+            if (typeof google !== 'undefined' && google.translate) {
+                const combo = document.querySelector('.goog-te-combo');
+                if (combo) {
+                    combo.value = languageCode;
+                    combo.dispatchEvent(new Event('change'));
+                }
+            } else {
+                // Retry after a delay if Google Translate isn't loaded yet
+                setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+            }
+        }
+
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false,
+                includedLanguages: countries.map(c => c.code).join(',')
+            }, 'google_translate_element');
+        }
+
+        // Navbar functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function toggleSearch() {
+            const searchContainer = document.getElementById('searchContainer');
+            searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function handleResponsive() {
+            if (window.innerWidth <= 768) {
+                document.getElementById('mobileMenuButton').style.display = 'block';
+                document.getElementById('desktopNav').style.display = 'none';
+            } else {
+                document.getElementById('mobileMenuButton').style.display = 'none';
+                document.getElementById('desktopNav').style.display = 'flex';
+                document.getElementById('mobileMenu').style.display = 'none';
+                document.getElementById('searchContainer').style.display = 'none';
+            }
+        }
+
+        // Initialize everything when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguageSelection();
+            handleResponsive();
+            document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+            window.addEventListener('resize', handleResponsive);
+            
+            // Load Google Translate script
+            const script = document.createElement('script');
+            script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.head.appendChild(script);
+        });
+
+        window.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar');
+            if(window.scrollY > 50){
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- Google Translate element (hidden) -->
+    <div id="google_translate_element" style="display:none;"></div>
+</body>
+</html>

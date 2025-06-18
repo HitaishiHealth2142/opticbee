@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optic Bee Soft Tech - Quantum Computing Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; color: #333; line-height: 1.6;">
+    <!-- Preloader -->
+    <div id="preloader" style="position: fixed; width: 100%; height: 100%; background: #fff url('https://i.gifer.com/ZZ5H.gif') no-repeat center center; z-index: 9999; transition: opacity 0.5s ease; opacity: 1;">
+        <div style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <h3 style="color: #0066cc; font-size: 22px; margin-top: 20px;">Optic Bee Soft Tech</h3>
+            <p style="color: #666; font-size: 16px;">Loading quantum possibilities...</p>
+        </div>
+    </div>
+
+<!-- Navbar -->
+<header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+    <!-- Logo -->
+    <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+      <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+      <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
+
+    <!-- Desktop Navigation -->
+    <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+      <a href="/" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="Projects.html" class="nav-link">Projects</a>
+      <div style="position:relative;">
+        <a href="#" class="nav-link" style="position:relative;" 
+          onmouseover="document.getElementById('servicesDropdown').style.display='flex'" 
+          onmouseout="document.getElementById('servicesDropdown').style.display='none'">
+          Services ▼
+        </a>
+
+        <div id="servicesDropdown" 
+            onmouseover="this.style.display='flex'" 
+            onmouseout="this.style.display='none'"
+            style="display:none; position:absolute; top:100%; left:0; background:white; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px; padding:20px; gap:20px; z-index:1000; flex-wrap:wrap; width:500px; justify-content:space-between;">
+
+          <!-- One box per service -->
+          <a href="web.html" style="text-decoration:none;  width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s; background:transparent;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=cpVpi7QV06BF&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Web Development</span>
+            </div>
+          </a>
+
+          <a href="api.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=4jPFChei3uGs&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">API Services</span>
+            </div>
+          </a>
+
+          <a href="cloud.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=ChinPmQHgZjj&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Cloud Services</span>
+            </div>
+          </a>
+
+          <a href="analytics.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=KoFr2bTvYl8Q&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Data Analytics</span>
+            </div>
+          </a>
+
+          <a href="iot.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=klZ231qlWc3O&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">IoT Solutions</span>
+            </div>
+          </a>
+
+          <a href="mobile.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=p8O28EWerfzK&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Mobile Development</span>
+            </div>
+          </a>
+
+          <a href="ai.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=YKHF3ARqA4fd&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">AI Solutions</span>
+            </div>
+          </a>
+
+          <a href="quantum.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=dAIe2P09btNH&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Quantum Computing</span>
+            </div>
+          </a>
+
+          <a href="marketing.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=gwrZ0uDVPabM&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Digital Marketing</span>
+            </div>
+          </a>
+
+          <a href="training.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/ios-filled/24/000000/classroom.png" style="width:20px; height:20px;">
+              <span style="color:#000;">Corporate Training</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+
+      <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="affiliate.html" class="nav-link">Affiliates</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      
+      <!-- Icons -->
+      <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+        <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+        <a href="register.html" class="nav-icon" title="Register">👤</a>
+        <button id="searchToggle" class="nav-icon">🔍</button>
+        
+        <!-- Desktop Language Selector -->
+        <div id="customDropdown" style="position:relative; user-select:none;">
+          <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+            <span id="currentLanguage">EN</span>
+            <span style="margin-left:5px;">▼</span>
+          </div>
+          <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="products.html" class="mobile-nav-link">Products</a>
+      <a href="Projects.html" class="mobile-nav-link">Projects</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+      <a href="insights.html" class="mobile-nav-link">Insights</a>
+      <a href="partners.html" class="mobile-nav-link">Partners</a>
+      <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+      <a href="industries.html" class="mobile-nav-link">Industries</a>
+      <a href="resources.html" class="mobile-nav-link">Resources</a>
+      
+      <div style="display:flex; justify-content:space-around; margin-top:15px;">
+        <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+        <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+      </div>
+      
+      <!-- Mobile Language Selector -->
+      <div style="margin-top:15px;">
+        <select id="mobileLanguageSelect" class="mobile-language-selector">
+          <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+          <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+          <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+          <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+          <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+          <!-- More languages will be added by JavaScript -->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Container -->
+  <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+    <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+  </div>
+</header>
+
+<style>
+
+  
+  /* Common Styles */
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+  
+  .nav-icon {
+    color: white;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Styles */
+  .mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .mobile-nav-icon {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .mobile-language-selector {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  /* Language dropdown options */
+  #optionsList div {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #optionsList div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #optionsList img {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .nav-link {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #mobileMenuButton {
+      display: block;
+    }
+    
+    #desktopNav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+// Country/language data
+// (Duplicate declaration removed. The 'countries' variable is already declared earlier in the file.)
+
+  // Initialize language functionality
+  function initLanguageSelection() {
+    // Populate desktop dropdown
+    const optionsList = document.getElementById('optionsList');
+    countries.forEach(country => {
+      const option = document.createElement('div');
+      option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+      option.dataset.code = country.code;
+      option.dataset.flag = country.flag;
+      option.dataset.name = country.name;
+      option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+      optionsList.appendChild(option);
+    });
+
+    // Populate mobile dropdown
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    countries.forEach(country => {
+      if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+        const option = document.createElement('option');
+        option.value = country.code;
+        option.textContent = `${country.name} (${country.country})`;
+        option.dataset.flag = country.flag;
+        mobileSelect.appendChild(option);
+      }
+    });
+
+    // Set up event listeners
+    document.getElementById('selectedOption').onclick = function() {
+      optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+    };
+
+    document.getElementById('mobileLanguageSelect').onchange = function() {
+      const selectedOption = this.options[this.selectedIndex];
+      selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#customDropdown')) {
+        optionsList.style.display = 'none';
+      }
+    });
+
+    // Detect user's language
+    detectUserLanguage();
+  }
+
+  // Select language function
+  function selectLanguage(code, flag, name) {
+    // Update desktop display
+    document.getElementById('currentFlag').src = flag;
+    document.getElementById('currentLanguage').textContent = code.toUpperCase();
+    document.getElementById('optionsList').style.display = 'none';
+    
+    // Update mobile display
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    mobileSelect.value = code;
+    
+    // Store selection
+    localStorage.setItem('userLanguage', code);
+    localStorage.setItem('userLanguageFlag', flag);
+    localStorage.setItem('userLanguageName', name);
+    
+    // Change Google Translate language
+    changeGoogleTranslateLanguage(code);
+  }
+
+  // Detect user's language
+  function detectUserLanguage() {
+    // Check for stored preference first
+    const storedLanguage = localStorage.getItem('userLanguage');
+    if (storedLanguage) {
+      const storedFlag = localStorage.getItem('userLanguageFlag');
+      const storedName = localStorage.getItem('userLanguageName');
+      selectLanguage(storedLanguage, storedFlag, storedName);
+      return;
+    }
+
+    // Try to detect from browser
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    if (browserLanguage) {
+      const mainLang = browserLanguage.split('-')[0];
+      const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+      if (matchedCountry) {
+        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        return;
+      }
+    }
+
+    // Fallback to IP detection
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const countryCode = data.country;
+        const matchedCountry = countries.find(c => 
+          c.country.toLowerCase() === data.country_name.toLowerCase() || 
+          c.code === data.languages?.split(',')[0]
+        );
+        if (matchedCountry) {
+          selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        } else {
+          // Default to English
+          selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+        }
+      })
+      .catch(() => {
+        // Default to English if all detection fails
+        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+      });
+  }
+
+  // Change Google Translate language
+  function changeGoogleTranslateLanguage(languageCode) {
+    if (typeof google !== 'undefined' && google.translate) {
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = languageCode;
+        combo.dispatchEvent(new Event('change'));
+      }
+    } else {
+      // Retry after a delay if Google Translate isn't loaded yet
+      setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+    }
+  }
+
+  // Initialize Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      includedLanguages: countries.map(c => c.code).join(',')
+    }, 'google_translate_element');
+  }
+
+  // Navbar functions
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function toggleSearch() {
+    const searchContainer = document.getElementById('searchContainer');
+    searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function handleResponsive() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('mobileMenuButton').style.display = 'block';
+      document.getElementById('desktopNav').style.display = 'none';
+    } else {
+      document.getElementById('mobileMenuButton').style.display = 'none';
+      document.getElementById('desktopNav').style.display = 'flex';
+      document.getElementById('mobileMenu').style.display = 'none';
+      document.getElementById('searchContainer').style.display = 'none';
+    }
+  }
+
+  // Initialize everything when DOM loads
+  document.addEventListener('DOMContentLoaded', function() {
+    initLanguageSelection();
+    handleResponsive();
+    document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+    window.addEventListener('resize', handleResponsive);
+    
+    // Load Google Translate script
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(script);
+  });
+</script>
+
+<!-- Google Translate element (hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<!-- =================================================================================== -->
+
+
+    <!-- Hero Section -->
+    <section id="home" style="padding: 180px 20px 100px; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); text-align: center; position: relative; overflow: hidden;">
+        <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+            <div style="display: inline-block; background-color: rgba(123, 31, 162, 0.2); color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px; animation: float 3s ease-in-out infinite; border: 1px solid #9c27b0;">Quantum Leap Ahead</div>
+            <h1 style="font-size: 48px; margin: 0 0 20px; color: white; line-height: 1.2; animation: fadeInUp 1s ease;">
+                Unlock the Power of <span style="color: #9c27b0;">Quantum Computing</span>
+            </h1>
+            <p style="font-size: 18px; color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto 40px; animation: fadeInUp 1s ease 0.2s forwards; opacity: 0;">Optic Bee Soft Tech delivers cutting-edge quantum computing solutions that solve complex problems beyond the reach of classical computers. Experience the future of computation today.</p>
+            <div style="display: flex; justify-content: center; gap: 20px; animation: fadeInUp 1s ease 0.4s forwards; opacity: 0;">
+                <button onclick="window.location.href='contact.html'" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);">Get Quantum Consultation</button>
+                <button onclick="window.location.href='services.html'" style="background: transparent; color: white; border: 2px solid #9c27b0; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Explore Solutions</button>
+            </div>
+        </div>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; z-index: 1; opacity: 0.1;">
+            <div style="position: absolute; top: 20%; left: 10%; width: 100px; height: 100px; border-radius: 50%; background-color: #9c27b0; filter: blur(60px); animation: float 6s ease-in-out infinite;"></div>
+            <div style="position: absolute; bottom: 15%; right: 15%; width: 150px; height: 150px; border-radius: 50%; background-color: #00bcd4; filter: blur(80px); animation: float 8s ease-in-out infinite 2s;"></div>
+        </div>
+        <div id="quantumParticles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></div>
+    </section>
+
+    <!-- Quantum Introduction -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+            <div style="position: relative;">
+                <div style="width: 100%; height: 500px; background: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; border-radius: 15px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);"></div>
+                <div style="position: absolute; bottom: -30px; right: -30px; width: 200px; height: 200px; background-color: #9c27b0; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; box-shadow: 0 10px 30px rgba(156, 39, 176, 0.3);">
+                    <div style="font-size: 48px; font-weight: 700;">100M+</div>
+                    <div style="font-size: 18px; text-align: center;">Qubits Processed</div>
+                </div>
+            </div>
+            <div>
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px;">QUANTUM REVOLUTION</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">The Next Frontier in <span style="color: #9c27b0;">Computing Power</span></h2>
+                <p style="color: #555; margin-bottom: 25px; font-size: 16px; line-height: 1.7;">Quantum computing harnesses the phenomena of quantum mechanics to deliver computational power exponentially greater than classical computers. At Optic Bee Soft Tech, we're pioneering practical applications of this transformative technology.</p>
+                
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                        <div style="width: 24px; height: 24px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-atom" style="color: white; font-size: 12px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Quantum Supremacy</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">Solve problems in seconds that would take classical computers thousands of years.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                        <div style="width: 24px; height: 24px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-project-diagram" style="color: white; font-size: 12px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Qubit Technology</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">Leverage superposition and entanglement for parallel processing at scale.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start;">
+                        <div style="width: 24px; height: 24px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-lock" style="color: white; font-size: 12px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Quantum Security</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">Unbreakable encryption through quantum key distribution and post-quantum cryptography.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="window.location.href='about.html'" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);">Learn How Quantum Works</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Stats -->
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #0f0c29, #302b63); color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: rgba(255,255,255,0.05); transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); border: 1px solid rgba(156, 39, 176, 0.3);">
+                <div style="font-size: 48px; font-weight: 700; color: #9c27b0; margin-bottom: 15px; transition: all 0.3s ease;">100x</div>
+                <h3 style="margin: 0; color: rgba(255,255,255,0.9); font-size: 18px;">Faster Than Classical Computers</h3>
+            </div>
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: rgba(255,255,255,0.05); transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); border: 1px solid rgba(156, 39, 176, 0.3);">
+                <div style="font-size: 48px; font-weight: 700; color: #9c27b0; margin-bottom: 15px; transition: all 0.3s ease;">128</div>
+                <h3 style="margin: 0; color: rgba(255,255,255,0.9); font-size: 18px;">Qubits in Our Latest Processor</h3>
+            </div>
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: rgba(255,255,255,0.05); transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); border: 1px solid rgba(156, 39, 176, 0.3);">
+                <div style="font-size: 48px; font-weight: 700; color: #9c27b0; margin-bottom: 15px; transition: all 0.3s ease;">50+</div>
+                <h3 style="margin: 0; color: rgba(255,255,255,0.9); font-size: 18px;">Quantum Algorithms Developed</h3>
+            </div>
+            <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: rgba(255,255,255,0.05); transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); border: 1px solid rgba(156, 39, 176, 0.3);">
+                <div style="font-size: 48px; font-weight: 700; color: #9c27b0; margin-bottom: 15px; transition: all 0.3s ease;">24/7</div>
+                <h3 style="margin: 0; color: rgba(255,255,255,0.9); font-size: 18px;">Quantum Cloud Access</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Services -->
+    <section id="services" style="padding: 100px 20px; background-color: #f5f9ff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">OUR SERVICES</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Quantum <span style="color: #9c27b0;">Computing Solutions</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We offer comprehensive quantum computing services to help your business harness this revolutionary technology.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                <!-- Service Card 1 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #9c27b0, #7b1fa2); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-question-circle" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Quantum Consulting</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Our quantum experts help you identify use cases where quantum computing can provide competitive advantage.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Quantum readiness assessment</li>
+                            <li style="margin-bottom: 8px;">Use case identification</li>
+                            <li style="margin-bottom: 8px;">ROI analysis</li>
+                            <li>Implementation roadmap</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9c27b0; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #673ab7, #5e35b1); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-laptop-code" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; bottom: -50px; left: -50px; width: 150px; height: 150px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Quantum Algorithm Development</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Custom quantum algorithms designed to solve your specific business problems with quantum advantage.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Problem formulation</li>
+                            <li style="margin-bottom: 8px;">Quantum circuit design</li>
+                            <li style="margin-bottom: 8px;">Hybrid algorithm development</li>
+                            <li>Performance optimization</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #673ab7; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #3f51b5, #3949ab); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-cloud" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Quantum Cloud Access</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Access to real quantum computers through our cloud platform with various hardware backends.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Multiple quantum processors</li>
+                            <li style="margin-bottom: 8px;">Simulator environments</li>
+                            <li style="margin-bottom: 8px;">Hybrid quantum-classical workflows</li>
+                            <li>API integration</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #3f51b5; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #2196f3, #1e88e5); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-lock" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Quantum Security</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Protect your data against quantum threats with our quantum-resistant cryptography solutions.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Post-quantum cryptography</li>
+                            <li style="margin-bottom: 8px;">Quantum key distribution</li>
+                            <li style="margin-bottom: 8px;">Security audits</li>
+                            <li>Migration strategies</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #2196f3; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #00bcd4, #00acc1); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-graduation-cap" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; top: -40px; right: -40px; width: 120px; height: 120px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Quantum Training</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Comprehensive training programs to build quantum computing expertise within your organization.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Quantum fundamentals</li>
+                            <li style="margin-bottom: 8px;">Algorithm development</li>
+                            <li style="margin-bottom: 8px;">Quantum programming</li>
+                            <li>Use case workshops</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #00bcd4; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now  <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(135deg, #4caf50, #43a047); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        <i class="fas fa-headset" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Quantum Support</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Ongoing support and maintenance for your quantum computing initiatives.</p>
+                        <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
+                            <li style="margin-bottom: 8px;">Algorithm optimization</li>
+                            <li style="margin-bottom: 8px;">Performance tuning</li>
+                            <li style="margin-bottom: 8px;">Hardware updates</li>
+                            <li>Dedicated quantum experts</li>
+                        </ul>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #4caf50; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Contact Now  <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Applications -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">TRANSFORMATIVE APPLICATIONS</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Industries Transformed by <span style="color: #9c27b0;">Quantum Computing</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Quantum computing is revolutionizing multiple industries by solving previously intractable problems.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                <!-- Application 1 -->
+                <div class="application-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Financial Services</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Quantum algorithms optimize portfolios, detect fraud, and model complex financial systems with unprecedented accuracy.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Portfolio Optimization</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Risk Analysis</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Algorithmic Trading</span>
+                        </div>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9c27b0; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Explore Solutions <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Application 2 -->
+                <div class="application-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Pharmaceuticals</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Quantum simulation accelerates drug discovery by modeling molecular interactions at quantum scale.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Molecular Modeling</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Drug Discovery</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Protein Folding</span>
+                        </div>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9c27b0; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Explore Solutions <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Application 3 -->
+                <div class="application-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
+                    <div style="height: 200px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Logistics & Supply Chain</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Quantum optimization solves complex routing and scheduling problems with millions of variables.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Route Optimization</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Inventory Management</span>
+                            <span style="background-color: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Supply Chain Optimization</span>
+                        </div>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9c27b0; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Explore Solutions <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Technology -->
+    <section style="padding: 80px 20px; background-color: #f5f9ff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 36px; margin: 0 0 15px; color: #222;">Our <span style="color: #9c27b0;">Quantum Technology</span> Stack</h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We work with leading quantum computing platforms and programming frameworks.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 30px; justify-items: center;">
+                <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/IBM_Quantum_Logo.png" alt="IBM Quantum" style="width: 50px; height: 50px; object-fit: contain;">
+                    </div>
+                    <p style="margin: 0; font-weight: 600; color: #444;">IBM Quantum</p>
+                </div>
+                <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Google_Quantum_AI_Logo.svg" alt="Google Quantum AI" style="width: 50px; height: 50px; object-fit: contain;">
+                    </div>
+                    <p style="margin: 0; font-weight: 600; color: #444;">Google Quantum AI</p>
+                </div>
+                <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Rigetti_Computing_Logo.png" alt="Rigetti" style="width: 50px; height: 50px; object-fit: contain;">
+                    </div>
+                    <p style="margin: 0; font-weight: 600; color: #444;">Rigetti</p>
+                </div>
+                <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/IonQ_logo.png" alt="IonQ" style="width: 50px; height: 50px; object-fit: contain;">
+                    </div>
+                    <p style="margin: 0; font-weight: 600; color: #444;">IonQ</p>
+                </div>
+                <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/D-Wave_Systems_logo.svg" alt="D-Wave" style="width: 50px; height: 50px; object-fit: contain;">
+                    </div>
+                    <p style="margin: 0; font-weight: 600; color: #444;">D-Wave</p>
+                </div>
+                <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Qiskit-Logo.svg" alt="Qiskit" style="width: 50px; height: 50px; object-fit: contain;">
+                    </div>
+                    <p style="margin: 0; font-weight: 600; color: #444;">Qiskit</p>
+                </div>
+                <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Cirq_logo.png" alt="Cirq" style="width: 50px; height: 50px; object-fit: contain;">
+                    </div>
+                    <p style="margin: 0; font-weight: 600; color: #444;">Cirq</p>
+                </div>
+                <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PennyLane_Logo.png" alt="PennyLane" style="width: 50px; height: 50px; object-fit: contain;">
+                    </div>
+                    <p style="margin: 0; font-weight: 600; color: #444;">PennyLane</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Process -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">OUR PROCESS</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Quantum Solution <span style="color: #9c27b0;">Development</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Our structured approach ensures successful quantum computing implementations.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; position: relative;">
+                <!-- Process Line -->
+                <div style="position: absolute; top: 40px; left: 125px; right: 125px; height: 3px; background-color: #f3e5f5; z-index: 1;"></div>
+                
+                <!-- Process Step 1 -->
+                <div class="process-step" style="text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 80px; height: 80px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(156, 39, 176, 0.2);">
+                        <i class="fas fa-search" style="font-size: 30px; color: white;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Discovery</h3>
+                    <p style="color: #555; margin: 0;">Identify quantum-appropriate problems and assess potential impact.</p>
+                </div>
+                
+                <!-- Process Step 2 -->
+                <div class="process-step" style="text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 80px; height: 80px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(156, 39, 176, 0.2);">
+                        <i class="fas fa-atom" style="font-size: 30px; color: white;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Formulation</h3>
+                    <p style="color: #555; margin: 0;">Translate business problems into quantum algorithms.</p>
+                </div>
+                
+                <!-- Process Step 3 -->
+                <div class="process-step" style="text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 80px; height: 80px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(156, 39, 176, 0.2);">
+                        <i class="fas fa-code" style="font-size: 30px; color: white;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Implementation</h3>
+                    <p style="color: #555; margin: 0;">Develop and test quantum circuits on simulators and real hardware.</p>
+                </div>
+                
+                <!-- Process Step 4 -->
+                <div class="process-step" style="text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 80px; height: 80px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(156, 39, 176, 0.2);">
+                        <i class="fas fa-rocket" style="font-size: 30px; color: white;"></i>
+                    </div>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Deployment</h3>
+                    <p style="color: #555; margin: 0;">Integrate quantum solutions into your business workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Testimonials -->
+    <section style="padding: 100px 20px; background-color: #f5f9ff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">CLIENT FEEDBACK</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">What Our <span style="color: #9c27b0;">Clients Say</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Hear from organizations that have transformed their operations with our quantum solutions.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" style="background-color: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px;">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Dr. Sarah Chen</h4>
+                            <p style="margin: 0; color: #666; font-size: 14px;">Head of Research, PharmaTech</p>
+                        </div>
+                    </div>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"Optic Bee's quantum algorithms reduced our molecular simulation time from weeks to hours. Their expertise in quantum chemistry applications was instrumental in accelerating our drug discovery pipeline."</p>
+                    <div style="color: #ff9900;">
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" style="background-color: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px;">
+                            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Client" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Michael Rodriguez</h4>
+                            <p style="margin: 0; color: #666; font-size: 14px;">CTO, FinTech Global</p>
+                        </div>
+                    </div>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"The quantum risk analysis models developed by Optic Bee have given us a significant competitive edge. Their ability to bridge the gap between quantum theory and practical financial applications is unparalleled."</p>
+                    <div style="color: #ff9900;">
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" style="background-color: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px;">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Client" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Emily Johnson</h4>
+                            <p style="margin: 0; color: #666; font-size: 14px;">Director of Logistics, Global Shipping</p>
+                        </div>
+                    </div>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"Optic Bee's quantum optimization algorithms reduced our fleet routing costs by 18% in the first month. Their team understood our complex constraints and delivered a solution that works with our existing systems."</p>
+                    <div style="color: #ff9900;">
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star" style="margin-right: 3px;"></i>
+                        <i class="fas fa-star-half-alt" style="margin-right: 3px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum CTA -->
+    <section style="padding: 100px 20px; background: linear-gradient(135deg, #0f0c29, #302b63); text-align: center; color: white;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 36px; margin: 0 0 20px;">Ready to Explore <span style="color: #9c27b0;">Quantum Advantage</span>?</h2>
+            <p style="font-size: 18px; margin-bottom: 40px; opacity: 0.9;">Schedule a consultation with our quantum experts to discover how your organization can benefit from this transformative technology.</p>
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <button onclick="window.location.href='contact.html'" style="background: #9c27b0; color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">Get Quantum Consultation</button>
+                <button onclick="window.location.href='tel:+918790170525'" style="background: transparent; color: white; border: 2px solid #9c27b0; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Call Quantum Experts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum FAQ -->
+    <section style="padding: 100px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">QUANTUM FAQ</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Frequently Asked <span style="color: #9c27b0;">Questions</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Answers to common questions about quantum computing and our services.</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+                    <button class="faq-question" style="width: 100%; padding: 20px; text-align: left; background-color: #f9f9f9; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 18px; color: #222;">
+                        <span>What is quantum computing and how does it differ from classical computing?</span>
+                        <i class="fas fa-chevron-down" style="transition: all 0.3s ease;"></i>
+                    </button>
+                    <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px 0; color: #555;">
+                            <p>Quantum computing leverages quantum mechanical phenomena like superposition and entanglement to perform calculations. Unlike classical bits that are either 0 or 1, quantum bits (qubits) can exist in multiple states simultaneously, enabling quantum computers to solve certain complex problems exponentially faster than classical computers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+                    <button class="faq-question" style="width: 100%; padding: 20px; text-align: left; background-color: #f9f9f9; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 18px; color: #222;">
+                        <span>What types of problems are best suited for quantum computing?</span>
+                        <i class="fas fa-chevron-down" style="transition: all 0.3s ease;"></i>
+                    </button>
+                    <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px 0; color: #555;">
+                            <p>Quantum computing excels at problems involving optimization, simulation, and machine learning. Key applications include:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Molecular modeling for drug discovery</li>
+                                <li style="margin-bottom: 8px;">Financial portfolio optimization</li>
+                                <li style="margin-bottom: 8px;">Logistics and supply chain optimization</li>
+                                <li style="margin-bottom: 8px;">Cryptography and cybersecurity</li>
+                                <li>Machine learning pattern recognition</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+                    <button class="faq-question" style="width: 100%; padding: 20px; text-align: left; background-color: #f9f9f9; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 18px; color: #222;">
+                        <span>How mature is quantum computing technology today?</span>
+                        <i class="fas fa-chevron-down" style="transition: all 0.3s ease;"></i>
+                    </button>
+                    <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px 0; color: #555;">
+                            <p>Quantum computing is in the noisy intermediate-scale quantum (NISQ) era, with devices containing 50-100 qubits available through cloud platforms. While error correction remains a challenge, these devices can already solve practical problems, especially when combined with classical computing in hybrid approaches. Major tech companies and startups are rapidly advancing the technology, with quantum advantage (outperforming classical computers on practical problems) being demonstrated for specific applications.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+                    <button class="faq-question" style="width: 100%; padding: 20px; text-align: left; background-color: #f9f9f9; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 18px; color: #222;">
+                        <span>How can my business prepare for quantum computing?</span>
+                        <i class="fas fa-chevron-down" style="transition: all 0.3s ease;"></i>
+                    </button>
+                    <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px 0; color: #555;">
+                            <p>Businesses can take several steps to prepare for quantum computing:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Identify potential use cases where quantum could provide advantage</li>
+                                <li style="margin-bottom: 8px;">Assess quantum readiness of your data and algorithms</li>
+                                <li style="margin-bottom: 8px;">Begin experimenting with quantum cloud services</li>
+                                <li style="margin-bottom: 8px;">Develop quantum literacy among technical staff</li>
+                                <li style="margin-bottom: 8px;">Evaluate cybersecurity implications and plan for post-quantum cryptography</li>
+                                <li>Partner with quantum experts like Optic Bee Soft Tech</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+                    <button class="faq-question" style="width: 100%; padding: 20px; text-align: left; background-color: #f9f9f9; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 18px; color: #222;">
+                        <span>What quantum computing hardware approaches does Optic Bee work with?</span>
+                        <i class="fas fa-chevron-down" style="transition: all 0.3s ease;"></i>
+                    </button>
+                    <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px 0; color: #555;">
+                            <p>We work with all major quantum computing hardware approaches:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>Superconducting qubits</strong> (IBM, Google, Rigetti)</li>
+                                <li style="margin-bottom: 8px;"><strong>Trapped ions</strong> (IonQ, Honeywell)</li>
+                                <li style="margin-bottom: 8px;"><strong>Photonic quantum computing</strong> (Xanadu)</li>
+                                <li style="margin-bottom: 8px;"><strong>Quantum annealing</strong> (D-Wave)</li>
+                                <li style="margin-bottom: 8px;"><strong>Topological qubits</strong> (Microsoft)</li>
+                                <li><strong>Neutral atoms</strong> (ColdQuanta, Pasqal)</li>
+                            </ul>
+                            <p>We help clients select the best approach for their specific problem domain and work with hybrid quantum-classical architectures when appropriate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Contact -->
+    <section id="contact" style="padding: 100px 20px; background-color: #f5f9ff;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+            <div>
+                <div style="display: inline-block; background-color: #f3e5f5; color: #9c27b0; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px;">QUANTUM TEAM</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Talk to Our <span style="color: #9c27b0;">Quantum Experts</span></h2>
+                <p style="color: #555; margin-bottom: 40px; font-size: 16px; line-height: 1.7;">Have questions about quantum computing or want to explore how it can benefit your organization? Our team of quantum physicists and engineers is ready to help.</p>
+                
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+                        <div style="width: 50px; height: 50px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 20px; flex-shrink: 0;">
+                            <i class="fas fa-map-marker-alt" style="color: #9c27b0; font-size: 20px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Our Quantum Lab</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">21 102 CVR Residency, Pragathi Nagar, Kukatpally, HYD 500090, IND</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+                        <div style="width: 50px; height: 50px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 20px; flex-shrink: 0;">
+                            <i class="fas fa-envelope" style="color: #9c27b0; font-size: 20px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Email Us</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">quantum@opticbeesofttech.com<br>support@opticbeesofttech.com</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start;">
+                        <div style="width: 50px; height: 50px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 20px; flex-shrink: 0;">
+                            <i class="fas fa-phone-alt" style="color: #9c27b0; font-size: 20px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Call Us</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">+91 8790170525 (Quantum Division)<br>+91 8790170525 (General)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #9c27b0; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #9c27b0; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #9c27b0; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #f3e5f5; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #9c27b0; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div style="background-color: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                <h3 style="margin: 0 0 30px; font-size: 24px; color: #222;">Quantum Inquiry Form</h3>
+                <form>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Your Name</label>
+                        <input type="text" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Your Email</label>
+                        <input type="email" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Company</label>
+                        <input type="text" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Industry</label>
+                        <select style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;">
+                            <option value="">Select your industry</option>
+                            <option value="finance">Financial Services</option>
+                            <option value="pharma">Pharmaceuticals</option>
+                            <option value="logistics">Logistics & Supply Chain</option>
+                            <option value="energy">Energy</option>
+                            <option value="tech">Technology</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #444;">Your Quantum Inquiry</label>
+                        <textarea rows="5" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: all 0.3s ease;"></textarea>
+                    </div>
+                    <button type="submit" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3); width: 100%;">Submit Quantum Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #222; color: #aaa; padding: 80px 20px 30px;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+            <div>
+                <div class="logo" style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 40px; height: 40px; background-color: #9c27b0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 10px;">
+                        <i class="fas fa-atom" style="color: white; font-size: 18px;"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 24px; color: white; font-weight: 700;">Optic<span style="color: #9c27b0;">Bee</span> Quantum</h2>
+                </div>
+                <p style="margin-bottom: 25px; line-height: 1.7;">Optic Bee Soft Tech is at the forefront of practical quantum computing applications, helping businesses harness this revolutionary technology.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 style="color: white; font-size: 20px; margin-bottom: 25px;">Quantum Links</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="#home" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Quantum Home</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#services" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Quantum Services</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#applications" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Quantum Applications</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#technology" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Quantum Technology</a></li>
+                    <li><a href="#contact" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Quantum Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 style="color: white; font-size: 20px; margin-bottom: 25px;">Quantum Services</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Quantum Consulting</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Algorithm Development</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Quantum Cloud Access</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Quantum Security</a></li>
+                    <li><a href="#" style="color: #aaa; text-decoration: none; transition: all 0.3s ease;">Quantum Training</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 style="color: white; font-size: 20px; margin-bottom: 25px;">Quantum Newsletter</h3>
+                <p style="margin-bottom: 20px;">Subscribe to our quantum computing newsletter for the latest breakthroughs and insights.</p>
+                <form style="display: flex;">
+                    <input type="email" placeholder="Your Email" style="flex-grow: 1; padding: 12px 15px; border: none; border-radius: 30px 0 0 30px; font-size: 14px;">
+                    <button type="submit" style="background: #9c27b0; color: white; border: none; padding: 0 20px; border-radius: 0 30px 30px 0; cursor: pointer; transition: all 0.3s ease;">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div style="max-width: 1200px; margin: 50px auto 0; padding-top: 30px; border-top: 1px solid #333; text-align: center;">
+            <p style="margin: 0; font-size: 14px;">&copy; 2023 Optic Bee Soft Tech Quantum Division. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top" style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background-color: #9c27b0; color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(function() {
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Quantum Particle Animation
+        function initQuantumParticles() {
+            const container = document.getElementById('quantumParticles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.backgroundColor = `rgba(156, 39, 176, ${Math.random() * 0.5 + 0.1})`;
+                particle.style.borderRadius = '50%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Animation
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+                
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                    item.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                    item.style.boxShadow = '0 5px 15px rgba(156, 39, 176, 0.1)';
+                }
+            });
+        });
+
+        // Hover Effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
+            });
+        });
+
+        document.querySelectorAll('.application-card').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const imgDiv = this.querySelector('div:first-child');
+                imgDiv.style.transform = 'scale(1.05)';
+            });
+            item.addEventListener('mouseleave', function() {
+                const imgDiv = this.querySelector('div:first-child');
+                imgDiv.style.transform = 'scale(1)';
+            });
+        });
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+                const number = this.querySelector('div:first-child');
+                number.style.color = '#00bcd4';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+                const number = this.querySelector('div:first-child');
+                number.style.color = '#9c27b0';
+            });
+        });
+
+        document.querySelectorAll('.tech-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const iconDiv = this.querySelector('div:first-child');
+                iconDiv.style.backgroundColor = '#9c27b0';
+                iconDiv.style.transform = 'scale(1.1)';
+                const img = iconDiv.querySelector('img');
+                if (img) {
+                    img.style.filter = 'brightness(0) invert(1)';
+                }
+            });
+            item.addEventListener('mouseleave', function() {
+                const iconDiv = this.querySelector('div:first-child');
+                iconDiv.style.backgroundColor = '#f5f5f5';
+                iconDiv.style.transform = 'scale(1)';
+                const img = iconDiv.querySelector('img');
+                if (img) {
+                    img.style.filter = 'none';
+                }
+            });
+        });
+
+        document.querySelectorAll('.process-step').forEach(step => {
+            step.addEventListener('mouseenter', function() {
+                const iconDiv = this.querySelector('div:first-child');
+                iconDiv.style.transform = 'scale(1.1) rotate(5deg)';
+                iconDiv.style.boxShadow = '0 15px 30px rgba(156, 39, 176, 0.3)';
+            });
+            step.addEventListener('mouseleave', function() {
+                const iconDiv = this.querySelector('div:first-child');
+                iconDiv.style.transform = 'scale(1) rotate(0)';
+                iconDiv.style.boxShadow = '0 10px 20px rgba(156, 39, 176, 0.2)';
+            });
+        });
+
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+            });
+        });
+
+        // Animation on Scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('[style*="animation: fadeInUp"]');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.animationPlayState = 'running';
+                }
+            });
+        }
+
+        // Initialize everything when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initQuantumParticles();
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-10px) translateX(10px);
+            }
+            50% {
+                transform: translateY(5px) translateX(-10px);
+            }
+            75% {
+                transform: translateY(-5px) translateX(5px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+        
+        [style*="animation: fadeInUp"] {
+            animation: fadeInUp 1s ease forwards;
+            animation-play-state: paused;
+        }
+        
+        .service-card:hover a {
+            color: inherit;
+        }
+        
+        .service-card:hover a i {
+            transform: translateX(5px);
+        }
+        
+        .application-card:hover a {
+            color: inherit;
+        }
+        
+        .application-card:hover a i {
+            transform: translateX(5px);
+        }
+        
+        footer a:hover {
+            color: #9c27b0 !important;
+        }
+        
+        footer .social-links a:hover {
+            background-color: #9c27b0 !important;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(156, 39, 176, 0.4) !important;
+        }
+        
+        #back-to-top:hover {
+            background-color: #7b1fa2;
+            transform: translateY(-5px);
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #9c27b0 !important;
+            box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.2);
+        }
+        
+        button:not(.cta-button):hover {
+            background-color: #9c27b0 !important;
+            color: white !important;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const servicesLink = document.getElementById("servicesLink");
+            const dropdown = document.getElementById("servicesDropdown");
+
+            servicesLink.addEventListener("mouseenter", () => {
+            dropdown.style.display = "flex";
+            });
+            servicesLink.addEventListener("mouseleave", () => {
+            setTimeout(() => {
+                if (!dropdown.matches(':hover')) {
+                dropdown.style.display = "none";
+                }
+            }, 100);
+            });
+
+            dropdown.addEventListener("mouseleave", () => {
+            dropdown.style.display = "none";
+            });
+
+            dropdown.addEventListener("mouseenter", () => {
+            dropdown.style.display = "flex";
+            });
+        });
+
+        // Country/language data
+        const countries = [
+            {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+            {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+            {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+            {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+            {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+            {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+            {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+            {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+            {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+            {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+            {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+        ];
+
+        // Initialize language functionality
+        function initLanguageSelection() {
+            // Populate desktop dropdown
+            const optionsList = document.getElementById('optionsList');
+            countries.forEach(country => {
+                const option = document.createElement('div');
+                option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+                option.dataset.code = country.code;
+                option.dataset.flag = country.flag;
+                option.dataset.name = country.name;
+                option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+                optionsList.appendChild(option);
+            });
+
+            // Populate mobile dropdown
+            const mobileSelect = document.getElementById('mobileLanguageSelect');
+            countries.forEach(country => {
+                if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+                    const option = document.createElement('option');
+                    option.value = country.code;
+                    option.textContent = `${country.name} (${country.country})`;
+                    option.dataset.flag = country.flag;
+                    mobileSelect.appendChild(option);
+                }
+            });
+
+            // Set up event listeners
+            document.getElementById('selectedOption').onclick = function() {
+                optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+            };
+
+            document.getElementById('mobileLanguageSelect').onchange = function() {
+                const selectedOption = this.options[this.selectedIndex];
+                selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+            };
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#customDropdown')) {
+                    optionsList.style.display = 'none';
+                }
+            });
+
+            // Detect user's language
+            detectUserLanguage();
+        }
+
+        // Select language function
+        function selectLanguage(code, flag, name) {
+            // Update desktop display
+            document.getElementById('currentFlag').src = flag;
+            document.getElementById('currentLanguage').textContent = code.toUpperCase();
+            document.getElementById('optionsList').style.display = 'none';
+            
+            // Update mobile display
+            const mobileSelect = document.getElementById('mobileLanguageSelect');
+            mobileSelect.value = code;
+            
+            // Store selection
+            localStorage.setItem('userLanguage', code);
+            localStorage.setItem('userLanguageFlag', flag);
+            localStorage.setItem('userLanguageName', name);
+            
+            // Change Google Translate language
+            changeGoogleTranslateLanguage(code);
+        }
+
+        // Detect user's language
+        function detectUserLanguage() {
+            // Check for stored preference first
+            const storedLanguage = localStorage.getItem('userLanguage');
+            if (storedLanguage) {
+                const storedFlag = localStorage.getItem('userLanguageFlag');
+                const storedName = localStorage.getItem('userLanguageName');
+                selectLanguage(storedLanguage, storedFlag, storedName);
+                return;
+            }
+
+            // Try to detect from browser
+            const browserLanguage = navigator.language || navigator.userLanguage;
+            if (browserLanguage) {
+                const mainLang = browserLanguage.split('-')[0];
+                const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+                if (matchedCountry) {
+                    selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+                    return;
+                }
+            }
+
+            // Fallback to IP detection
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = data.country;
+                    const matchedCountry = countries.find(c => 
+                        c.country.toLowerCase() === data.country_name.toLowerCase() || 
+                        c.code === data.languages?.split(',')[0]
+                    );
+                    if (matchedCountry) {
+                        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+                    } else {
+                        // Default to English
+                        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+                    }
+                })
+                .catch(() => {
+                    // Default to English if all detection fails
+                    selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+                });
+        }
+
+        // Change Google Translate language
+        function changeGoogleTranslateLanguage(languageCode) {
+            if (typeof google !== 'undefined' && google.translate) {
+                const combo = document.querySelector('.goog-te-combo');
+                if (combo) {
+                    combo.value = languageCode;
+                    combo.dispatchEvent(new Event('change'));
+                }
+            } else {
+                // Retry after a delay if Google Translate isn't loaded yet
+                setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+            }
+        }
+
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false,
+                includedLanguages: countries.map(c => c.code).join(',')
+            }, 'google_translate_element');
+        }
+
+        // Navbar functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function toggleSearch() {
+            const searchContainer = document.getElementById('searchContainer');
+            searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function handleResponsive() {
+            if (window.innerWidth <= 768) {
+                document.getElementById('mobileMenuButton').style.display = 'block';
+                document.getElementById('desktopNav').style.display = 'none';
+            } else {
+                document.getElementById('mobileMenuButton').style.display = 'none';
+                document.getElementById('desktopNav').style.display = 'flex';
+                document.getElementById('mobileMenu').style.display = 'none';
+                document.getElementById('searchContainer').style.display = 'none';
+            }
+        }
+
+        // Initialize everything when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguageSelection();
+            handleResponsive();
+            document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+            window.addEventListener('resize', handleResponsive);
+            
+            // Load Google Translate script
+            const script = document.createElement('script');
+            script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.head.appendChild(script);
+        });
+
+        window.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar');
+            if(window.scrollY > 50){
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- Google Translate element (hidden) -->
+    <div id="google_translate_element" style="display:none;"></div>
+</body>
+</html>

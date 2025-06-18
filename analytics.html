@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optic Bee Soft Tech - Web Development Services</title>
+    <title>Optic Bee Soft Tech - Data Analytics Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; color: #333; line-height: 1.6;">
@@ -11,12 +11,12 @@
     <div id="preloader" style="position: fixed; width: 100%; height: 100%; background: #fff url('https://i.gifer.com/ZZ5H.gif') no-repeat center center; z-index: 9999; transition: opacity 0.5s ease; opacity: 1;">
         <div style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
             <h3 style="color: #0066cc; font-size: 22px; margin-top: 20px;">Optic Bee Soft Tech</h3>
-            <p style="color: #666; font-size: 16px;">Loading our digital excellence...</p>
+            <p style="color: #666; font-size: 16px;">Loading our data insights...</p>
         </div>
     </div>
 
-<!-- Navbar -->
-<header style="position:sticky;top:0;z-index:1000;background:#6a1b9a; background:linear-gradient(to right, #fff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+    <!-- Navbar -->
+<header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
   <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
     <!-- Logo -->
     <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
@@ -34,13 +34,17 @@
       <a href="products.html" class="nav-link">Products</a>
       <a href="Projects.html" class="nav-link">Projects</a>
       <div style="position:relative;">
-        <a id="servicesLink" href="#" class="nav-link" style="position:relative; z-index: 2000;">
-            Services ▼
+        <a href="#" class="nav-link" style="position:relative;" 
+          onmouseover="document.getElementById('servicesDropdown').style.display='flex'" 
+          onmouseout="document.getElementById('servicesDropdown').style.display='none'">
+          Services ▼
         </a>
 
+        <div id="servicesDropdown" 
+            onmouseover="this.style.display='flex'" 
+            onmouseout="this.style.display='none'"
+            style="display:none; position:absolute; top:100%; left:0; background:white; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px; padding:20px; gap:20px; z-index:1000; flex-wrap:wrap; width:500px; justify-content:space-between;">
 
-        <div id="servicesDropdown"
-            style="display:none; position:absolute; top:100%; left:0; background:rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow:0 4px 20px rgba(0,0,0,0.2); border-radius:8px; padding:20px; gap:20px; z-index:1500; flex-wrap:wrap; width:500px; justify-content:space-between;">
           <!-- One box per service -->
           <a href="web.html" style="text-decoration:none;  width:48%;">
             <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s; background:transparent;" 
@@ -87,7 +91,7 @@
             </div>
           </a>
 
-          <a href="mobile.html" style="text-decoration:none, width:48%;">
+          <a href="mobile.html" style="text-decoration:none; width:48%;">
             <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
                 onmouseover="this.style.background='#f0f0f0'" 
                 onmouseout="this.style.background='transparent'">
@@ -216,9 +220,8 @@
   }
   
   .nav-link:hover {
-        background-color: rgba(255,255,255,0.05);
-    }
-
+    background-color: rgba(255,255,255,0.2);
+  }
   
   .nav-icon {
     color: white;
@@ -290,13 +293,6 @@
       display: none;
     }
   }
-
-  /* Navbar scrolled style */
-  .navbar.scrolled {
-    background: #fff; /* or rgba(255,255,255,0.95) */
-    color: #222;
-    opacity: 1;
-}
 </style>
 
 <script>
@@ -484,15 +480,6 @@
     script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
     document.head.appendChild(script);
   });
-
-  window.addEventListener('scroll', function() {
-    var navbar = document.querySelector('.navbar');
-    if(window.scrollY > 50){
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
 </script>
 
 <!-- Google Translate element (hidden) -->
@@ -503,14 +490,14 @@
     <!-- Hero Section -->
     <section id="home" style="padding: 180px 20px 100px; background: linear-gradient(135deg, #f0f7ff, #e1f0ff); text-align: center; position: relative; overflow: hidden;">
         <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
-            <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px; animation: float 3s ease-in-out infinite;">Innovative Web Solutions</div>
+            <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px; animation: float 3s ease-in-out infinite;">Data-Driven Decisions</div>
             <h1 style="font-size: 48px; margin: 0 0 20px; color: #222; line-height: 1.2; animation: fadeInUp 1s ease;">
-                Transforming Your <span style="color: #0066cc;">Digital Vision</span> Into Reality
+                Transform <span style="color: #0066cc;">Raw Data</span> Into Strategic Insights
             </h1>
-            <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto 40px; animation: fadeInUp 1s ease 0.2s forwards; opacity: 0;">Optic Bee Soft Tech delivers cutting-edge web development services tailored to your business needs. We create responsive, scalable, and high-performance websites that drive results.</p>
+            <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto 40px; animation: fadeInUp 1s ease 0.2s forwards; opacity: 0;">Optic Bee Soft Tech delivers advanced data analytics solutions that uncover hidden patterns, predict trends, and drive informed business decisions.</p>
             <div style="display: flex; justify-content: center; gap: 20px; animation: fadeInUp 1s ease 0.4s forwards; opacity: 0;">
-                <button onclick="window.location.href='services.html'" style="background: linear-gradient(135deg, #0066cc, #004d99); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);">Explore Services</button>
-                <button onclick="window.location.href='contact.html'" style="background: white; color: #0066cc; border: 2px solid #0066cc; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Contact Us</button>
+                <button style="background: linear-gradient(135deg, #0066cc, #004d99); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);">Explore Services</button>
+                <button style="background: white; color: #0066cc; border: 2px solid #0066cc; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">See Case Studies</button>
             </div>
         </div>
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; z-index: 1; opacity: 0.1;">
@@ -523,20 +510,20 @@
     <section style="padding: 80px 20px; background-color: white;">
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
             <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: #f9f9f9; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
-                <div style="font-size: 48px; font-weight: 700; color: #0066cc; margin-bottom: 15px; transition: all 0.3s ease;">250+</div>
-                <h3 style="margin: 0; color: #444; font-size: 18px;">Projects Completed</h3>
+                <div style="font-size: 48px; font-weight: 700; color: #0066cc; margin-bottom: 15px; transition: all 0.3s ease;">87%</div>
+                <h3 style="margin: 0; color: #444; font-size: 18px;">Improved Decision Making</h3>
             </div>
             <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: #f9f9f9; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
-                <div style="font-size: 48px; font-weight: 700; color: #0066cc; margin-bottom: 15px; transition: all 0.3s ease;">98%</div>
-                <h3 style="margin: 0; color: #444; font-size: 18px;">Client Satisfaction</h3>
+                <div style="font-size: 48px; font-weight: 700; color: #0066cc; margin-bottom: 15px; transition: all 0.3s ease;">2.5x</div>
+                <h3 style="margin: 0; color: #444; font-size: 18px;">Faster Insights</h3>
             </div>
             <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: #f9f9f9; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
-                <div style="font-size: 48px; font-weight: 700; color: #0066cc; margin-bottom: 15px; transition: all 0.3s ease;">50+</div>
-                <h3 style="margin: 0; color: #444; font-size: 18px;">Expert Team Members</h3>
+                <div style="font-size: 48px; font-weight: 700; color: #0066cc; margin-bottom: 15px; transition: all 0.3s ease;">300+</div>
+                <h3 style="margin: 0; color: #444; font-size: 18px;">Data Projects Completed</h3>
             </div>
             <div class="stat-card" style="text-align: center; padding: 30px; border-radius: 15px; background-color: #f9f9f9; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
-                <div style="font-size: 48px; font-weight: 700; color: #0066cc; margin-bottom: 15px; transition: all 0.3s ease;">10+</div>
-                <h3 style="margin: 0; color: #444; font-size: 18px;">Years of Experience</h3>
+                <div style="font-size: 48px; font-weight: 700; color: #0066cc; margin-bottom: 15px; transition: all 0.3s ease;">10B+</div>
+                <h3 style="margin: 0; color: #444; font-size: 18px;">Data Points Analyzed</h3>
             </div>
         </div>
     </section>
@@ -546,28 +533,28 @@
         <div style="max-width: 1200px; margin: 0 auto;">
             <div style="text-align: center; margin-bottom: 60px;">
                 <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">OUR SERVICES</div>
-                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Comprehensive <span style="color: #0066cc;">Web Development</span> Solutions</h2>
-                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We offer end-to-end web development services to help your business establish a powerful online presence.</p>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Comprehensive <span style="color: #0066cc;">Data Analytics</span> Services</h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We offer end-to-end data analytics services to help your business unlock the full potential of your data.</p>
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
                 <!-- Service Card 1 -->
                 <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
                     <div style="height: 200px; background: linear-gradient(135deg, #0066cc, #004d99); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-                        <i class="fas fa-laptop-code" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <i class="fas fa-database" style="font-size: 70px; color: white; z-index: 2;"></i>
                         <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
                     </div>
                     <div style="padding: 30px;">
-                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Custom Web Development</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Tailored web solutions built from scratch to meet your specific business requirements and objectives.</p>
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Data Engineering</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Build robust data pipelines and infrastructure to collect, process, and store your data efficiently.</p>
                         <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
-                            <li style="margin-bottom: 8px;">Responsive design for all devices</li>
-                            <li style="margin-bottom: 8px;">SEO-friendly architecture</li>
-                            <li style="margin-bottom: 8px;">Scalable solutions</li>
-                            <li>Performance optimization</li>
+                            <li style="margin-bottom: 8px;">Data pipeline development</li>
+                            <li style="margin-bottom: 8px;">ETL/ELT processes</li>
+                            <li style="margin-bottom: 8px;">Data warehouse solutions</li>
+                            <li>Data quality management</li>
                         </ul>
-                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #0066cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        <a href="#" style="display: inline-flex; align-items: center; color: #0066cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
                         </a>
                     </div>
                 </div>
@@ -575,20 +562,20 @@
                 <!-- Service Card 2 -->
                 <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
                     <div style="height: 200px; background: linear-gradient(135deg, #ff9900, #e68a00); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-                        <i class="fas fa-shopping-cart" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <i class="fas fa-chart-line" style="font-size: 70px; color: white; z-index: 2;"></i>
                         <div style="position: absolute; bottom: -50px; left: -50px; width: 150px; height: 150px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
                     </div>
                     <div style="padding: 30px;">
-                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">E-Commerce Solutions</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Powerful online stores with seamless shopping experiences to boost your sales and revenue.</p>
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Business Intelligence</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Transform your data into actionable insights with powerful dashboards and visualizations.</p>
                         <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
-                            <li style="margin-bottom: 8px;">Secure payment gateways</li>
-                            <li style="margin-bottom: 8px;">Inventory management</li>
-                            <li style="margin-bottom: 8px;">Mobile-optimized checkout</li>
-                            <li>Marketing integrations</li>
+                            <li style="margin-bottom: 8px;">Interactive dashboards</li>
+                            <li style="margin-bottom: 8px;">KPI tracking</li>
+                            <li style="margin-bottom: 8px;">Ad-hoc reporting</li>
+                            <li>Data storytelling</li>
                         </ul>
-                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #ff9900; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        <a href="#" style="display: inline-flex; align-items: center; color: #ff9900; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
                         </a>
                     </div>
                 </div>
@@ -596,20 +583,20 @@
                 <!-- Service Card 3 -->
                 <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
                     <div style="height: 200px; background: linear-gradient(135deg, #33cc33, #29a329); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-                        <i class="fas fa-mobile-alt" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <i class="fas fa-brain" style="font-size: 70px; color: white; z-index: 2;"></i>
                         <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
                     </div>
                     <div style="padding: 30px;">
-                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Mobile-First Development</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Websites designed with mobile users in mind first, ensuring optimal performance on all devices.</p>
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Machine Learning</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Leverage predictive analytics and AI to uncover patterns and forecast future trends.</p>
                         <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
-                            <li style="margin-bottom: 8px;">Progressive Web Apps</li>
-                            <li style="margin-bottom: 8px;">Touch-friendly interfaces</li>
-                            <li style="margin-bottom: 8px;">Fast loading speeds</li>
-                            <li>Offline capabilities</li>
+                            <li style="margin-bottom: 8px;">Predictive modeling</li>
+                            <li style="margin-bottom: 8px;">Recommendation systems</li>
+                            <li style="margin-bottom: 8px;">Natural language processing</li>
+                            <li>Anomaly detection</li>
                         </ul>
-                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #33cc33; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        <a href="#" style="display: inline-flex; align-items: center; color: #33cc33; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
                         </a>
                     </div>
                 </div>
@@ -617,20 +604,20 @@
                 <!-- Service Card 4 -->
                 <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
                     <div style="height: 200px; background: linear-gradient(135deg, #9933ff, #7a00cc); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-                        <i class="fas fa-search" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <i class="fas fa-search-dollar" style="font-size: 70px; color: white; z-index: 2;"></i>
                         <div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
                     </div>
                     <div style="padding: 30px;">
-                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">SEO Optimization</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Boost your search engine rankings with our comprehensive SEO strategies and technical optimizations.</p>
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Advanced Analytics</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Go beyond basic reporting with sophisticated statistical analysis and data mining.</p>
                         <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
-                            <li style="margin-bottom: 8px;">Keyword research</li>
-                            <li style="margin-bottom: 8px;">On-page optimization</li>
-                            <li style="margin-bottom: 8px;">Technical SEO audits</li>
-                            <li>Content strategy</li>
+                            <li style="margin-bottom: 8px;">Customer segmentation</li>
+                            <li style="margin-bottom: 8px;">Market basket analysis</li>
+                            <li style="margin-bottom: 8px;">Sentiment analysis</li>
+                            <li>Churn prediction</li>
                         </ul>
-                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #9933ff; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                            Contact Now <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        <a href="#" style="display: inline-flex; align-items: center; color: #9933ff; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
                         </a>
                     </div>
                 </div>
@@ -638,20 +625,20 @@
                 <!-- Service Card 5 -->
                 <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
                     <div style="height: 200px; background: linear-gradient(135deg, #ff6666, #cc3333); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-                        <i class="fas fa-shield-alt" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <i class="fas fa-cloud" style="font-size: 70px; color: white; z-index: 2;"></i>
                         <div style="position: absolute; top: -40px; right: -40px; width: 120px; height: 120px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
                     </div>
                     <div style="padding: 30px;">
-                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Web Security</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Protect your website and user data with our comprehensive security solutions and best practices.</p>
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Cloud Analytics</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Scalable, secure analytics solutions in the cloud for maximum flexibility and performance.</p>
                         <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
-                            <li style="margin-bottom: 8px;">SSL certificates</li>
-                            <li style="margin-bottom: 8px;">Malware scanning</li>
-                            <li style="margin-bottom: 8px;">DDoS protection</li>
-                            <li>Security audits</li>
+                            <li style="margin-bottom: 8px;">AWS/Azure/GCP solutions</li>
+                            <li style="margin-bottom: 8px;">Serverless architectures</li>
+                            <li style="margin-bottom: 8px;">Data lake implementation</li>
+                            <li>Cost optimization</li>
                         </ul>
-                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #ff6666; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                            Contact Now  <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        <a href="#" style="display: inline-flex; align-items: center; color: #ff6666; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
                         </a>
                     </div>
                 </div>
@@ -659,20 +646,20 @@
                 <!-- Service Card 6 -->
                 <div class="service-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative;">
                     <div style="height: 200px; background: linear-gradient(135deg, #0099cc, #007799); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-                        <i class="fas fa-headset" style="font-size: 70px; color: white; z-index: 2;"></i>
+                        <i class="fas fa-shield-alt" style="font-size: 70px; color: white; z-index: 2;"></i>
                         <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);"></div>
                     </div>
                     <div style="padding: 30px;">
-                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Maintenance & Support</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Ongoing website maintenance and support to keep your digital presence running smoothly.</p>
+                        <h3 style="margin: 0 0 15px; font-size: 22px; color: #222;">Data Governance</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Ensure data quality, security, and compliance across your organization.</p>
                         <ul style="padding-left: 20px; margin-bottom: 25px; color: #555;">
-                            <li style="margin-bottom: 8px;">Regular updates</li>
-                            <li style="margin-bottom: 8px;">Performance monitoring</li>
-                            <li style="margin-bottom: 8px;">Bug fixes</li>
-                            <li>24/7 support</li>
+                            <li style="margin-bottom: 8px;">Data cataloging</li>
+                            <li style="margin-bottom: 8px;">Privacy compliance</li>
+                            <li style="margin-bottom: 8px;">Access controls</li>
+                            <li>Audit trails</li>
                         </ul>
-                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #0099cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                            Contact Now  <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        <a href="#" style="display: inline-flex; align-items: center; color: #0099cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            Learn More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
                         </a>
                     </div>
                 </div>
@@ -684,127 +671,127 @@
     <section style="padding: 80px 20px; background-color: white;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-size: 36px; margin: 0 0 15px; color: #222;">Our <span style="color: #0066cc;">Technology Stack</span></h2>
-                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We work with the latest technologies to deliver cutting-edge web solutions.</p>
+                <h2 style="font-size: 36px; margin: 0 0 15px; color: #222;">Our <span style="color: #0066cc;">Analytics Stack</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We work with the leading technologies in data analytics and business intelligence.</p>
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 30px; justify-items: center;">
                 <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
                     <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
-                        <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React" style="width: 50px; height: 50px; object-fit: contain;">
+                        <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" alt="Python" style="width: 50px; height: 50px; object-fit: contain;">
                     </div>
-                    <p style="margin: 0; font-weight: 600; color: #444;">React</p>
+                    <p style="margin: 0; font-weight: 600; color: #444;">Python</p>
                 </div>
                 <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
                     <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
-                        <img src="https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg" alt="Angular" style="width: 50px; height: 50px; object-fit: contain;">
+                        <img src="https://cdn.worldvectorlogo.com/logos/r-lang.svg" alt="R" style="width: 50px; height: 50px; object-fit: contain;">
                     </div>
-                    <p style="margin: 0; font-weight: 600; color: #444;">Angular</p>
+                    <p style="margin: 0; font-weight: 600; color: #444;">R</p>
                 </div>
                 <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
                     <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
-                        <img src="https://cdn.worldvectorlogo.com/logos/vue-9.svg" alt="Vue" style="width: 50px; height: 50px; object-fit: contain;">
+                        <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau" style="width: 50px; height: 50px; object-fit: contain;">
                     </div>
-                    <p style="margin: 0; font-weight: 600; color: #444;">Vue.js</p>
+                    <p style="margin: 0; font-weight: 600; color: #444;">Tableau</p>
                 </div>
                 <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
                     <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
-                        <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js" style="width: 50px; height: 50px; object-fit: contain;">
+                        <img src="https://cdn.worldvectorlogo.com/logos/power-bi.svg" alt="Power BI" style="width: 50px; height: 50px; object-fit: contain;">
                     </div>
-                    <p style="margin: 0; font-weight: 600; color: #444;">Node.js</p>
+                    <p style="margin: 0; font-weight: 600; color: #444;">Power BI</p>
                 </div>
                 <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
                     <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
-                        <img src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg" alt="Laravel" style="width: 50px; height: 50px; object-fit: contain;">
+                        <img src="https://cdn.worldvectorlogo.com/logos/snowflake-2.svg" alt="Snowflake" style="width: 50px; height: 50px; object-fit: contain;">
                     </div>
-                    <p style="margin: 0; font-weight: 600; color: #444;">Laravel</p>
+                    <p style="margin: 0; font-weight: 600; color: #444;">Snowflake</p>
                 </div>
                 <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
                     <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
-                        <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="Django" style="width: 50px; height: 50px; object-fit: contain;">
+                        <img src="https://cdn.worldvectorlogo.com/logos/apache-spark-13.svg" alt="Spark" style="width: 50px; height: 50px; object-fit: contain;">
                     </div>
-                    <p style="margin: 0; font-weight: 600; color: #444;">Django</p>
+                    <p style="margin: 0; font-weight: 600; color: #444;">Spark</p>
                 </div>
                 <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
                     <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
-                        <img src="https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" alt="MongoDB" style="width: 30px; height: 30px; object-fit: contain;">
+                        <img src="https://cdn.worldvectorlogo.com/logos/tensorflow-2.svg" alt="TensorFlow" style="width: 40px; height: 40px; object-fit: contain;">
                     </div>
-                    <p style="margin: 0; font-weight: 600; color: #444;">MongoDB</p>
+                    <p style="margin: 0; font-weight: 600; color: #444;">TensorFlow</p>
                 </div>
                 <div class="tech-item" style="text-align: center; transition: all 0.3s ease;">
                     <div style="width: 80px; height: 80px; background-color: #f5f5f5; border-radius: 15px; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; transition: all 0.3s ease;">
-                        <img src="https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000" alt="MySQL" style="width: 50px; height: 50px; object-fit: contain;">
+                        <img src="https://cdn.worldvectorlogo.com/logos/aws-lambda-1.svg" alt="AWS" style="width: 50px; height: 50px; object-fit: contain;">
                     </div>
-                    <p style="margin: 0; font-weight: 600; color: #444;">MySQL</p>
+                    <p style="margin: 0; font-weight: 600; color: #444;">AWS</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" style="padding: 100px 20px; background-color: #f5f9ff;">
+    <!-- Solutions Section -->
+    <section id="solutions" style="padding: 100px 20px; background-color: #f5f9ff;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <div style="text-align: center; margin-bottom: 60px;">
-                <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">OUR WORK</div>
-                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Featured <span style="color: #0066cc;">Projects</span></h2>
-                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Explore some of our successful web development projects across various industries.</p>
+                <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">INDUSTRY SOLUTIONS</div>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Tailored <span style="color: #0066cc;">Analytics Solutions</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">We deliver industry-specific analytics solutions that address your unique challenges.</p>
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-item" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
-                    <div style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
+                <!-- Solution Item 1 -->
+                <div class="solution-item" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+                    <div style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
                     <div style="padding: 25px; background-color: white;">
-                        <h3 style="margin: 0 0 10px; font-size: 22px; color: #222;">E-Commerce Platform</h3>
-                        <p style="color: #666; margin-bottom: 15px;">A full-featured online store with custom product configurator and seamless checkout process.</p>
+                        <h3 style="margin: 0 0 10px; font-size: 22px; color: #222;">Retail Analytics</h3>
+                        <p style="color: #666; margin-bottom: 15px;">Optimize inventory, pricing, and customer experience with our retail analytics solutions.</p>
                         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">React</span>
-                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Node.js</span>
-                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">MongoDB</span>
+                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Demand Forecasting</span>
+                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Customer Segmentation</span>
+                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Market Basket Analysis</span>
                         </div>
-                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #0066cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                           Build Your <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        <a href="#" style="display: inline-flex; align-items: center; color: #0066cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            View Solution <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-item" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
-                    <div style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
+                <!-- Solution Item 2 -->
+                <div class="solution-item" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+                    <div style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
                     <div style="padding: 25px; background-color: white;">
-                        <h3 style="margin: 0 0 10px; font-size: 22px; color: #222;">Corporate Website</h3>
-                        <p style="color: #666; margin-bottom: 15px;">A modern, responsive corporate website with CMS integration and multilingual support.</p>
+                        <h3 style="margin: 0 0 10px; font-size: 22px; color: #222;">Healthcare Analytics</h3>
+                        <p style="color: #666; margin-bottom: 15px;">Improve patient outcomes and operational efficiency with data-driven healthcare insights.</p>
                         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Vue.js</span>
-                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Laravel</span>
-                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">MySQL</span>
+                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Patient Risk Stratification</span>
+                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Clinical Decision Support</span>
+                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Operational Efficiency</span>
                         </div>
-                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #0066cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                            Own A Project <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        <a href="#" style="display: inline-flex; align-items: center; color: #0066cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            View Solution <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-item" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
-                    <div style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
+                <!-- Solution Item 3 -->
+                <div class="solution-item" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+                    <div style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; transition: all 0.5s ease;"></div>
                     <div style="padding: 25px; background-color: white;">
-                        <h3 style="margin: 0 0 10px; font-size: 22px; color: #222;">Travel Portal</h3>
-                        <p style="color: #666; margin-bottom: 15px;">A comprehensive travel booking platform with real-time availability and payment processing.</p>
+                        <h3 style="margin: 0 0 10px; font-size: 22px; color: #222;">Financial Analytics</h3>
+                        <p style="color: #666; margin-bottom: 15px;">Mitigate risk, detect fraud, and optimize investments with our financial analytics solutions.</p>
                         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Angular</span>
-                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Django</span>
-                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">PostgreSQL</span>
+                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Fraud Detection</span>
+                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Risk Modeling</span>
+                            <span style="background-color: #e6f2ff; color: #0066cc; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Portfolio Optimization</span>
                         </div>
-                        <a href="contact.html" style="display: inline-flex; align-items: center; color: #0066cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                            Start Yous <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
+                        <a href="#" style="display: inline-flex; align-items: center; color: #0066cc; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                            View Solution <i class="fas fa-arrow-right" style="margin-left: 8px; transition: all 0.3s ease;"></i>
                         </a>
                     </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 50px;">
-                <button style="background: linear-gradient(135deg, #0066cc, #004d99); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);">View All Projects</button>
+                <button style="background: linear-gradient(135deg, #0066cc, #004d99); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);">View All Solutions</button>
             </div>
         </div>
     </section>
@@ -815,7 +802,7 @@
             <div style="text-align: center; margin-bottom: 60px;">
                 <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">CLIENT FEEDBACK</div>
                 <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">What Our <span style="color: #0066cc;">Clients Say</span></h2>
-                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Hear from businesses that have transformed their digital presence with our web development services.</p>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Hear from businesses that have transformed their operations with our data analytics services.</p>
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
@@ -827,10 +814,10 @@
                         </div>
                         <div>
                             <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Sarah Johnson</h4>
-                            <p style="margin: 0; color: #666; font-size: 14px;">CEO, TechSolutions Inc.</p>
+                            <p style="margin: 0; color: #666; font-size: 14px;">CEO, RetailChain Inc.</p>
                         </div>
                     </div>
-                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"Optic Bee Soft Tech transformed our outdated website into a modern, high-performing platform. Their attention to detail and commitment to delivering on time was impressive. Our online conversions have increased by 40% since the launch."</p>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"Optic Bee's predictive analytics transformed our inventory management. We reduced stockouts by 35% and decreased excess inventory by 28%, significantly improving our bottom line."</p>
                     <div style="color: #ff9900;">
                         <i class="fas fa-star" style="margin-right: 3px;"></i>
                         <i class="fas fa-star" style="margin-right: 3px;"></i>
@@ -848,10 +835,10 @@
                         </div>
                         <div>
                             <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Michael Chen</h4>
-                            <p style="margin: 0; color: #666; font-size: 14px;">Marketing Director, Global Retail</p>
+                            <p style="margin: 0; color: #666; font-size: 14px;">CFO, FinTech Solutions</p>
                         </div>
                     </div>
-                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"The e-commerce solution developed by Optic Bee has exceeded our expectations. Their team understood our complex requirements and delivered a scalable platform that handles our high traffic volumes seamlessly. Highly recommended!"</p>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"The fraud detection system developed by Optic Bee has saved us millions by identifying suspicious transactions in real-time. Their machine learning expertise is unparalleled."</p>
                     <div style="color: #ff9900;">
                         <i class="fas fa-star" style="margin-right: 3px;"></i>
                         <i class="fas fa-star" style="margin-right: 3px;"></i>
@@ -869,10 +856,10 @@
                         </div>
                         <div>
                             <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Emily Rodriguez</h4>
-                            <p style="margin: 0; color: #666; font-size: 14px;">Founder, Startup Ventures</p>
+                            <p style="margin: 0; color: #666; font-size: 14px;">CMO, HealthPlus Network</p>
                         </div>
                     </div>
-                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"As a startup, we needed a web partner who could grow with us. Optic Bee has been instrumental in building our digital presence from scratch. Their responsive design and SEO optimizations have helped us rank quickly in our niche."</p>
+                    <p style="color: #555; margin-bottom: 20px; font-style: italic;">"Our patient readmission predictions are now 92% accurate thanks to Optic Bee's analytics platform. This has dramatically improved our care quality while reducing costs."</p>
                     <div style="color: #ff9900;">
                         <i class="fas fa-star" style="margin-right: 3px;"></i>
                         <i class="fas fa-star" style="margin-right: 3px;"></i>
@@ -891,7 +878,7 @@
             <div>
                 <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px;">ABOUT US</div>
                 <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Why Choose <span style="color: #0066cc;">Optic Bee Soft Tech</span></h2>
-                <p style="color: #555; margin-bottom: 25px; font-size: 16px; line-height: 1.7;">Founded in 2012, Optic Bee Soft Tech has grown from a small web development studio to a full-service digital agency. Our mission is to deliver exceptional web solutions that drive business growth and create memorable user experiences.</p>
+                <p style="color: #555; margin-bottom: 25px; font-size: 16px; line-height: 1.7;">With over a decade of experience in data analytics, Optic Bee Soft Tech combines technical expertise with deep business understanding to deliver actionable insights that drive growth and efficiency.</p>
                 
                 <div style="margin-bottom: 30px;">
                     <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
@@ -899,8 +886,8 @@
                             <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
                         </div>
                         <div>
-                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Expert Team</h4>
-                            <p style="margin: 0; color: #555; font-size: 15px;">Our developers, designers, and strategists are industry veterans with proven track records.</p>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Data Science Experts</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">Our team includes PhD-level data scientists with expertise in advanced analytics and machine learning.</p>
                         </div>
                     </div>
                     
@@ -909,21 +896,30 @@
                             <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
                         </div>
                         <div>
-                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Agile Methodology</h4>
-                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Client-Centric Approach</h4>
-                            <p style="margin: 0; color: #555; font-size: 15px;">Your success is our priority. We tailor solutions to your specific business needs.</p>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Proven Methodologies</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">We follow CRISP-DM and other industry-standard methodologies to ensure reliable results.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start;">
+                        <div style="width: 24px; height: 24px; background-color: #0066cc; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: white; font-size: 12px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Business-Focused Insights</h4>
+                            <p style="margin: 0; color: #555; font-size: 15px;">We translate complex data into clear, actionable recommendations for your business.</p>
                         </div>
                     </div>
                 </div>
                 
-                <button onclick="window.location.href='about.html'" style="background: linear-gradient(135deg, #0066cc, #004d99); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);">Learn More About Us</button>
+                <button style="background: linear-gradient(135deg, #0066cc, #004d99); color: white; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);">Learn More About Us</button>
             </div>
             
             <div style="position: relative;">
-                <div style="width: 100%; height: 500px; background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; border-radius: 15px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);"></div>
+                <div style="width: 100%; height: 500px; background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover; border-radius: 15px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);"></div>
                 <div style="position: absolute; bottom: -30px; right: -30px; width: 200px; height: 200px; background-color: #ff9900; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; box-shadow: 0 10px 30px rgba(255, 153, 0, 0.3);">
-                    <div style="font-size: 48px; font-weight: 700;">10+</div>
-                    <div style="font-size: 18px; text-align: center;">Years of<br>Experience</div>
+                    <div style="font-size: 48px; font-weight: 700;">150+</div>
+                    <div style="font-size: 18px; text-align: center;">Data Projects<br>Completed</div>
                 </div>
             </div>
         </div>
@@ -934,8 +930,8 @@
         <div style="max-width: 1200px; margin: 0 auto;">
             <div style="text-align: center; margin-bottom: 60px;">
                 <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px;">OUR PROCESS</div>
-                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">How We <span style="color: #0066cc;">Work</span></h2>
-                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Our proven web development process ensures quality, efficiency, and outstanding results.</p>
+                <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Our Data Analytics <span style="color: #0066cc;">Approach</span></h2>
+                <p style="font-size: 18px; color: #555; max-width: 700px; margin: 0 auto;">Our structured analytics process ensures we deliver accurate, actionable insights.</p>
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; position: relative;">
@@ -945,37 +941,37 @@
                 <!-- Process Step 1 -->
                 <div class="process-step" style="text-align: center; position: relative; z-index: 2;">
                     <div style="width: 80px; height: 80px; background-color: #0066cc; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(0, 102, 204, 0.2);">
-                        <i class="fas fa-lightbulb" style="font-size: 30px; color: white;"></i>
+                        <i class="fas fa-search" style="font-size: 30px; color: white;"></i>
                     </div>
-                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Discovery</h3>
-                    <p style="color: #555; margin: 0;">We analyze your requirements and business objectives to create a strategic plan.</p>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Discover</h3>
+                    <p style="color: #555; margin: 0;">We analyze your business objectives and data landscape to define success metrics.</p>
                 </div>
                 
                 <!-- Process Step 2 -->
                 <div class="process-step" style="text-align: center; position: relative; z-index: 2;">
                     <div style="width: 80px; height: 80px; background-color: #0066cc; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(0, 102, 204, 0.2);">
-                        <i class="fas fa-pencil-ruler" style="font-size: 30px; color: white;"></i>
+                        <i class="fas fa-database" style="font-size: 30px; color: white;"></i>
                     </div>
-                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Design</h3>
-                    <p style="color: #555; margin: 0;">Our designers create intuitive, visually appealing interfaces tailored to your brand.</p>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Prepare</h3>
+                    <p style="color: #555; margin: 0;">We collect, clean, and transform your data for analysis.</p>
                 </div>
                 
                 <!-- Process Step 3 -->
                 <div class="process-step" style="text-align: center; position: relative; z-index: 2;">
                     <div style="width: 80px; height: 80px; background-color: #0066cc; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(0, 102, 204, 0.2);">
-                        <i class="fas fa-code" style="font-size: 30px; color: white;"></i>
+                        <i class="fas fa-chart-bar" style="font-size: 30px; color: white;"></i>
                     </div>
-                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Development</h3>
-                    <p style="color: #555; margin: 0;">Our developers build robust, scalable solutions using the latest technologies.</p>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Analyze</h3>
+                    <p style="color: #555; margin: 0;">We apply statistical models and machine learning to uncover insights.</p>
                 </div>
                 
                 <!-- Process Step 4 -->
                 <div class="process-step" style="text-align: center; position: relative; z-index: 2;">
                     <div style="width: 80px; height: 80px; background-color: #0066cc; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(0, 102, 204, 0.2);">
-                        <i class="fas fa-rocket" style="font-size: 30px; color: white;"></i>
+                        <i class="fas fa-lightbulb" style="font-size: 30px; color: white;"></i>
                     </div>
-                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Launch</h3>
-                    <p style="color: #555; margin: 0;">We deploy your solution and provide training to ensure smooth operation.</p>
+                    <h3 style="margin: 0 0 15px; font-size: 20px; color: #222;">Interpret</h3>
+                    <p style="color: #555; margin: 0;">We translate findings into actionable business recommendations.</p>
                 </div>
             </div>
         </div>
@@ -984,11 +980,11 @@
     <!-- CTA Section -->
     <section style="padding: 100px 20px; background: linear-gradient(135deg, #0066cc, #004d99); text-align: center; color: white;">
         <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 36px; margin: 0 0 20px;">Ready to Transform Your <span style="color: #ff9900;">Digital Presence</span>?</h2>
-            <p style="font-size: 18px; margin-bottom: 40px; opacity: 0.9;">Let's discuss how we can help you achieve your business goals with our expert web development services.</p>
+            <h2 style="font-size: 36px; margin: 0 0 20px;">Ready to <span style="color: #ff9900;">Unlock Insights</span> From Your Data?</h2>
+            <p style="font-size: 18px; margin-bottom: 40px; opacity: 0.9;">Let's discuss how we can help you transform your data into a competitive advantage.</p>
             <div style="display: flex; justify-content: center; gap: 20px;">
-                <button onclick="window.location.href='contact.html'" style="background: white; color: #0066cc; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">Get Free Consultation</button>
-                <button onclick="window.location.href='tel:+918790170525'" style="background: transparent; color: white; border: 2px solid white; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Call Us Now</button>
+                <button style="background: white; color: #0066cc; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">Get Free Consultation</button>
+                <button style="background: transparent; color: white; border: 2px solid white; padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Call Us Now</button>
             </div>
         </div>
     </section>
@@ -999,7 +995,7 @@
             <div>
                 <div style="display: inline-block; background-color: #e6f2ff; color: #0066cc; padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px;">CONTACT US</div>
                 <h2 style="font-size: 36px; margin: 0 0 20px; color: #222;">Get In <span style="color: #0066cc;">Touch</span></h2>
-                <p style="color: #555; margin-bottom: 40px; font-size: 16px; line-height: 1.7;">Have a project in mind or questions about our services? Reach out to our team—we'd love to hear from you!</p>
+                <p style="color: #555; margin-bottom: 40px; font-size: 16px; line-height: 1.7;">Have questions about our data analytics services? Reach out to our team—we'd love to hear from you!</p>
                 
                 <div style="margin-bottom: 30px;">
                     <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
@@ -1008,7 +1004,7 @@
                         </div>
                         <div>
                             <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Our Location</h4>
-                            <p style="margin: 0; color: #555; font-size: 15px;">21 102 CVR Residency, Pragathi Nagar, Kukatpally, HYD 500090, IND</p>
+                            <p style="margin: 0; color: #555; font-size: 15px;">123 Data Drive, Silicon Valley, CA 94025, USA</p>
                         </div>
                     </div>
                     
@@ -1018,7 +1014,7 @@
                         </div>
                         <div>
                             <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Email Us</h4>
-                            <p style="margin: 0; color: #555; font-size: 15px;">info@opticbeesofttech.com<br>support@opticbeesofttech.com</p>
+                            <p style="margin: 0; color: #555; font-size: 15px;">analytics@opticbeesofttech.com<br>support@opticbeesofttech.com</p>
                         </div>
                     </div>
                     
@@ -1028,7 +1024,7 @@
                         </div>
                         <div>
                             <h4 style="margin: 0 0 5px; font-size: 18px; color: #222;">Call Us</h4>
-                            <p style="margin: 0; color: #555; font-size: 15px;">+91 8790170525 <br>+91 8790170525</p>
+                            <p style="margin: 0; color: #555; font-size: 15px;">+1 (555) 123-4567<br>+1 (555) 987-6543</p>
                         </div>
                     </div>
                 </div>
@@ -1074,7 +1070,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+<!-- Footer -->
     <footer style="background-color: #222; color: #aaa; padding: 80px 20px 30px;">
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
             <div>
@@ -1376,32 +1372,5 @@
             color: white !important;
         }
     </style>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const servicesLink = document.getElementById("servicesLink");
-            const dropdown = document.getElementById("servicesDropdown");
-
-            servicesLink.addEventListener("mouseenter", () => {
-            dropdown.style.display = "flex";
-            });
-            servicesLink.addEventListener("mouseleave", () => {
-            setTimeout(() => {
-                if (!dropdown.matches(':hover')) {
-                dropdown.style.display = "none";
-                }
-            }, 100);
-            });
-
-            dropdown.addEventListener("mouseleave", () => {
-            dropdown.style.display = "none";
-            });
-
-            dropdown.addEventListener("mouseenter", () => {
-            dropdown.style.display = "flex";
-            });
-        });
-    </script>
-
 </body>
 </html>

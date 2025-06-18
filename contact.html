@@ -8,6 +8,7 @@
 <body>
     
 
+<!-- Navbar -->
 <header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
   <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
     <!-- Logo -->
@@ -25,7 +26,113 @@
       <a href="about.html" class="nav-link">About</a>
       <a href="products.html" class="nav-link">Products</a>
       <a href="Projects.html" class="nav-link">Projects</a>
-      <a href="services.html" class="nav-link">Services</a>
+      <div style="position:relative;">
+        <a href="#" class="nav-link" style="position:relative;" 
+          onmouseover="document.getElementById('servicesDropdown').style.display='flex'" 
+          onmouseout="document.getElementById('servicesDropdown').style.display='none'">
+          Services ▼
+        </a>
+
+        <div id="servicesDropdown" 
+            onmouseover="this.style.display='flex'" 
+            onmouseout="this.style.display='none'"
+            style="display:none; position:absolute; top:100%; left:0; background:white; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px; padding:20px; gap:20px; z-index:1000; flex-wrap:wrap; width:500px; justify-content:space-between;">
+
+          <!-- One box per service -->
+          <a href="web.html" style="text-decoration:none;  width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s; background:transparent;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=cpVpi7QV06BF&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Web Development</span>
+            </div>
+          </a>
+
+          <a href="api.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=4jPFChei3uGs&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">API Services</span>
+            </div>
+          </a>
+
+          <a href="cloud.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=ChinPmQHgZjj&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Cloud Services</span>
+            </div>
+          </a>
+
+          <a href="analytics.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=KoFr2bTvYl8Q&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Data Analytics</span>
+            </div>
+          </a>
+
+          <a href="iot.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=klZ231qlWc3O&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">IoT Solutions</span>
+            </div>
+          </a>
+
+          <a href="mobile.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=p8O28EWerfzK&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Mobile Development</span>
+            </div>
+          </a>
+
+          <a href="ai.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=YKHF3ARqA4fd&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">AI Solutions</span>
+            </div>
+          </a>
+
+          <a href="quantum.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=dAIe2P09btNH&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Quantum Computing</span>
+            </div>
+          </a>
+
+          <a href="marketing.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=gwrZ0uDVPabM&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Digital Marketing</span>
+            </div>
+          </a>
+
+          <a href="training.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/ios-filled/24/000000/classroom.png" style="width:20px; height:20px;">
+              <span style="color:#000;">Corporate Training</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+
       <a href="INVESTORS.HTML" class="nav-link">Investors</a>
       <a href="insights.html" class="nav-link">Insights</a>
       <a href="partners.html" class="nav-link">Partners</a>
@@ -61,7 +168,7 @@
       <a href="Projects.html" class="mobile-nav-link">Projects</a>
       <a href="services.html" class="mobile-nav-link">Services</a>
       <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
-      <a href="partners-page.html" class="mobile-nav-link">Insights</a>
+      <a href="insights.html" class="mobile-nav-link">Insights</a>
       <a href="partners.html" class="mobile-nav-link">Partners</a>
       <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
       <a href="industries.html" class="mobile-nav-link">Industries</a>
@@ -93,6 +200,8 @@
 </header>
 
 <style>
+
+  
   /* Common Styles */
   .nav-link {
     color: white;

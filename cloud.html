@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Services - Optic Bee Soft Tech</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f5f7fa; color: #333; overflow-x: hidden;">
+    <!-- Preloader -->
+    <div id="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0f172a; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.5s ease;">
+        <div style="font-size: 24px; color: #fff; animation: pulse 1.5s infinite;">Loading Cloud Excellence...</div>
+    </div>
+
+<!-- Navbar -->
+<header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+    <!-- Logo -->
+    <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+      <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+      <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
+
+    <!-- Desktop Navigation -->
+    <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+      <a href="/" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="Projects.html" class="nav-link">Projects</a>
+      <div style="position:relative;">
+        <a href="#" class="nav-link" style="position:relative;" 
+          onmouseover="document.getElementById('servicesDropdown').style.display='flex'" 
+          onmouseout="document.getElementById('servicesDropdown').style.display='none'">
+          Services ▼
+        </a>
+
+        <div id="servicesDropdown" 
+            onmouseover="this.style.display='flex'" 
+            onmouseout="this.style.display='none'"
+            style="display:none; position:absolute; top:100%; left:0; background:white; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px; padding:20px; gap:20px; z-index:1000; flex-wrap:wrap; width:500px; justify-content:space-between;">
+
+          <!-- One box per service -->
+          <a href="web.html" style="text-decoration:none;  width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s; background:transparent;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=cpVpi7QV06BF&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Web Development</span>
+            </div>
+          </a>
+
+          <a href="api.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=4jPFChei3uGs&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">API Services</span>
+            </div>
+          </a>
+
+          <a href="cloud.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=ChinPmQHgZjj&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Cloud Services</span>
+            </div>
+          </a>
+
+          <a href="analytics.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=KoFr2bTvYl8Q&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Data Analytics</span>
+            </div>
+          </a>
+
+          <a href="iot.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=klZ231qlWc3O&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">IoT Solutions</span>
+            </div>
+          </a>
+
+          <a href="mobile.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=p8O28EWerfzK&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Mobile Development</span>
+            </div>
+          </a>
+
+          <a href="ai.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=YKHF3ARqA4fd&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">AI Solutions</span>
+            </div>
+          </a>
+
+          <a href="quantum.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=dAIe2P09btNH&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Quantum Computing</span>
+            </div>
+          </a>
+
+          <a href="marketing.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/?size=100&id=gwrZ0uDVPabM&format=png&color=000000" style="width:20px; height:20px;">
+              <span style="color:#000;">Digital Marketing</span>
+            </div>
+          </a>
+
+          <a href="training.html" style="text-decoration:none; width:48%;">
+            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                onmouseover="this.style.background='#f0f0f0'" 
+                onmouseout="this.style.background='transparent'">
+              <img src="https://img.icons8.com/ios-filled/24/000000/classroom.png" style="width:20px; height:20px;">
+              <span style="color:#000;">Corporate Training</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+
+      <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="affiliate.html" class="nav-link">Affiliates</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      
+      <!-- Icons -->
+      <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+        <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+        <a href="register.html" class="nav-icon" title="Register">👤</a>
+        <button id="searchToggle" class="nav-icon">🔍</button>
+        
+        <!-- Desktop Language Selector -->
+        <div id="customDropdown" style="position:relative; user-select:none;">
+          <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+            <span id="currentLanguage">EN</span>
+            <span style="margin-left:5px;">▼</span>
+          </div>
+          <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="products.html" class="mobile-nav-link">Products</a>
+      <a href="Projects.html" class="mobile-nav-link">Projects</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+      <a href="insights.html" class="mobile-nav-link">Insights</a>
+      <a href="partners.html" class="mobile-nav-link">Partners</a>
+      <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+      <a href="industries.html" class="mobile-nav-link">Industries</a>
+      <a href="resources.html" class="mobile-nav-link">Resources</a>
+      
+      <div style="display:flex; justify-content:space-around; margin-top:15px;">
+        <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+        <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+      </div>
+      
+      <!-- Mobile Language Selector -->
+      <div style="margin-top:15px;">
+        <select id="mobileLanguageSelect" class="mobile-language-selector">
+          <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+          <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+          <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+          <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+          <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+          <!-- More languages will be added by JavaScript -->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Container -->
+  <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+    <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+  </div>
+</header>
+
+<style>
+
+  
+  /* Common Styles */
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+  
+  .nav-icon {
+    color: white;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Styles */
+  .mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .mobile-nav-icon {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .mobile-language-selector {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  /* Language dropdown options */
+  #optionsList div {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #optionsList div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #optionsList img {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .nav-link {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #mobileMenuButton {
+      display: block;
+    }
+    
+    #desktopNav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Country/language data
+  const countries = [
+    {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+    {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+    {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+    {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+    {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+    {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+    {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+    {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+    {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+    {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+    {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+  ];
+
+  // Initialize language functionality
+  function initLanguageSelection() {
+    // Populate desktop dropdown
+    const optionsList = document.getElementById('optionsList');
+    countries.forEach(country => {
+      const option = document.createElement('div');
+      option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+      option.dataset.code = country.code;
+      option.dataset.flag = country.flag;
+      option.dataset.name = country.name;
+      option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+      optionsList.appendChild(option);
+    });
+
+    // Populate mobile dropdown
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    countries.forEach(country => {
+      if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+        const option = document.createElement('option');
+        option.value = country.code;
+        option.textContent = `${country.name} (${country.country})`;
+        option.dataset.flag = country.flag;
+        mobileSelect.appendChild(option);
+      }
+    });
+
+    // Set up event listeners
+    document.getElementById('selectedOption').onclick = function() {
+      optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+    };
+
+    document.getElementById('mobileLanguageSelect').onchange = function() {
+      const selectedOption = this.options[this.selectedIndex];
+      selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#customDropdown')) {
+        optionsList.style.display = 'none';
+      }
+    });
+
+    // Detect user's language
+    detectUserLanguage();
+  }
+
+  // Select language function
+  function selectLanguage(code, flag, name) {
+    // Update desktop display
+    document.getElementById('currentFlag').src = flag;
+    document.getElementById('currentLanguage').textContent = code.toUpperCase();
+    document.getElementById('optionsList').style.display = 'none';
+    
+    // Update mobile display
+    const mobileSelect = document.getElementById('mobileLanguageSelect');
+    mobileSelect.value = code;
+    
+    // Store selection
+    localStorage.setItem('userLanguage', code);
+    localStorage.setItem('userLanguageFlag', flag);
+    localStorage.setItem('userLanguageName', name);
+    
+    // Change Google Translate language
+    changeGoogleTranslateLanguage(code);
+  }
+
+  // Detect user's language
+  function detectUserLanguage() {
+    // Check for stored preference first
+    const storedLanguage = localStorage.getItem('userLanguage');
+    if (storedLanguage) {
+      const storedFlag = localStorage.getItem('userLanguageFlag');
+      const storedName = localStorage.getItem('userLanguageName');
+      selectLanguage(storedLanguage, storedFlag, storedName);
+      return;
+    }
+
+    // Try to detect from browser
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    if (browserLanguage) {
+      const mainLang = browserLanguage.split('-')[0];
+      const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+      if (matchedCountry) {
+        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        return;
+      }
+    }
+
+    // Fallback to IP detection
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const countryCode = data.country;
+        const matchedCountry = countries.find(c => 
+          c.country.toLowerCase() === data.country_name.toLowerCase() || 
+          c.code === data.languages?.split(',')[0]
+        );
+        if (matchedCountry) {
+          selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+        } else {
+          // Default to English
+          selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+        }
+      })
+      .catch(() => {
+        // Default to English if all detection fails
+        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+      });
+  }
+
+  // Change Google Translate language
+  function changeGoogleTranslateLanguage(languageCode) {
+    if (typeof google !== 'undefined' && google.translate) {
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = languageCode;
+        combo.dispatchEvent(new Event('change'));
+      }
+    } else {
+      // Retry after a delay if Google Translate isn't loaded yet
+      setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+    }
+  }
+
+  // Initialize Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      includedLanguages: countries.map(c => c.code).join(',')
+    }, 'google_translate_element');
+  }
+
+  // Navbar functions
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function toggleSearch() {
+    const searchContainer = document.getElementById('searchContainer');
+    searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function handleResponsive() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('mobileMenuButton').style.display = 'block';
+      document.getElementById('desktopNav').style.display = 'none';
+    } else {
+      document.getElementById('mobileMenuButton').style.display = 'none';
+      document.getElementById('desktopNav').style.display = 'flex';
+      document.getElementById('mobileMenu').style.display = 'none';
+      document.getElementById('searchContainer').style.display = 'none';
+    }
+  }
+
+  // Initialize everything when DOM loads
+  document.addEventListener('DOMContentLoaded', function() {
+    initLanguageSelection();
+    handleResponsive();
+    document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+    window.addEventListener('resize', handleResponsive);
+    
+    // Load Google Translate script
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(script);
+  });
+</script>
+
+<!-- Google Translate element (hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<!-- =================================================================================== -->
+
+    <!-- Hero Section -->
+    <section style="background: linear-gradient(135deg, #0f172a, #3b82f6); padding: 100px 20px; text-align: center; color: #fff;">
+        <h1 style="font-size: 48px; margin: 0; animation: slideInDown 1s ease;">Cloud Computing Services</h1>
+        <p style="font-size: 20px; max-width: 600px; margin: 20px auto; animation: fadeIn 1.5s ease;">Empowering Your Business with Scalable Cloud Solutions</p>
+        <p style="font-size: 16px; max-width: 700px; margin: 0 auto 30px; animation: fadeIn 2s ease;">Optic Bee Soft Tech provides cutting-edge cloud services to optimize your infrastructure, enhance scalability, and drive digital transformation with secure and reliable solutions.</p>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+            <a href="#" style="background: #fff; color: #0f172a; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-size: 16px; transition: background 0.3s ease, transform 0.3s ease;" onmouseover="this.style.background='#3b82f6'; this.style.color='#fff'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='#fff'; this.style.color='#0f172a'; this.style.transform='scale(1)';">Explore Services</a>
+            <a href="#" style="border: 2px solid #fff; color: #fff; padding: 13px 28px; border-radius: 25px; text-decoration: none; font-size: 16px; transition: background 0.3s ease, transform 0.3s ease;" onmouseover="this.style.background='#fff'; this.style.color='#0f172a'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='transparent'; this.style.color='#fff'; this.style.transform='scale(1)';">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section style="padding: 60px 20px; background: #fff; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+            <div style="flex: 1; min-width: 200px; padding: 20px; animation: fadeInUp 1s ease;">
+                <h3 style="font-size: 36px; color: #3b82f6; margin: 0;">300+</h3>
+                <p style="font-size: 16px; color: #333;">Cloud Projects Delivered</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; padding: 20px; animation: fadeInUp 1.2s ease;">
+                <h3 style="font-size: 36px; color: #3b82f6; margin: 0;">99%</h3>
+                <p style="font-size: 16px; color: #333;">Client Satisfaction</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; padding: 20px; animation: fadeInUp 1.4s ease;">
+                <h3 style="font-size: 36px; color: #3b82f6; margin: 0;">60+</h3>
+                <p style="font-size: 16px; color: #333;">Cloud Experts</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; padding: 20px; animation: fadeInUp 1.6s ease;">
+                <h3 style="font-size: 36px; color: #3b82f6; margin: 0;">12+</h3>
+                <p style="font-size: 16px; color: #333;">Years of Experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section style="padding: 80px 20px; background: #f5f7fa; text-align: center;">
+        <h2 style="font-size: 36px; color: #0f172a; margin-bottom: 20px; animation: slideInLeft 1s ease;">Our Cloud Computing Services</h2>
+        <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto 40px; animation: fadeIn 1.5s ease;">End-to-end cloud solutions to enhance performance, security, and scalability for your business.</p>
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div style="flex: 1; min-width: 300px; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="https://via.placeholder.com/50" alt="Cloud Migration Icon" style="margin-bottom: 20px;">
+                <h3 style="font-size: 24px; color: #0f172a;">Cloud Migration</h3>
+                <p style="font-size: 16px; color: #666;">Seamless migration of your applications and data to the cloud with minimal downtime.</p>
+                <ul style="list-style: none; padding: 0; font-size: 14px; color: #666; text-align: left;">
+                    <li style="margin: 10px 0;">Assessment & planning</li>
+                    <li style="margin: 10px 0;">Data migration</li>
+                    <li style="margin: 10px 0;">Application re-architecture</li>
+                    <li style="margin: 10px 0;">Post-migration support</li>
+                </ul>
+                <a href="#" style="display: inline-block; margin-top: 20px; background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Contact Now</a>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="https://via.placeholder.com/50" alt="Cloud Consulting Icon" style="margin-bottom: 20px;">
+                <h3 style="font-size: 24px; color: #0f172a;">Cloud Consulting</h3>
+                <p style="font-size: 16px; color: #666;">Expert guidance to develop a cloud strategy aligned with your business goals.</p>
+                <ul style="list-style: none; padding: 0; font-size: 14px; color: #666; text-align: left;">
+                    <li style="margin: 10px 0;">Cloud architecture design</li>
+                    <li style="margin: 10px 0;">Cost optimization</li>
+                    <li style="margin: 10px 0;">Security assessments</li>
+                    <li style="margin: 10px 0;">Vendor selection</li>
+                </ul>
+                <a href="#" style="display: inline-block; margin-top: 18px; background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Contact Now</a>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="https://via.placeholder.com/50" alt="Cloud Security Icon" style="margin-bottom: 20px;">
+                <h3 style="font-size: 24px; color: #0f172a;">Cloud Security</h3>
+                <p style="font-size: 16px; color: #666;">Robust security measures to protect your cloud infrastructure and data.</p>
+                <ul style="list-style: none; padding: 0; font-size: 14px; color: #666; text-align: left;">
+                    <li style="margin: 10px 0;">Identity & access management</li>
+                    <li style="margin: 10px 0;">Data encryption</li>
+                    <li style="margin: 10px 0;">Threat detection</li>
+                    <li style="margin: 10px 0;">Compliance audits</li>
+                </ul>
+                <a href="#" style="display: inline-block; margin-top: 18px; background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Contact Now</a>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="https://via.placeholder.com/50" alt="DevOps Icon" style="margin-bottom: 20px;">
+                <h3 style="font-size: 24px; color: #0f172a;">DevOps & Automation</h3>
+                <p style="font-size: 16px; color: #666;">Streamline development and operations with automated CI/CD pipelines.</p>
+                <ul style="list-style: none; padding: 0; font-size: 14px; color: #666; text-align: left;">
+                    <li style="margin: 10px 0;">CI/CD pipeline setup</li>
+                    <li style="margin: 10px 0;">Infrastructure as code</li>
+                    <li style="margin: 10px 0;">Containerization</li>
+                    <li style="margin: 10px 0;">Monitoring & alerting</li>
+                </ul>
+                <a href="#" style="display: inline-block; margin-top: 18px; background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Contact Now</a>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="https://via.placeholder.com/50" alt="Cloud Integration Icon" style="margin-bottom: 20px;">
+                <h3 style="font-size: 24px; color: #0f172a;">Cloud Integration</h3>
+                <p style="font-size: 16px; color: #666;">Seamlessly integrate cloud solutions with your existing systems.</p>
+                <ul style="list-style: none; padding: 0; font-size: 14px; color: #666; text-align: left;">
+                    <li style="margin: 10px 0;">API integrations</li>
+                    <li style="margin: 10px 0;">Hybrid cloud setup</li>
+                    <li style="margin: 10px 0;">Multi-cloud strategies</li>
+                    <li style="margin: 10px 0;">Data synchronization</li>
+                </ul>
+                <a href="#" style="display: inline-block; margin-top: 18px; background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Contact Now</a>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="https://via.placeholder.com/50" alt="Managed Cloud Icon" style="margin-bottom: 20px;">
+                <h3 style="font-size: 24px; color: #0f172a;">Managed Cloud Services</h3>
+                <p style="font-size: 16px; color: #666;">End-to-end management of your cloud infrastructure for optimal performance.</p>
+                <ul style="list-style: none; padding: 0; font-size: 14px; color: #666; text-align: left;">
+                    <li style="margin: 10px 0;">24/7 monitoring</li>
+                    <li style="margin: 10px 0;">Performance optimization</li>
+                    <li style="margin: 10px 0;">Backup & recovery</li>
+                    <li style="margin: 10px 0;">Cost management</li>
+                </ul>
+                <a href="#" style="display: inline-block; margin-top: 18px; background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Contact Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack Section -->
+    <section style="padding: 80px 20px; background: #fff; text-align: center;">
+        <h2 style="font-size: 36px; color: #0f172a; margin-bottom: 20px; animation: slideInRight 1s ease;">Our Cloud Technology Stack</h2>
+        <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto 40px; animation: fadeIn 1.5s ease;">We utilize industry-leading cloud platforms and tools to deliver scalable solutions.</p>
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div style="flex: 1; min-width: 150px; padding: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                <img src="https://via.placeholder.com/50" alt="AWS Icon" style="margin-bottom: 10px;">
+                <p style="font-size: 16px; color: #0f172a;">AWS</p>
+            </div>
+            <div style="flex: 1; min-width: 150px; padding: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                <img src="https://via.placeholder.com/50" alt="Azure Icon" style="margin-bottom: 10px;">
+                <p style="font-size: 16px; color: #0f172a;">Azure</p>
+            </div>
+            <div style="flex: 1; min-width: 150px; padding: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                <img src="https://via.placeholder.com/50" alt="Google Cloud Icon" style="margin-bottom: 10px;">
+                <p style="font-size: 16px; color: #0f172a;">Google Cloud</p>
+            </div>
+            <div style="flex: 1; min-width: 150px; padding: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                <img src="https://via.placeholder.com/50" alt="Kubernetes Icon" style="margin-bottom: 10px;">
+                <p style="font-size: 16px; color: #0f172a;">Kubernetes</p>
+            </div>
+            <div style="flex: 1; min-width: 150px; padding: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                <img src="https://via.placeholder.com/50" alt="Docker Icon" style="margin-bottom: 10px;">
+                <p style="font-size: 16px; color: #0f172a;">Docker</p>
+            </div>
+            <div style="flex: 1; min-width: 150px; padding: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                <img src="https://via.placeholder.com/50" alt="Terraform Icon" style="margin-bottom: 10px;">
+                <p style="font-size: 16px; color: #0f172a;">Terraform</p>
+            </div>
+            <div style="flex: 1; min-width: 150px; padding: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                <img src="https://via.placeholder.com/50" alt="Ansible Icon" style="margin-bottom: 10px;">
+                <p style="font-size: 16px; color: #0f172a;">Ansible</p>
+            </div>
+            <div style="flex: 1; min-width: 150px; padding: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                <img src="https://via.placeholder.com/50" alt="Jenkins Icon" style="margin-bottom: 10px;">
+                <p style="font-size: 16px; color: #0f172a;">Jenkins</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section style="padding: 80px 20px; background: #f5f7fa; text-align: center;">
+        <h2 style="font-size: 36px; color: #0f172a; margin-bottom: 20px; animation: slideInLeft 1s ease;">Featured Cloud Projects</h2>
+        <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto 40px; animation: fadeIn 1.5s ease;">Explore our successful cloud projects that have transformed businesses across industries.</p>
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div style="flex: 1; min-width: 300px; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="https://via.placeholder.com/150" alt="E-Commerce Cloud" style="border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="font-size: 24px; color: #0f172a;">E-Commerce Cloud Infrastructure</h3>
+                <p style="font-size: 16px; color: #666;">A scalable cloud solution for a high-traffic e-commerce platform with automated scaling.</p>
+                <p style="font-size: 14px; color: #666;">Technologies: AWS, Kubernetes, Terraform</p>
+                <a href="#" style="display: inline-block; margin-top: 18px; background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Build Yours</a>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="https://via.placeholder.com/150" alt="Enterprise Cloud" style="border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="font-size: 24px; color: #0f172a;">Enterprise Cloud Migration</h3>
+                <p style="font-size: 16px; color: #666;">Migrated legacy systems to Azure with zero downtime and enhanced security.</p>
+                <p style="font-size: 14px; color: #666;">Technologies: Azure, Docker, Ansible</p>
+                <a href="#" style="display: inline-block; margin-top: 18px; background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Build Yours</a>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="https://via.placeholder.com/150" alt="Cloud Analytics" style="border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="font-size: 24px; color: #0f172a;">Cloud-Based Analytics Platform</h3>
+                <p style="font-size: 16px; color: #666;">A data analytics platform with real-time insights using Google Cloud.</p>
+                <p style="font-size: 14px; color: #666;">Technologies: Google Cloud, Jenkins, Kubernetes</p>
+                <a href="#" style="display: inline-block; margin-top: 18px; background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Build Yours</a>
+            </div>
+        </div>
+        <a href="#" style="display: inline-block; margin-top: 40px; background: #3b82f6; color: #fff; padding: 15px 30px; border-radius: 25px; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">View All Projects</a>
+    </section>
+
+    <!-- Client Feedback Section -->
+    <section style="padding: 80px 20px; background: #fff; text-align: center;">
+        <h2 style="font-size: 36px; color: #0f172a; margin-bottom: 20px; animation: slideInRight 1s ease;">What Our Clients Say</h2>
+        <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto 40px; animation: fadeIn 1.5s ease;">Hear from businesses that have transformed their operations with our cloud services.</p>
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div style="flex: 1; min-width: 300px; background: #f5f7fa; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+                <img src="https://via.placeholder.com/50" alt="Client Icon" style="border-radius: 50%; margin-bottom: 20px;">
+                <p style="font-size: 16px; color: #666;">"Optic Bee's cloud migration services were flawless. Our transition to AWS was seamless, boosting our efficiency by 45%."</p>
+                <h4 style="font-size: 18px; color: #0f172a; margin: 10px 0 5px;">Sarah Johnson</h4>
+                <p style="font-size: 14px; color: #666;">CEO, TechSolutions Inc.</p>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #f5f7fa; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+                <img src="https://via.placeholder.com/50" alt="Client Icon" style="border-radius: 50%; margin-bottom: 20px;">
+                <p style="font-size: 16px; color: #666;">"Their cloud consulting helped us optimize costs and scale effortlessly on Azure. Highly professional team!"</p>
+                <h4 style="font-size: 18px; color: #0f172a; margin: 10px 0 5px;">Michael Chen</h4>
+                <p style="font-size: 14px; color: #666;">Marketing Director, Global Retail</p>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #f5f7fa; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+                <img src="https://via.placeholder.com/50" alt="Client Icon" style="border-radius: 50%; margin-bottom: 20px;">
+                <p style="font-size: 16px; color: #666;">"Optic Bee's managed cloud services have been a game-changer for our startup. Their support is outstanding!"</p>
+                <h4 style="font-size: 18px; color: #0f172a; margin: 10px 0 5px;">Emily Rodriguez</h4>
+                <p style="font-size: 14px; color: #666;">Founder, Startup Ventures</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #0f172a, #3b82f6); text-align: center; color: #fff;">
+        <h2 style="font-size: 36px; margin-bottom: 20px; animation: slideInLeft 1s ease;">Get In Touch</h2>
+        <p style="font-size: 18px; max-width: 700px; margin: 0 auto 40px; animation: fadeIn 1.5s ease;">Ready to transform your business with our cloud services? Contact us for a free consultation!</p>
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div style="flex: 1; min-width: 300px; padding: 20px;">
+                <img src="https://via.placeholder.com/50" alt="Location Icon" style="margin-bottom: 20px;">
+                <h3 style="font-size: 24px;">Our Location</h3>
+                <p style="font-size: 16px;">21 102 CVR Residency, Pragathi Nagar, Kukatpally, HYD 500090, IND</p>
+            </div>
+            <div style="flex: 1; min-width: 300px; padding: 20px;">
+                <img src="https://via.placeholder.com/50" alt="Email Icon" style="margin-bottom: 20px;">
+                <h3 style="font-size: 24px;">Email Us</h3>
+                <p style="font-size: 16px;">[email protected]</p>
+                <p style="font-size: 16px;">[email protected]</p>
+            </div>
+            <div style="flex: 1; min-width: 300px; padding: 20px;">
+                <img src="https://via.placeholder.com/50" alt="Phone Icon" style="margin-bottom: 20px;">
+                <h3 style="font-size: 24px;">Call Us</h3>
+                <p style="font-size: 16px;">+91 8790170525</p>
+                <p style="font-size: 16px;">+91 8790170525</p>
+            </div>
+        </div>
+        <div style="max-width: 600px; margin: 40px auto; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <h3 style="font-size: 24px; color: #0f172a; margin-bottom: 20px;">Send Us a Message</h3>
+            <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+            <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+            <input type="text" placeholder="Subject" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+            <textarea placeholder="Your Message" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; height: 100px;"></textarea>
+            <button style="background: #3b82f6; color: #fff; padding: 10px 20px; border: none; border-radius: 25px; font-size: 16px; cursor: pointer; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Send Message</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 60px 20px; background: #0f172a; color: #fff; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div style="flex: 1; min-width: 300px;">
+                <div style="font-size: 24px; font-weight: bold; margin-bottom: 20px;">OpticBee</div>
+                <p style="font-size: 16px; color: #ccc;">Optic Bee Soft Tech is a leading cloud services provider dedicated to delivering innovative solutions that drive business growth.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="font-size: 20px; margin-bottom: 20px;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 10px 0;"><a href="#" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#3b82f6';" onmouseout="this.style.color='#ccc';">Home</a></li>
+                    <li style="margin: 10px 0;"><a href="#" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#3b82f6';" onmouseout="this.style.color='#ccc';">Services</a></li>
+                    <li style="margin: 10px 0;"><a href="#" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#3b82f6';" onmouseout="this.style.color='#ccc';">Portfolio</a></li>
+                    <li style="margin: 10px 0;"><a href="#" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#3b82f6';" onmouseout="this.style.color='#ccc';">About Us</a></li>
+                    <li style="margin: 10px 0;"><a href="#" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#3b82f6';" onmouseout="this.style.color='#ccc';">Contact</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="font-size: 20px; margin-bottom: 20px;">Our Services</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 10px 0;"><a href="#" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#3b82f6';" onmouseout="this.style.color='#ccc';">Cloud Migration</a></li>
+                    <li style="margin: 10px 0;"><a href="#" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#3b82f6';" onmouseout="this.style.color='#ccc';">Cloud Consulting</a></li>
+                    <li style="margin: 10px 0;"><a href="#" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#3b82f6';" onmouseout="this.style.color='#ccc';">Cloud Security</a></li>
+                    <li style="margin: 10px 0;"><a href="#" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#3b82f6';" onmouseout="this.style.color='#ccc';">DevOps & Automation</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="font-size: 20px; margin-bottom: 20px;">Newsletter</h3>
+                <p style="font-size: 16px; color: #ccc;">Subscribe for the latest updates and insights.</p>
+                <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+                <button style="background: #3b82f6; color: #fff; padding: 10px 20px; border: none; border-radius: 25px; font-size: 16px; cursor: pointer; transition: background 0.3s ease;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">Subscribe</button>
+            </div>
+        </div>
+        <p style="font-size: 14px; color: #ccc; margin-top: 40px;">© 2025 Optic Bee Soft Tech. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Animations -->
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @keyframes slideInDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+
+    <!-- Preloader Script -->
+    <script>
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => { preloader.style.display = 'none'; }, 500);
+        });
+    </script>
+</body>
+</html>
