@@ -6,477 +6,472 @@
 </head>
 <body style="margin:0; font-family: Arial, sans-serif;">
 
-<!-- Navbar -->
-<header style="position:sticky;top:0;z-index:1000;background:linear-gradient(to right, #ffffff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
-  <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
-    <!-- Logo -->
-    <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
-      <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
-      <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
-    </div>
-
-    <!-- Mobile Menu Button -->
-    <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
-
-    <!-- Desktop Navigation -->
-    <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
-      <a href="/" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="products.html" class="nav-link">Products</a>
-      <a href="Projects.html" class="nav-link">Projects</a>
-      <div style="position:relative;">
-        <a href="#" class="nav-link" style="position:relative;" 
-          onmouseover="document.getElementById('servicesDropdown').style.display='flex'" 
-          onmouseout="document.getElementById('servicesDropdown').style.display='none'">
-          Services ▼
-        </a>
-
-        <div id="servicesDropdown" 
-            onmouseover="this.style.display='flex'" 
-            onmouseout="this.style.display='none'"
-            style="display:none; position:absolute; top:100%; left:0; background:white; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px; padding:20px; gap:20px; z-index:1000; flex-wrap:wrap; width:500px; justify-content:space-between;">
-
-          <!-- One box per service -->
-          <a href="web.html" style="text-decoration:none;  width:48%;">
-            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s; background:transparent;" 
-                onmouseover="this.style.background='#f0f0f0'" 
-                onmouseout="this.style.background='transparent'">
-              <img src="https://img.icons8.com/?size=100&id=cpVpi7QV06BF&format=png&color=000000" style="width:20px; height:20px;">
-              <span style="color:#000;">Web Development</span>
+    <!-- Navbar (Same as web.html) -->
+    <header style="position:sticky;top:0;z-index:1000;background:#6a1b9a; background:linear-gradient(to right, #fff,#6a1b9a,#000000,#6a1b9a,#000000);border-bottom:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 15px; max-width:1400px; margin:auto;">
+            <!-- Logo -->
+            <div id="logoContainer" onclick="toggleLogoText()" style="cursor:pointer; display:flex; flex-direction:column; align-items:flex-start;">
+                <a href="/" style="text-decoration:none;"><img src="images/logo_optic bee.png" alt="Logo" style="height:40px;width:auto;"></a>
+                <div id="logoText" style="display:none; margin-top:5px; color:white; font-weight:bold; font-size:15px;">OPTIC BEE</div>
             </div>
-          </a>
 
-          <a href="api.html" style="text-decoration:none; width:48%;">
-            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
-                onmouseover="this.style.background='#f0f0f0'" 
-                onmouseout="this.style.background='transparent'">
-              <img src="https://img.icons8.com/?size=100&id=4jPFChei3uGs&format=png&color=000000" style="width:20px; height:20px;">
-              <span style="color:#000;">API Services</span>
-            </div>
-          </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuButton" style="display:none; background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="toggleMobileMenu()">☰</button>
 
-          <a href="cloud.html" style="text-decoration:none; width:48%;">
-            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
-                onmouseover="this.style.background='#f0f0f0'" 
-                onmouseout="this.style.background='transparent'">
-              <img src="https://img.icons8.com/?size=100&id=ChinPmQHgZjj&format=png&color=000000" style="width:20px; height:20px;">
-              <span style="color:#000;">Cloud Services</span>
-            </div>
-          </a>
-
-          <a href="analytics.html" style="text-decoration:none; width:48%;">
-            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
-                onmouseover="this.style.background='#f0f0f0'" 
-                onmouseout="this.style.background='transparent'">
-              <img src="https://img.icons8.com/?size=100&id=KoFr2bTvYl8Q&format=png&color=000000" style="width:20px; height:20px;">
-              <span style="color:#000;">Data Analytics</span>
-            </div>
-          </a>
-
-          <a href="iot.html" style="text-decoration:none; width:48%;">
-            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
-                onmouseover="this.style.background='#f0f0f0'" 
-                onmouseout="this.style.background='transparent'">
-              <img src="https://img.icons8.com/?size=100&id=klZ231qlWc3O&format=png&color=000000" style="width:20px; height:20px;">
-              <span style="color:#000;">IoT Solutions</span>
-            </div>
-          </a>
-
-          <a href="mobile.html" style="text-decoration:none; width:48%;">
-            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
-                onmouseover="this.style.background='#f0f0f0'" 
-                onmouseout="this.style.background='transparent'">
-              <img src="https://img.icons8.com/?size=100&id=p8O28EWerfzK&format=png&color=000000" style="width:20px; height:20px;">
-              <span style="color:#000;">Mobile Development</span>
-            </div>
-          </a>
-
-          <a href="ai.html" style="text-decoration:none; width:48%;">
-            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
-                onmouseover="this.style.background='#f0f0f0'" 
-                onmouseout="this.style.background='transparent'">
-              <img src="https://img.icons8.com/?size=100&id=YKHF3ARqA4fd&format=png&color=000000" style="width:20px; height:20px;">
-              <span style="color:#000;">AI Solutions</span>
-            </div>
-          </a>
-
-          <a href="quantum.html" style="text-decoration:none; width:48%;">
-            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
-                onmouseover="this.style.background='#f0f0f0'" 
-                onmouseout="this.style.background='transparent'">
-              <img src="https://img.icons8.com/?size=100&id=dAIe2P09btNH&format=png&color=000000" style="width:20px; height:20px;">
-              <span style="color:#000;">Quantum Computing</span>
-            </div>
-          </a>
-
-          <a href="marketing.html" style="text-decoration:none; width:48%;">
-            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
-                onmouseover="this.style.background='#f0f0f0'" 
-                onmouseout="this.style.background='transparent'">
-              <img src="https://img.icons8.com/?size=100&id=gwrZ0uDVPabM&format=png&color=000000" style="width:20px; height:20px;">
-              <span style="color:#000;">Digital Marketing</span>
-            </div>
-          </a>
-
-          <a href="training.html" style="text-decoration:none; width:48%;">
-            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
-                onmouseover="this.style.background='#f0f0f0'" 
-                onmouseout="this.style.background='transparent'">
-              <img src="https://img.icons8.com/ios-filled/24/000000/classroom.png" style="width:20px; height:20px;">
-              <span style="color:#000;">Corporate Training</span>
-            </div>
-          </a>
-
+            <!-- Desktop Navigation -->
+            <nav id="desktopNav" style="display:flex; align-items:center; gap:10px;">
+                <a href="/" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="Projects.html" class="nav-link">Projects</a>
+                <div style="position:relative;">
+                    <a id="servicesLink" href="#" class="nav-link" style="position:relative; z-index: 2000;">
+                        Services ▼
+                    </a>
+                    <div id="servicesDropdown"
+                        style="display:none; position:absolute; top:100%; left:0; background:rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow:0 4px 20px rgba(0,0,0,0.2); border-radius:8px; padding:20px; gap:20px; z-index:1500; flex-wrap:wrap; width:500px; justify-content:space-between;">
+                        <!-- One box per service -->
+                        <a href="web.html" style="text-decoration:none;  width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s; background:transparent;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=cpVpi7QV06BF&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">Web Development</span>
+                            </div>
+                        </a>
+                        <a href="marketing.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=gwrZ0uDVPabM&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000; font-weight:bold;">Digital Marketing</span>
+                            </div>
+                        </a>
+                        <a href="api.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=4jPFChei3uGs&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">API Services</span>
+                            </div>
+                        </a>
+                        <a href="cloud.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=ChinPmQHgZjj&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">Cloud Services</span>
+                            </div>
+                        </a>
+                        <a href="analytics.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=KoFr2bTvYl8Q&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">Data Analytics</span>
+                            </div>
+                        </a>
+                        <a href="iot.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=klZ231qlWc3O&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">IoT Solutions</span>
+                            </div>
+                        </a>
+                        <a href="mobile.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=p8O28EWerfzK&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">Mobile Development</span>
+                            </div>
+                        </a>
+                        <a href="ai.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=YKHF3ARqA4fd&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">AI Solutions</span>
+                            </div>
+                        </a>
+                        <a href="quantum.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/?size=100&id=dAIe2P09btNH&format=png&color=000000" style="width:20px; height:20px;">
+                                <span style="color:#000;">Quantum Computing</span>
+                            </div>
+                        </a>
+                        <a href="training.html" style="text-decoration:none; width:48%;">
+                            <div style="display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; transition:background 0.3s;" 
+                                onmouseover="this.style.background='#f0f0f0'" 
+                                onmouseout="this.style.background='transparent'">
+                                <img src="https://img.icons8.com/ios-filled/24/000000/classroom.png" style="width:20px; height:20px;">
+                                <span style="color:#000;">Corporate Training</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="INVESTORS.HTML" class="nav-link">Investors</a>
+                <a href="insights.html" class="nav-link">Insights</a>
+                <a href="partners.html" class="nav-link">Partners</a>
+                <a href="affiliate.html" class="nav-link">Affiliates</a>
+                <a href="industries.html" class="nav-link">Industries</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                
+                <!-- Icons -->
+                <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
+                    <a href="contact.html" class="nav-icon" title="Contact">📞</a>
+                    <a href="register.html" class="nav-icon" title="Register">👤</a>
+                    <button id="searchToggle" class="nav-icon">🔍</button>
+                    
+                    <!-- Desktop Language Selector -->
+                    <div id="customDropdown" style="position:relative; user-select:none;">
+                        <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
+                            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
+                            <span id="currentLanguage">EN</span>
+                            <span style="margin-left:5px;">▼</span>
+                        </div>
+                        <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+                    </div>
+                </div>
+            </nav>
         </div>
-      </div>
 
-
-      <a href="INVESTORS.HTML" class="nav-link">Investors</a>
-      <a href="insights.html" class="nav-link">Insights</a>
-      <a href="partners.html" class="nav-link">Partners</a>
-      <a href="affiliate.html" class="nav-link">Affiliates</a>
-      <a href="industries.html" class="nav-link">Industries</a>
-      <a href="resources.html" class="nav-link">Resources</a>
-      
-      <!-- Icons -->
-      <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
-        <a href="contact.html" class="nav-icon" title="Contact">📞</a>
-        <a href="register.html" class="nav-icon" title="Register">👤</a>
-        <button id="searchToggle" class="nav-icon">🔍</button>
-        
-        <!-- Desktop Language Selector -->
-        <div id="customDropdown" style="position:relative; user-select:none;">
-          <div id="selectedOption" style="display:flex; align-items:center; gap:5px; padding:4px 8px; background:rgba(0,0,0,0.2); border-radius:20px; border:1px solid rgba(255,255,255,0.3); color:white; cursor:pointer;">
-            <img id="currentFlag" src="https://flagcdn.com/us.svg" alt="US Flag" style="width:20px; height:15px; object-fit:cover;"/>
-            <span id="currentLanguage">EN</span>
-            <span style="margin-left:5px;">▼</span>
-          </div>
-          <div id="optionsList" style="position:absolute; right:0; background:#fff; color:#000; border:1px solid #ccc; border-radius:4px; margin-top:5px; max-height:300px; overflow-y:auto; display:none; z-index:1000; min-width:180px;"></div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
+            <div style="display:flex; flex-direction:column; gap:12px;">
+                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="about.html" class="mobile-nav-link">About</a>
+                <a href="products.html" class="mobile-nav-link">Products</a>
+                <a href="Projects.html" class="mobile-nav-link">Projects</a>
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
+                <a href="insights.html" class="mobile-nav-link">Insights</a>
+                <a href="partners.html" class="mobile-nav-link">Partners</a>
+                <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
+                <a href="industries.html" class="mobile-nav-link">Industries</a>
+                <a href="resources.html" class="mobile-nav-link">Resources</a>
+                
+                <div style="display:flex; justify-content:space-around; margin-top:15px;">
+                    <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
+                    <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
+                </div>
+                
+                <!-- Mobile Language Selector -->
+                <div style="margin-top:15px;">
+                    <select id="mobileLanguageSelect" class="mobile-language-selector">
+                        <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
+                        <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
+                        <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
+                        <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
+                        <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
+                        <!-- More languages will be added by JavaScript -->
+                    </select>
+                </div>
+            </div>
         </div>
-      </div>
-    </nav>
-  </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" style="display:none; background-color:#6a1b9a; padding:15px;">
-    <div style="display:flex; flex-direction:column; gap:12px;">
-      <a href="/" class="mobile-nav-link">Home</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="products.html" class="mobile-nav-link">Products</a>
-      <a href="Projects.html" class="mobile-nav-link">Projects</a>
-      <a href="services.html" class="mobile-nav-link">Services</a>
-      <a href="INVESTORS.HTML" class="mobile-nav-link">Investors</a>
-      <a href="insights.html" class="mobile-nav-link">Insights</a>
-      <a href="partners.html" class="mobile-nav-link">Partners</a>
-      <a href="affiliate.html" class="mobile-nav-link">Affiliates</a>
-      <a href="industries.html" class="mobile-nav-link">Industries</a>
-      <a href="resources.html" class="mobile-nav-link">Resources</a>
-      
-      <div style="display:flex; justify-content:space-around; margin-top:15px;">
-        <a href="contact.html" class="mobile-nav-icon" title="Contact">📞 Contact</a>
-        <a href="register.html" class="mobile-nav-icon" title="Register">👤 Register</a>
-      </div>
-      
-      <!-- Mobile Language Selector -->
-      <div style="margin-top:15px;">
-        <select id="mobileLanguageSelect" class="mobile-language-selector">
-          <option value="en" data-flag="https://flagcdn.com/us.svg">English</option>
-          <option value="es" data-flag="https://flagcdn.com/es.svg">Español</option>
-          <option value="fr" data-flag="https://flagcdn.com/fr.svg">Français</option>
-          <option value="de" data-flag="https://flagcdn.com/de.svg">Deutsch</option>
-          <option value="zh-CN" data-flag="https://flagcdn.com/cn.svg">中文</option>
-          <!-- More languages will be added by JavaScript -->
-        </select>
-      </div>
-    </div>
-  </div>
+        <!-- Search Container -->
+        <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
+            <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
+        </div>
+    </header>
 
-  <!-- Search Container -->
-  <div id="searchContainer" style="display:none; padding:10px 15px; background-color:#f5f5f5; border-top:1px solid #ddd;">
-    <input type="text" placeholder="Search..." style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;">
-  </div>
-</header>
-
-<style>
-
-  
-  /* Common Styles */
-  .nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 6px 10px;
-    white-space: nowrap;
-    border-radius: 4px;
-    transition: all 0.2s;
-  }
-  
-  .nav-link:hover {
-    background-color: rgba(255,255,255,0.2);
-  }
-  
-  .nav-icon {
-    color: white;
-    font-size: 18px;
-    padding: 6px;
-    cursor: pointer;
-  }
-  
-  /* Mobile Styles */
-  .mobile-nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  
-  .mobile-nav-icon {
-    color: white;
-    text-decoration: none;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .mobile-language-selector {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    border: 1px solid rgba(255,255,255,0.3);
-  }
-  
-  /* Language dropdown options */
-  #optionsList div {
-    padding: 8px 12px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  #optionsList div:hover {
-    background-color: #f0f0f0;
-  }
-  
-  #optionsList img {
-    width: 20px;
-    height: 15px;
-    object-fit: cover;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 1024px) {
-    .nav-link {
-      padding: 6px 8px;
-      font-size: 14px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    #mobileMenuButton {
-      display: block;
-    }
-    
-    #desktopNav {
-      display: none;
-    }
-  }
-</style>
-
-<script>
-  // Country/language data
-  const countries = [
-    {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
-    {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
-    {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
-    {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
-    {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
-    {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
-    {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
-    {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
-    {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
-    {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
-    {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
-  ];
-
-  // Initialize language functionality
-  function initLanguageSelection() {
-    // Populate desktop dropdown
-    const optionsList = document.getElementById('optionsList');
-    countries.forEach(country => {
-      const option = document.createElement('div');
-      option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
-      option.dataset.code = country.code;
-      option.dataset.flag = country.flag;
-      option.dataset.name = country.name;
-      option.onclick = () => selectLanguage(country.code, country.flag, country.name);
-      optionsList.appendChild(option);
-    });
-
-    // Populate mobile dropdown
-    const mobileSelect = document.getElementById('mobileLanguageSelect');
-    countries.forEach(country => {
-      if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
-        const option = document.createElement('option');
-        option.value = country.code;
-        option.textContent = `${country.name} (${country.country})`;
-        option.dataset.flag = country.flag;
-        mobileSelect.appendChild(option);
-      }
-    });
-
-    // Set up event listeners
-    document.getElementById('selectedOption').onclick = function() {
-      optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
-    };
-
-    document.getElementById('mobileLanguageSelect').onchange = function() {
-      const selectedOption = this.options[this.selectedIndex];
-      selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
-    };
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('#customDropdown')) {
-        optionsList.style.display = 'none';
-      }
-    });
-
-    // Detect user's language
-    detectUserLanguage();
-  }
-
-  // Select language function
-  function selectLanguage(code, flag, name) {
-    // Update desktop display
-    document.getElementById('currentFlag').src = flag;
-    document.getElementById('currentLanguage').textContent = code.toUpperCase();
-    document.getElementById('optionsList').style.display = 'none';
-    
-    // Update mobile display
-    const mobileSelect = document.getElementById('mobileLanguageSelect');
-    mobileSelect.value = code;
-    
-    // Store selection
-    localStorage.setItem('userLanguage', code);
-    localStorage.setItem('userLanguageFlag', flag);
-    localStorage.setItem('userLanguageName', name);
-    
-    // Change Google Translate language
-    changeGoogleTranslateLanguage(code);
-  }
-
-  // Detect user's language
-  function detectUserLanguage() {
-    // Check for stored preference first
-    const storedLanguage = localStorage.getItem('userLanguage');
-    if (storedLanguage) {
-      const storedFlag = localStorage.getItem('userLanguageFlag');
-      const storedName = localStorage.getItem('userLanguageName');
-      selectLanguage(storedLanguage, storedFlag, storedName);
-      return;
-    }
-
-    // Try to detect from browser
-    const browserLanguage = navigator.language || navigator.userLanguage;
-    if (browserLanguage) {
-      const mainLang = browserLanguage.split('-')[0];
-      const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
-      if (matchedCountry) {
-        selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
-        return;
-      }
-    }
-
-    // Fallback to IP detection
-    fetch('https://ipapi.co/json/')
-      .then(response => response.json())
-      .then(data => {
-        const countryCode = data.country;
-        const matchedCountry = countries.find(c => 
-          c.country.toLowerCase() === data.country_name.toLowerCase() || 
-          c.code === data.languages?.split(',')[0]
-        );
-        if (matchedCountry) {
-          selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
-        } else {
-          // Default to English
-          selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+    <style>
+        /* Common Styles */
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 6px 10px;
+            white-space: nowrap;
+            border-radius: 4px;
+            transition: all 0.2s;
         }
-      })
-      .catch(() => {
-        // Default to English if all detection fails
-        selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
-      });
-  }
+        
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.05);
+        }
 
-  // Change Google Translate language
-  function changeGoogleTranslateLanguage(languageCode) {
-    if (typeof google !== 'undefined' && google.translate) {
-      const combo = document.querySelector('.goog-te-combo');
-      if (combo) {
-        combo.value = languageCode;
-        combo.dispatchEvent(new Event('change'));
-      }
-    } else {
-      // Retry after a delay if Google Translate isn't loaded yet
-      setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
-    }
-  }
+        .nav-icon {
+            color: white;
+            font-size: 18px;
+            padding: 6px;
+            cursor: pointer;
+        }
+        
+        /* Mobile Styles */
+        .mobile-nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .mobile-nav-icon {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .mobile-language-selector {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Language dropdown options */
+        #optionsList div {
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        #optionsList div:hover {
+            background-color: #f0f0f0;
+        }
+        
+        #optionsList img {
+            width: 20px;
+            height: 15px;
+            object-fit: cover;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .nav-link {
+                padding: 6px 8px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #mobileMenuButton {
+                display: block;
+            }
+            
+            #desktopNav {
+                display: none;
+            }
+        }
 
-  // Initialize Google Translate
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      autoDisplay: false,
-      includedLanguages: countries.map(c => c.code).join(',')
-    }, 'google_translate_element');
-  }
+        /* Navbar scrolled style */
+        .navbar.scrolled {
+            background: #fff; /* or rgba(255,255,255,0.95) */
+            color: #222;
+            opacity: 1;
+        }
+    </style>
 
-  // Navbar functions
-  function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
-  }
-  
-  function toggleSearch() {
-    const searchContainer = document.getElementById('searchContainer');
-    searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
-  }
-  
-  function handleResponsive() {
-    if (window.innerWidth <= 768) {
-      document.getElementById('mobileMenuButton').style.display = 'block';
-      document.getElementById('desktopNav').style.display = 'none';
-    } else {
-      document.getElementById('mobileMenuButton').style.display = 'none';
-      document.getElementById('desktopNav').style.display = 'flex';
-      document.getElementById('mobileMenu').style.display = 'none';
-      document.getElementById('searchContainer').style.display = 'none';
-    }
-  }
+    <script>
+        // Country/language data
+        const countries = [
+            {code: 'en', name: 'English', flag: 'https://flagcdn.com/us.svg', country: 'United States'},
+            {code: 'es', name: 'Español', flag: 'https://flagcdn.com/es.svg', country: 'Spain'},
+            {code: 'fr', name: 'Français', flag: 'https://flagcdn.com/fr.svg', country: 'France'},
+            {code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg', country: 'Germany'},
+            {code: 'zh-CN', name: '中文', flag: 'https://flagcdn.com/cn.svg', country: 'China'},
+            {code: 'hi', name: 'हिन्दी', flag: 'https://flagcdn.com/in.svg', country: 'India'},
+            {code: 'ja', name: '日本語', flag: 'https://flagcdn.com/jp.svg', country: 'Japan'},
+            {code: 'pt', name: 'Português', flag: 'https://flagcdn.com/pt.svg', country: 'Portugal'},
+            {code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/ru.svg', country: 'Russia'},
+            {code: 'ar', name: 'العربية', flag: 'https://flagcdn.com/sa.svg', country: 'Saudi Arabia'},
+            {code: 'ko', name: '한국어', flag: 'https://flagcdn.com/kr.svg', country: 'South Korea'}
+        ];
 
-  // Initialize everything when DOM loads
-  document.addEventListener('DOMContentLoaded', function() {
-    initLanguageSelection();
-    handleResponsive();
-    document.getElementById('searchToggle').addEventListener('click', toggleSearch);
-    window.addEventListener('resize', handleResponsive);
-    
-    // Load Google Translate script
-    const script = document.createElement('script');
-    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    document.head.appendChild(script);
-  });
-</script>
+        // Initialize language functionality
+        function initLanguageSelection() {
+            // Populate desktop dropdown
+            const optionsList = document.getElementById('optionsList');
+            countries.forEach(country => {
+            const option = document.createElement('div');
+            option.innerHTML = `<img src="${country.flag}" alt="${country.country}"/> <span>${country.name} (${country.country})</span>`;
+            option.dataset.code = country.code;
+            option.dataset.flag = country.flag;
+            option.dataset.name = country.name;
+            option.onclick = () => selectLanguage(country.code, country.flag, country.name);
+            optionsList.appendChild(option);
+            });
+
+            // Populate mobile dropdown
+            const mobileSelect = document.getElementById('mobileLanguageSelect');
+            countries.forEach(country => {
+            if (!mobileSelect.querySelector(`option[value="${country.code}"]`)) {
+                const option = document.createElement('option');
+                option.value = country.code;
+                option.textContent = `${country.name} (${country.country})`;
+                option.dataset.flag = country.flag;
+                mobileSelect.appendChild(option);
+            }
+            });
+
+            // Set up event listeners
+            document.getElementById('selectedOption').onclick = function() {
+            optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+            };
+
+            document.getElementById('mobileLanguageSelect').onchange = function() {
+            const selectedOption = this.options[this.selectedIndex];
+            selectLanguage(this.value, selectedOption.dataset.flag, selectedOption.text);
+            };
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+            if (!e.target.closest('#customDropdown')) {
+                optionsList.style.display = 'none';
+            }
+            });
+
+            // Detect user's language
+            detectUserLanguage();
+        }
+
+        // Select language function
+        function selectLanguage(code, flag, name) {
+            // Update desktop display
+            document.getElementById('currentFlag').src = flag;
+            document.getElementById('currentLanguage').textContent = code.toUpperCase();
+            document.getElementById('optionsList').style.display = 'none';
+            
+            // Update mobile display
+            const mobileSelect = document.getElementById('mobileLanguageSelect');
+            mobileSelect.value = code;
+            
+            // Store selection
+            localStorage.setItem('userLanguage', code);
+            localStorage.setItem('userLanguageFlag', flag);
+            localStorage.setItem('userLanguageName', name);
+            
+            // Change Google Translate language
+            changeGoogleTranslateLanguage(code);
+        }
+
+        // Detect user's language
+        function detectUserLanguage() {
+            // Check for stored preference first
+            const storedLanguage = localStorage.getItem('userLanguage');
+            if (storedLanguage) {
+            const storedFlag = localStorage.getItem('userLanguageFlag');
+            const storedName = localStorage.getItem('userLanguageName');
+            selectLanguage(storedLanguage, storedFlag, storedName);
+            return;
+            }
+
+            // Try to detect from browser
+            const browserLanguage = navigator.language || navigator.userLanguage;
+            if (browserLanguage) {
+            const mainLang = browserLanguage.split('-')[0];
+            const matchedCountry = countries.find(c => c.code === mainLang || c.code.split('-')[0] === mainLang);
+            if (matchedCountry) {
+                selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+                return;
+            }
+            }
+
+            // Fallback to IP detection
+            fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                const countryCode = data.country;
+                const matchedCountry = countries.find(c => 
+                c.country.toLowerCase() === data.country_name.toLowerCase() || 
+                c.code === data.languages?.split(',')[0]
+                );
+                if (matchedCountry) {
+                selectLanguage(matchedCountry.code, matchedCountry.flag, matchedCountry.name);
+                } else {
+                // Default to English
+                selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+                }
+            })
+            .catch(() => {
+                // Default to English if all detection fails
+                selectLanguage('en', 'https://flagcdn.com/us.svg', 'English');
+            });
+        }
+
+        // Change Google Translate language
+        function changeGoogleTranslateLanguage(languageCode) {
+            if (typeof google !== 'undefined' && google.translate) {
+            const combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.value = languageCode;
+                combo.dispatchEvent(new Event('change'));
+            }
+            } else {
+            // Retry after a delay if Google Translate isn't loaded yet
+            setTimeout(() => changeGoogleTranslateLanguage(languageCode), 500);
+            }
+        }
+
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            autoDisplay: false,
+            includedLanguages: countries.map(c => c.code).join(',')
+            }, 'google_translate_element');
+        }
+
+        // Navbar functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function toggleSearch() {
+            const searchContainer = document.getElementById('searchContainer');
+            searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function handleResponsive() {
+            if (window.innerWidth <= 768) {
+            document.getElementById('mobileMenuButton').style.display = 'block';
+            document.getElementById('desktopNav').style.display = 'none';
+            } else {
+            document.getElementById('mobileMenuButton').style.display = 'none';
+            document.getElementById('desktopNav').style.display = 'flex';
+            document.getElementById('mobileMenu').style.display = 'none';
+            document.getElementById('searchContainer').style.display = 'none';
+            }
+        }
+
+        // Initialize everything when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguageSelection();
+            handleResponsive();
+            document.getElementById('searchToggle').addEventListener('click', toggleSearch);
+            window.addEventListener('resize', handleResponsive);
+            
+            // Load Google Translate script
+            const script = document.createElement('script');
+            script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.head.appendChild(script);
+        });
+
+        window.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar');
+            if(window.scrollY > 50){
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 
 <!-- Google Translate element (hidden) -->
 <div id="google_translate_element" style="display:none;"></div>
 
 <!-- =================================================================================== -->
-
 </body>
 </html>
